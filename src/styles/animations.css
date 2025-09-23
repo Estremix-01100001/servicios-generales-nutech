@@ -154,3 +154,66 @@
   z-index: 10;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 }
+
+/* Efectos de circuitos para el ojo digital */
+.circuit-line-1 {
+  position: absolute;
+  top: 20%;
+  left: 10%;
+  width: 60%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #3b82f6, #f97316, transparent);
+  animation: circuitPulse 3s ease-in-out infinite;
+}
+
+.circuit-line-2 {
+  position: absolute;
+  top: 50%;
+  left: 15%;
+  width: 50%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #06b6d4, #f59e0b, transparent);
+  animation: circuitPulse 3s ease-in-out infinite 1s;
+}
+
+.circuit-line-3 {
+  position: absolute;
+  top: 70%;
+  left: 20%;
+  width: 40%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #8b5cf6, #ef4444, transparent);
+  animation: circuitPulse 3s ease-in-out infinite 2s;
+}
+
+@keyframes circuitPulse {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scaleX(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+}
+
+/* Efectos de puntos digitales */
+.circuit-dots {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: #3b82f6;
+  border-radius: 50%;
+  animation: dotBlink 2s ease-in-out infinite;
+}
+
+@keyframes dotBlink {
+  0%, 100% {
+    opacity: 0.2;
+    transform: scale(0.5);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
