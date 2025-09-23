@@ -1,0 +1,7 @@
+<svg width="800" height="450" viewBox="0 0 800 450" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="450" fill="#1e40af"/>
+  <circle cx="400" cy="225" r="50" fill="white" opacity="0.8"/>
+  <polygon points="380,200 380,250 430,225" fill="#1e40af"/>
+  <text x="400" y="300" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="24" font-weight="bold">Transformación Digital</text>
+  <text x="400" y="330" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="16" opacity="0.8">Video Promocional</text>
+</svg>
