@@ -2,15 +2,15 @@
 
 /* Botones personalizados */
 .btn-primary {
-  @apply bg-primary-600 hover:bg-primary-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl;
+  @apply bg-accent-600 hover:bg-accent-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl;
 }
 
 .btn-secondary {
-  @apply bg-secondary-200 hover:bg-secondary-300 text-secondary-800 font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg;
+  @apply bg-secondary-800 hover:bg-secondary-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg;
 }
 
 .btn-outline {
-  @apply border-2 border-primary-600 text-primary-600 hover:bg-primary-600 hover:text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105;
+  @apply border-2 border-accent-600 text-accent-600 hover:bg-accent-600 hover:text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105;
 }
 
 /* Cards personalizadas */
@@ -45,11 +45,11 @@
 
 /* Navegación */
 .nav-link {
-  @apply text-gray-600 hover:text-primary-600 font-medium transition-colors duration-300 relative;
+  @apply text-white hover:text-accent-400 font-medium transition-colors duration-300 relative;
 }
 
 .nav-link::after {
-  @apply content-[''] absolute bottom-0 left-0 w-0 h-0.5 bg-primary-600 transition-all duration-300;
+  @apply content-[''] absolute bottom-0 left-0 w-0 h-0.5 bg-accent-600 transition-all duration-300;
 }
 
 .nav-link:hover::after {
@@ -58,7 +58,7 @@
 
 /* Hero sections */
 .hero-gradient {
-  @apply bg-gradient-to-br from-primary-600 via-primary-700 to-primary-800;
+  @apply bg-gradient-to-br from-secondary-800 via-secondary-900 to-black;
 }
 
 .hero-text {
@@ -75,24 +75,24 @@
 }
 
 .service-icon {
-  @apply w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mb-6 mx-auto;
+  @apply w-16 h-16 bg-accent-100 rounded-full flex items-center justify-center mb-6 mx-auto;
 }
 
 .service-title {
-  @apply text-2xl font-bold text-gray-800 mb-4 text-center;
+  @apply text-2xl font-bold text-secondary-800 mb-4 text-center;
 }
 
 .service-description {
-  @apply text-gray-600 text-center leading-relaxed;
+  @apply text-secondary-600 text-center leading-relaxed;
 }
 
 /* Testimonios */
 .testimonial-card {
-  @apply bg-white rounded-xl shadow-lg p-8 border-l-4 border-primary-500;
+  @apply bg-white rounded-xl shadow-lg p-8 border-l-4 border-accent-500;
 }
 
 .testimonial-text {
-  @apply text-gray-700 italic text-lg leading-relaxed mb-6;
+  @apply text-secondary-700 italic text-lg leading-relaxed mb-6;
 }
 
 .testimonial-author {
@@ -100,15 +100,15 @@
 }
 
 .testimonial-avatar {
-  @apply w-12 h-12 rounded-full bg-primary-100 flex items-center justify-center text-primary-600 font-bold text-lg;
+  @apply w-12 h-12 rounded-full bg-accent-100 flex items-center justify-center text-accent-600 font-bold text-lg;
 }
 
 .testimonial-name {
-  @apply font-semibold text-gray-800 ml-4;
+  @apply font-semibold text-secondary-800 ml-4;
 }
 
 .testimonial-role {
-  @apply text-gray-600 text-sm ml-4;
+  @apply text-secondary-600 text-sm ml-4;
 }
 
 /* Footer */
