@@ -1,0 +1,74 @@
+---
+import { services } from '../../database/data';
+---
+
+<section id="servicios" class="py-20 bg-gray-50">
+  <div class="container mx-auto px-4">
+    <!-- Section Header -->
+    <div class="text-center mb-16">
+      <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
+        Nuestros Servicios
+      </h2>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+        Ofrecemos una amplia gama de servicios profesionales para satisfacer todas tus necesidades
+      </p>
+    </div>
+
+    <!-- Services Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+      {services.map((service, index) => (
+        <div class={`service-card hover-lift animate-fade-in-up`} style={`animation-delay: ${index * 0.1}s`}>
+          <div class="service-icon">
+            <span class="text-3xl">{service.icon}</span>
+          </div>
+          <h3 class="service-title">{service.name}</h3>
+          <p class="service-description mb-6">
+            {service.description}
+          </p>
+          
+          <!-- Features -->
+          <ul class="space-y-2 mb-6">
+            {service.features.map((feature) => (
+              <li class="flex items-center text-gray-600">
+                <svg class="w-5 h-5 text-primary-500 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                {feature}
+              </li>
+            ))}
+          </ul>
+
+          <!-- Price and CTA -->
+          <div class="flex items-center justify-between">
+            <div class="text-2xl font-bold text-primary-600">
+              {service.price}
+            </div>
+            <a href="#contacto" class="btn-primary">
+              Solicitar
+            </a>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- CTA Section -->
+    <div class="text-center mt-16">
+      <div class="bg-white rounded-2xl shadow-xl p-8 max-w-4xl mx-auto">
+        <h3 class="text-3xl font-bold text-gray-800 mb-4">
+          ¿Necesitas un servicio personalizado?
+        </h3>
+        <p class="text-lg text-gray-600 mb-8">
+          Contáctanos para una cotización personalizada según tus necesidades específicas
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="#contacto" class="btn-primary">
+            Solicitar Cotización
+          </a>
+          <a href="tel:+15551234567" class="btn-secondary">
+            Llamar Ahora
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

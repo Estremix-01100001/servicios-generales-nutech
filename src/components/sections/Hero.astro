@@ -1,0 +1,72 @@
+---
+import { companyInfo } from '../../database/data';
+---
+
+<section id="inicio" class="hero-gradient min-h-screen flex items-center">
+  <div class="container mx-auto px-4">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <!-- Content -->
+      <div class="animate-fade-in-up">
+        <h1 class="hero-text">
+          Soluciones Integrales para tu Hogar y Empresa
+        </h1>
+        <p class="hero-subtext">
+          Ofrecemos servicios profesionales de limpieza, mantenimiento y cuidado de espacios. 
+          Con más de 10 años de experiencia, garantizamos calidad y satisfacción.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 mt-8">
+          <a href="#contacto" class="btn-primary text-center">
+            Solicitar Cotización
+          </a>
+          <a href="#servicios" class="btn-outline text-center">
+            Ver Servicios
+          </a>
+        </div>
+        
+        <!-- Stats -->
+        <div class="grid grid-cols-3 gap-8 mt-12">
+          <div class="text-center">
+            <div class="text-3xl font-bold text-white">500+</div>
+            <div class="text-white/80 text-sm">Clientes Satisfechos</div>
+          </div>
+          <div class="text-center">
+            <div class="text-3xl font-bold text-white">10+</div>
+            <div class="text-white/80 text-sm">Años de Experiencia</div>
+          </div>
+          <div class="text-center">
+            <div class="text-3xl font-bold text-white">24/7</div>
+            <div class="text-white/80 text-sm">Atención Disponible</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Image/Video -->
+      <div class="animate-slide-in-right">
+        <div class="relative">
+          <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
+            <div class="aspect-video bg-gradient-to-br from-white/20 to-white/10 rounded-xl flex items-center justify-center">
+              <div class="text-center text-white">
+                <svg class="w-16 h-16 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1m4 0h1m-6 4h1m4 0h1m-6-8h8a2 2 0 012 2v8a2 2 0 01-2 2H8a2 2 0 01-2-2V8a2 2 0 012-2z"></path>
+                </svg>
+                <p class="text-lg font-semibold">Video Promocional</p>
+                <p class="text-sm opacity-80">Conoce nuestros servicios</p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Floating elements -->
+          <div class="absolute -top-4 -right-4 w-20 h-20 bg-primary-400 rounded-full opacity-20 animate-pulse-custom"></div>
+          <div class="absolute -bottom-4 -left-4 w-16 h-16 bg-white rounded-full opacity-20 animate-bounce-slow"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll indicator -->
+  <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+    <svg class="w-6 h-6 text-white/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+    </svg>
+  </div>
+</section>

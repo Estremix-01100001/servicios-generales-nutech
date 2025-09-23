@@ -1,0 +1,136 @@
+/* Estilos para componentes específicos */
+
+/* Botones personalizados */
+.btn-primary {
+  @apply bg-primary-600 hover:bg-primary-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl;
+}
+
+.btn-secondary {
+  @apply bg-secondary-200 hover:bg-secondary-300 text-secondary-800 font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg;
+}
+
+.btn-outline {
+  @apply border-2 border-primary-600 text-primary-600 hover:bg-primary-600 hover:text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105;
+}
+
+/* Cards personalizadas */
+.card {
+  @apply bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100;
+}
+
+.card-header {
+  @apply px-6 py-4 border-b border-gray-100;
+}
+
+.card-body {
+  @apply px-6 py-4;
+}
+
+.card-footer {
+  @apply px-6 py-4 border-t border-gray-100 bg-gray-50 rounded-b-xl;
+}
+
+/* Formularios */
+.form-input {
+  @apply w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-300;
+}
+
+.form-label {
+  @apply block text-sm font-medium text-gray-700 mb-2;
+}
+
+.form-error {
+  @apply text-red-600 text-sm mt-1;
+}
+
+/* Navegación */
+.nav-link {
+  @apply text-gray-600 hover:text-primary-600 font-medium transition-colors duration-300 relative;
+}
+
+.nav-link::after {
+  @apply content-[''] absolute bottom-0 left-0 w-0 h-0.5 bg-primary-600 transition-all duration-300;
+}
+
+.nav-link:hover::after {
+  @apply w-full;
+}
+
+/* Hero sections */
+.hero-gradient {
+  @apply bg-gradient-to-br from-primary-600 via-primary-700 to-primary-800;
+}
+
+.hero-text {
+  @apply text-white text-4xl md:text-6xl font-bold leading-tight;
+}
+
+.hero-subtext {
+  @apply text-white/90 text-xl md:text-2xl font-light mt-4;
+}
+
+/* Secciones de servicios */
+.service-card {
+  @apply bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 p-8 border border-gray-100;
+}
+
+.service-icon {
+  @apply w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mb-6 mx-auto;
+}
+
+.service-title {
+  @apply text-2xl font-bold text-gray-800 mb-4 text-center;
+}
+
+.service-description {
+  @apply text-gray-600 text-center leading-relaxed;
+}
+
+/* Testimonios */
+.testimonial-card {
+  @apply bg-white rounded-xl shadow-lg p-8 border-l-4 border-primary-500;
+}
+
+.testimonial-text {
+  @apply text-gray-700 italic text-lg leading-relaxed mb-6;
+}
+
+.testimonial-author {
+  @apply flex items-center;
+}
+
+.testimonial-avatar {
+  @apply w-12 h-12 rounded-full bg-primary-100 flex items-center justify-center text-primary-600 font-bold text-lg;
+}
+
+.testimonial-name {
+  @apply font-semibold text-gray-800 ml-4;
+}
+
+.testimonial-role {
+  @apply text-gray-600 text-sm ml-4;
+}
+
+/* Footer */
+.footer-link {
+  @apply text-gray-400 hover:text-white transition-colors duration-300;
+}
+
+.footer-section-title {
+  @apply text-white font-semibold text-lg mb-4;
+}
+
+/* Responsive utilities */
+@media (max-width: 768px) {
+  .hero-text {
+    @apply text-3xl;
+  }
+  
+  .hero-subtext {
+    @apply text-lg;
+  }
+  
+  .service-card {
+    @apply p-6;
+  }
+}

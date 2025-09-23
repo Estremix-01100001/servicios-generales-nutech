@@ -1,0 +1,63 @@
+---
+import { companyInfo } from '../../database/data';
+---
+
+<header class="bg-white shadow-lg sticky top-0 z-50">
+  <nav class="container mx-auto px-4 py-4">
+    <div class="flex items-center justify-between">
+      <!-- Logo -->
+      <div class="flex items-center space-x-3">
+        <div class="w-10 h-10 bg-primary-600 rounded-lg flex items-center justify-center">
+          <span class="text-white font-bold text-xl">SG</span>
+        </div>
+        <div>
+          <h1 class="text-xl font-bold text-gray-800">{companyInfo.name}</h1>
+          <p class="text-sm text-gray-600">Servicios Generales</p>
+        </div>
+      </div>
+
+      <!-- Desktop Navigation -->
+      <div class="hidden md:flex items-center space-x-8">
+        <a href="#inicio" class="nav-link">Inicio</a>
+        <a href="#servicios" class="nav-link">Servicios</a>
+        <a href="#nosotros" class="nav-link">Nosotros</a>
+        <a href="#testimonios" class="nav-link">Testimonios</a>
+        <a href="#contacto" class="nav-link">Contacto</a>
+        <a href="#contacto" class="btn-primary">Cotizar Ahora</a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button id="mobile-menu-button" class="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Navigation -->
+    <div id="mobile-menu" class="md:hidden hidden mt-4 pb-4 border-t border-gray-200">
+      <div class="flex flex-col space-y-4 pt-4">
+        <a href="#inicio" class="nav-link">Inicio</a>
+        <a href="#servicios" class="nav-link">Servicios</a>
+        <a href="#nosotros" class="nav-link">Nosotros</a>
+        <a href="#testimonios" class="nav-link">Testimonios</a>
+        <a href="#contacto" class="nav-link">Contacto</a>
+        <a href="#contacto" class="btn-primary text-center">Cotizar Ahora</a>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<script>
+  // Mobile menu toggle
+  document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    if (mobileMenuButton && mobileMenu) {
+      mobileMenuButton.addEventListener('click', function() {
+        mobileMenu.classList.toggle('hidden');
+      });
+    }
+  });
+</script>
