@@ -62,11 +62,11 @@
 }
 
 .hero-text {
-  @apply text-white text-4xl md:text-6xl font-bold leading-tight;
+  @apply text-white text-4xl md:text-6xl lg:text-7xl font-bold leading-tight drop-shadow-lg;
 }
 
 .hero-subtext {
-  @apply text-white/90 text-xl md:text-2xl font-light mt-4;
+  @apply text-white/90 text-xl md:text-2xl lg:text-3xl font-light mt-4 drop-shadow-md;
 }
 
 /* Secciones de servicios */
