@@ -2,44 +2,43 @@
 import { companyInfo } from '../../database/data';
 ---
 
-<header class="bg-secondary-900/80 backdrop-blur-sm sticky top-0 z-50">
-  <nav class="container mx-auto px-4 py-4">
+<header class="bg-secondary-900/90 backdrop-blur-sm sticky top-0 z-50">
+  <nav class="container mx-auto px-4 py-3">
     <div class="flex items-center justify-between">
       <!-- Logo -->
-      <div class="flex items-center space-x-3">
-        <img src="/favicon.png" alt="DIGNITA" class="w-32 h-32 rounded-lg" />
-        
+      <div class="flex items-center">
+        <img src="/favicon.png" alt="Nutech" class="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-lg" />
       </div>
 
       <!-- Desktop Navigation -->
-      <div class="hidden md:flex items-center space-x-8">
-        <a href="#inicio" class="nav-link">Inicio</a>
-        <a href="#crecimiento" class="nav-link">Crecimiento</a>
-        <a href="#servicios-detallados" class="nav-link">Servicios</a>
-        <a href="#partners" class="nav-link">Partners</a>
-        <a href="#nutech-info" class="nav-link">Nutech</a>
-        <a href="#perspectiva" class="nav-link">Perspectiva</a>
-        <a href="#contacto" class="nav-link">Contacto</a>
+      <div class="hidden lg:flex items-center space-x-6 xl:space-x-8">
+        <a href="#inicio" class="nav-link text-sm xl:text-base">Inicio</a>
+        <a href="#crecimiento" class="nav-link text-sm xl:text-base">Crecimiento</a>
+        <a href="#servicios-detallados" class="nav-link text-sm xl:text-base">Servicios</a>
+        <a href="#partners" class="nav-link text-sm xl:text-base">Partners</a>
+        <a href="#nutech-info" class="nav-link text-sm xl:text-base">Nutech</a>
+        <a href="#perspectiva" class="nav-link text-sm xl:text-base">Perspectiva</a>
+        <a href="#contacto" class="nav-link text-sm xl:text-base">Contacto</a>
       </div>
 
       <!-- Mobile Menu Button -->
-      <button id="mobile-menu-button" class="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <button id="mobile-menu-button" class="lg:hidden p-2 rounded-lg hover:bg-white/10 transition-colors">
+        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
         </svg>
       </button>
     </div>
 
     <!-- Mobile Navigation -->
-    <div id="mobile-menu" class="md:hidden hidden mt-4 pb-4 border-t border-gray-200">
-      <div class="flex flex-col space-y-4 pt-4">
-        <a href="#inicio" class="nav-link">Inicio</a>
-        <a href="#crecimiento" class="nav-link">Crecimiento</a>
-        <a href="#servicios-detallados" class="nav-link">Servicios</a>
-        <a href="#partners" class="nav-link">Partners</a>
-        <a href="#nutech-info" class="nav-link">Nutech</a>
-        <a href="#perspectiva" class="nav-link">Perspectiva</a>
-        <a href="#contacto" class="nav-link">Contacto</a>
+    <div id="mobile-menu" class="lg:hidden hidden mt-4 pb-4 border-t border-white/20">
+      <div class="flex flex-col space-y-3 pt-4">
+        <a href="#inicio" class="nav-link text-base py-2">Inicio</a>
+        <a href="#crecimiento" class="nav-link text-base py-2">Crecimiento</a>
+        <a href="#servicios-detallados" class="nav-link text-base py-2">Servicios</a>
+        <a href="#partners" class="nav-link text-base py-2">Partners</a>
+        <a href="#nutech-info" class="nav-link text-base py-2">Nutech</a>
+        <a href="#perspectiva" class="nav-link text-base py-2">Perspectiva</a>
+        <a href="#contacto" class="nav-link text-base py-2">Contacto</a>
       </div>
     </div>
   </nav>
