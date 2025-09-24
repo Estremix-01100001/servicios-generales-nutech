@@ -36,9 +36,11 @@ const { title, description = "Servicios Generales Pro - Soluciones integrales pa
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
     
     <!-- Styles -->
-    <link rel="stylesheet" href="/global.css" />
-    <link rel="stylesheet" href="/animations.css" />
-    <link rel="stylesheet" href="/components.css" />
+    <link rel="stylesheet" href="/global.css" onerror="this.href='https://raw.githubusercontent.com/Estremix-01100001/servicios-generales-nutech/main/public/global.css'" />
+    <link rel="stylesheet" href="/animations.css" onerror="this.href='https://raw.githubusercontent.com/Estremix-01100001/servicios-generales-nutech/main/public/animations.css'" />
+    <link rel="stylesheet" href="/components.css" onerror="this.href='https://raw.githubusercontent.com/Estremix-01100001/servicios-generales-nutech/main/public/components.css'" />
+    <!-- Tailwind CSS with fallback -->
+    <link rel="stylesheet" href="/tailwind.css" onerror="this.href='https://raw.githubusercontent.com/Estremix-01100001/servicios-generales-nutech/main/public/tailwind.css'" />
   </head>
   <body class="font-sans antialiased">
     <slot />
