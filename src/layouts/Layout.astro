@@ -36,17 +36,43 @@ const { title, description = "Servicios Generales Pro - Soluciones integrales pa
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
     
     <!-- Styles -->
-    <link rel="stylesheet" href="/global.css" onerror="this.href='https://raw.githubusercontent.com/Estremix-01100001/servicios-generales-nutech/main/public/global.css'" />
-    <link rel="stylesheet" href="/animations.css" onerror="this.href='https://raw.githubusercontent.com/Estremix-01100001/servicios-generales-nutech/main/public/animations.css'" />
-    <link rel="stylesheet" href="/components.css" onerror="this.href='https://raw.githubusercontent.com/Estremix-01100001/servicios-generales-nutech/main/public/components.css'" />
+    <link rel="stylesheet" href="/global.css" />
+    <link rel="stylesheet" href="/animations.css" />
+    <link rel="stylesheet" href="/components.css" />
     <!-- Tailwind CSS with fallback -->
-    <link rel="stylesheet" href="/tailwind.css" onerror="this.href='https://raw.githubusercontent.com/Estremix-01100001/servicios-generales-nutech/main/public/tailwind.css'" />
+    <link rel="stylesheet" href="/tailwind.css" />
   </head>
   <body class="font-sans antialiased">
     <slot />
     
     <!-- Scripts -->
     <script>
+      // Load CSS fallbacks
+      document.addEventListener('DOMContentLoaded', function() {
+        const cssFiles = [
+          { local: '/global.css', fallback: 'https://raw.githubusercontent.com/Estremix-01100001/servicios-generales-nutech/main/public/global.css' },
+          { local: '/animations.css', fallback: 'https://raw.githubusercontent.com/Estremix-01100001/servicios-generales-nutech/main/public/animations.css' },
+          { local: '/components.css', fallback: 'https://raw.githubusercontent.com/Estremix-01100001/servicios-generales-nutech/main/public/components.css' },
+          { local: '/tailwind.css', fallback: 'https://raw.githubusercontent.com/Estremix-01100001/servicios-generales-nutech/main/public/tailwind.css' }
+        ];
+
+        cssFiles.forEach(css => {
+          fetch(css.local)
+            .then(response => {
+              if (!response.ok) {
+                throw new Error('CSS not found');
+              }
+            })
+            .catch(() => {
+              // Load fallback CSS
+              const link = document.createElement('link');
+              link.rel = 'stylesheet';
+              link.href = css.fallback;
+              document.head.appendChild(link);
+            });
+        });
+      });
+
       // Smooth scrolling para enlaces internos
       document.addEventListener('DOMContentLoaded', function() {
         const links = document.querySelectorAll('a[href^="#"]');
