@@ -1,32 +1,21 @@
 ---
 import { companyInfo } from '../../database/data';
+import MotionNav from '../MotionNav';
+import MotionLogo from '../MotionLogo';
+import MotionMenuButton from '../MotionMenuButton';
 ---
 
 <header class="bg-secondary-900/90 backdrop-blur-sm sticky top-0 z-50">
   <nav class="container mx-auto px-4 py-3">
     <div class="flex items-center justify-between">
       <!-- Logo -->
-      <div class="flex items-center">
-        <img src="https://raw.githubusercontent.com/Estremix-01100001/servicios-generales-nutech/main/public/favicon.png" alt="Nutech" class="w-32 h-32" />
-      </div>
+      <MotionLogo client:load />
 
       <!-- Desktop Navigation -->
-      <div class="hidden lg:flex items-center space-x-6 xl:space-x-8">
-        <a href="#inicio" class="nav-link text-sm xl:text-base">Inicio</a>
-        <a href="#crecimiento" class="nav-link text-sm xl:text-base">Crecimiento</a>
-        <a href="#servicios-detallados" class="nav-link text-sm xl:text-base">Servicios</a>
-        <a href="#partners" class="nav-link text-sm xl:text-base">Partners</a>
-        <a href="#nutech-info" class="nav-link text-sm xl:text-base">Nutech</a>
-        <a href="#perspectiva" class="nav-link text-sm xl:text-base">Perspectiva</a>
-        <a href="#contacto" class="nav-link text-sm xl:text-base">Contacto</a>
-      </div>
+      <MotionNav client:load />
 
       <!-- Mobile Menu Button -->
-      <button id="mobile-menu-button" class="lg:hidden p-2 rounded-lg hover:bg-white/10 transition-colors">
-        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-        </svg>
-      </button>
+      <MotionMenuButton client:load />
     </div>
 
     <!-- Mobile Navigation -->
