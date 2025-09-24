@@ -110,7 +110,7 @@
 
 /* Gradientes animados */
 .animated-gradient {
-  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background: linear-gradient(-45deg, #1e3a8a, #3730a3, #1e40af, #3b82f6, #1d4ed8);
   background-size: 400% 400%;
   animation: gradientShift 15s ease infinite;
 }
@@ -183,8 +183,13 @@
   display: inline-block;
 }
 
-.animate-text-selection span {
+.animate-text-selection .letter {
   position: relative;
   color: #ffffff;
   transition: color 0.3s ease;
+  display: inline;
+  margin: 0;
+  padding: 0;
+  letter-spacing: 0;
+  word-spacing: 0;
 }

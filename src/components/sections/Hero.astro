@@ -3,18 +3,16 @@ import { companyInfo } from '../../database/data';
 ---
 
 <section id="inicio" class="relative min-h-screen flex items-center justify-center overflow-hidden">
-  <!-- Video Background -->
-  <div class="absolute inset-0 w-full h-full">
-    <video 
-      class="w-full h-full object-cover" 
-      autoplay 
-      muted 
-      loop 
-      playsinline
-    >
-      <source src="https://raw.githubusercontent.com/Estremix-01100001/servicios-generales-nutech/main/public/video-hersection.mp4" type="video/mp4">
-      Tu navegador no soporta el elemento de video.
-    </video>
+  <!-- Animated Background -->
+  <div class="absolute inset-0 w-full h-full animated-gradient">
+    <!-- Particles effect -->
+    <div class="absolute inset-0">
+      <div class="circuit-dots" style="top: 20%; left: 10%; animation-delay: 0s;"></div>
+      <div class="circuit-dots" style="top: 30%; left: 80%; animation-delay: 0.5s;"></div>
+      <div class="circuit-dots" style="top: 60%; left: 20%; animation-delay: 1s;"></div>
+      <div class="circuit-dots" style="top: 70%; left: 70%; animation-delay: 1.5s;"></div>
+      <div class="circuit-dots" style="top: 40%; left: 50%; animation-delay: 2s;"></div>
+    </div>
     <!-- Overlay para contraste -->
     <div class="absolute inset-0 bg-gradient-to-br from-blue-900/30 via-transparent to-orange-900/30"></div>
     <!-- Degradado hacia la siguiente sección -->
@@ -29,13 +27,8 @@ import { companyInfo } from '../../database/data';
         <span class="block">Agrega valor a las</span>
         <span class="block">organizaciones</span>
         <span class="block">a través de la</span>
-        <span class="relative inline-block">
-          <span class="letter">t</span><span class="letter">r</span><span class="letter">a</span><span class="letter">n</span>
-          <span class="letter">s</span><span class="letter">f</span><span class="letter">o</span><span class="letter">r</span>
-          <span class="letter">m</span><span class="letter">a</span><span class="letter">c</span><span class="letter">i</span>
-          <span class="letter">ó</span><span class="letter">n</span><span class="letter"> </span><span class="letter">d</span><span class="letter">i</span>
-          <span class="letter">g</span><span class="letter">i</span><span class="letter">t</span><span class="letter">a</span>
-          <span class="letter">l</span>
+        <span class="relative inline-block animate-text-selection">
+          <span class="letter">t</span><span class="letter">r</span><span class="letter">a</span><span class="letter">n</span><span class="letter">s</span><span class="letter">f</span><span class="letter">o</span><span class="letter">r</span><span class="letter">m</span><span class="letter">a</span><span class="letter">c</span><span class="letter">i</span><span class="letter">ó</span><span class="letter">n</span><span class="letter" style="width: 0.3em; display: inline-block;">&nbsp;</span><span class="letter">d</span><span class="letter">i</span><span class="letter">g</span><span class="letter">i</span><span class="letter">t</span><span class="letter">a</span><span class="letter">l</span>
         </span>
       </h1>
       
