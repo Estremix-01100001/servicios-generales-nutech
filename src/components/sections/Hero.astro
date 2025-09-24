@@ -6,7 +6,7 @@ import { companyInfo } from '../../database/data';
   <!-- Video Background -->
   <div class="absolute inset-0 w-full h-full bg-gradient-to-br from-blue-900 via-purple-900 to-blue-800">
     <video 
-      class="w-full h-full object-cover" 
+      class="w-full h-full object-cover video-zoom-out" 
       autoplay 
       muted 
       loop 
@@ -92,3 +92,23 @@ import { companyInfo } from '../../database/data';
     animateLetters();
   });
 </script>
+
+<style>
+  /* Efecto de alejamiento para el video */
+  .video-zoom-out {
+    transform: scale(1.2);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  /* Asegurar que el video mantenga el centrado */
+  .video-zoom-out {
+    transform-origin: center center;
+  }
+  
+  /* Opcional: Efecto de parallax sutil */
+  @media (min-width: 768px) {
+    .video-zoom-out:hover {
+      transform: scale(1.15);
+    }
+  }
+</style>
