@@ -2,67 +2,104 @@
 import { services } from '../../database/data';
 ---
 
-<section id="servicios" class="py-20 bg-secondary-800">
+<section id="servicios" class="py-20 bg-gradient-to-br from-white to-blue-50">
   <div class="container mx-auto px-4">
+    <!-- Section Badge -->
+    <div class="text-center mb-8">
+      <div class="inline-flex items-center px-4 py-2 bg-accent-100 border border-accent-200 rounded-full">
+        <span class="text-accent-600 text-sm font-semibold">Nuestros Servicios</span>
+      </div>
+    </div>
+
     <!-- Section Header -->
     <div class="text-center mb-16">
-      <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
+      <h2 class="text-4xl md:text-5xl font-bold text-secondary-800 mb-6">
         Nuestros Servicios
       </h2>
-      <p class="text-xl text-gray-300 max-w-3xl mx-auto">
-        Ofrecemos una amplia gama de servicios profesionales para satisfacer todas tus necesidades
+      <p class="text-xl text-secondary-600 max-w-4xl mx-auto">
+        Nuestro enfoque es personalizado, escalable y medible, para asegurar retornos visibles en el corto y mediano plazo.
       </p>
     </div>
 
     <!-- Services Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
-      {services.map((service, index) => (
-        <div class={`service-card hover-lift animate-fade-in-up`} style={`animation-delay: ${index * 0.1}s`}>
-          <div class="service-icon">
-            <span class="text-3xl">{service.icon}</span>
-          </div>
-          <h3 class="service-title">{service.name}</h3>
-          <p class="service-description mb-6">
-            {service.description}
-          </p>
-          
-          <!-- Features -->
-          <ul class="space-y-2 mb-6">
-            {service.features.map((feature) => (
-              <li class="flex items-center text-gray-600">
-                <svg class="w-5 h-5 text-primary-500 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                </svg>
-                {feature}
-              </li>
-            ))}
-          </ul>
-
-          <!-- Price and CTA -->
-          <div class="flex items-center justify-between">
-            <div class="text-2xl font-bold text-accent-600">
-              {service.price}
-            </div>
-            <a href="#contacto" class="btn-primary">
-              Solicitar
-            </a>
-          </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <!-- Consultoría en Transformación Digital -->
+      <div class="bg-white rounded-xl shadow-lg p-8 hover-lift animate-fade-in-up">
+        <div class="w-16 h-16 bg-accent-100 rounded-lg flex items-center justify-center mb-6">
+          <svg class="w-8 h-8 text-accent-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+          </svg>
         </div>
-      ))}
+        <h3 class="text-2xl font-bold text-secondary-800 mb-4">Consultoría en Transformación Digital</h3>
+        <p class="text-secondary-600 mb-6">
+          Lo guiamos en la definición de una estrategia de automatización adaptada a su negocio.
+        </p>
+        <a href="#contacto" class="btn-primary">
+          Solicitar Consulta
+        </a>
+      </div>
+
+      <!-- Automatización Robótica de Procesos (RPA) -->
+      <div class="bg-white rounded-xl shadow-lg p-8 hover-lift animate-fade-in-up" style="animation-delay: 0.1s">
+        <div class="w-16 h-16 bg-accent-100 rounded-lg flex items-center justify-center mb-6">
+          <svg class="w-8 h-8 text-accent-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+          </svg>
+        </div>
+        <h3 class="text-2xl font-bold text-secondary-800 mb-4">Automatización Robótica de Procesos (RPA)</h3>
+        <p class="text-secondary-600 mb-6">
+          Implementamos soluciones que simplifican sus operaciones, reduciendo costos y tiempos.
+        </p>
+        <a href="#contacto" class="btn-primary">
+          Solicitar Consulta
+        </a>
+      </div>
+
+      <!-- Gestión de Ciclo de Vida -->
+      <div class="bg-white rounded-xl shadow-lg p-8 hover-lift animate-fade-in-up" style="animation-delay: 0.2s">
+        <div class="w-16 h-16 bg-accent-100 rounded-lg flex items-center justify-center mb-6">
+          <svg class="w-8 h-8 text-accent-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
+          </svg>
+        </div>
+        <h3 class="text-2xl font-bold text-secondary-800 mb-4">Gestión de Ciclo de Vida</h3>
+        <p class="text-secondary-600 mb-6">
+          Ofrecemos soporte integral desde la planificación hasta la optimización continua de sus procesos.
+        </p>
+        <a href="#contacto" class="btn-primary">
+          Solicitar Consulta
+        </a>
+      </div>
+
+      <!-- Inteligencia Artificial aplicada -->
+      <div class="bg-white rounded-xl shadow-lg p-8 hover-lift animate-fade-in-up" style="animation-delay: 0.3s">
+        <div class="w-16 h-16 bg-accent-100 rounded-lg flex items-center justify-center mb-6">
+          <svg class="w-8 h-8 text-accent-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+          </svg>
+        </div>
+        <h3 class="text-2xl font-bold text-secondary-800 mb-4">Inteligencia Artificial aplicada</h3>
+        <p class="text-secondary-600 mb-6">
+          Diseñamos sistemas inteligentes que potencian la toma de decisiones y la productividad.
+        </p>
+        <a href="#contacto" class="btn-primary">
+          Solicitar Consulta
+        </a>
+      </div>
     </div>
 
     <!-- CTA Section -->
     <div class="text-center mt-16">
       <div class="bg-white rounded-2xl shadow-xl p-8 max-w-4xl mx-auto">
-        <h3 class="text-3xl font-bold text-gray-800 mb-4">
-          ¿Necesitas un servicio personalizado?
+        <h3 class="text-3xl font-bold text-secondary-800 mb-4">
+          ¿Listo para transformar su empresa?
         </h3>
-        <p class="text-lg text-gray-600 mb-8">
-          Contáctanos para una cotización personalizada según tus necesidades específicas
+        <p class="text-lg text-secondary-600 mb-8">
+          Agende una consulta gratuita y descubra cómo la automatización puede revolucionar sus procesos
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
           <a href="#contacto" class="btn-primary">
-            Solicitar Cotización
+            Reservar Consulta Gratuita
           </a>
           <a href="tel:+15551234567" class="btn-secondary">
             Llamar Ahora
