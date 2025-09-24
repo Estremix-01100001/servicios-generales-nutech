@@ -4,8 +4,7 @@ import tailwind from '@astrojs/tailwind';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://estremix-01100001.github.io',
-  base: '/servicios-generales-nutech',
+  site: 'https://servicios-generales-nutech.vercel.app',
   output: 'static',
   integrations: [tailwind()]
 });
