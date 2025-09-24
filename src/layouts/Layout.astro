@@ -14,9 +14,9 @@ const { title, description = "Servicios Generales Pro - Soluciones integrales pa
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/png" href="/servicios-generales-nutech/favicon.png" onerror="this.href='https://raw.githubusercontent.com/Estremix-01100001/servicios-generales-nutech/main/public/favicon.png'" />
-    <link rel="shortcut icon" href="/servicios-generales-nutech/favicon.png" onerror="this.href='https://raw.githubusercontent.com/Estremix-01100001/servicios-generales-nutech/main/public/favicon.png'" />
-    <link rel="apple-touch-icon" href="/servicios-generales-nutech/favicon.png" onerror="this.href='https://raw.githubusercontent.com/Estremix-01100001/servicios-generales-nutech/main/public/favicon.png'" />
+    <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/Estremix-01100001/servicios-generales-nutech/main/public/favicon.png" />
+    <link rel="shortcut icon" href="https://raw.githubusercontent.com/Estremix-01100001/servicios-generales-nutech/main/public/favicon.png" />
+    <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/Estremix-01100001/servicios-generales-nutech/main/public/favicon.png" />
     <meta name="generator" content={Astro.generator} />
     
     <!-- SEO Meta Tags -->
@@ -35,44 +35,18 @@ const { title, description = "Servicios Generales Pro - Soluciones integrales pa
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
     
-    <!-- Styles -->
-    <link rel="stylesheet" href="/servicios-generales-nutech/global.css" />
-    <link rel="stylesheet" href="/servicios-generales-nutech/animations.css" />
-    <link rel="stylesheet" href="/servicios-generales-nutech/components.css" />
-    <!-- Tailwind CSS with fallback -->
-    <link rel="stylesheet" href="/servicios-generales-nutech/tailwind.css" />
+    <!-- Styles - Direct GitHub URLs -->
+    <link rel="stylesheet" href="https://raw.githubusercontent.com/Estremix-01100001/servicios-generales-nutech/main/public/global.css" />
+    <link rel="stylesheet" href="https://raw.githubusercontent.com/Estremix-01100001/servicios-generales-nutech/main/public/animations.css" />
+    <link rel="stylesheet" href="https://raw.githubusercontent.com/Estremix-01100001/servicios-generales-nutech/main/public/components.css" />
+    <!-- Tailwind CSS -->
+    <link rel="stylesheet" href="https://raw.githubusercontent.com/Estremix-01100001/servicios-generales-nutech/main/public/tailwind.css" />
   </head>
   <body class="font-sans antialiased">
     <slot />
     
     <!-- Scripts -->
     <script>
-      // Load CSS fallbacks
-      document.addEventListener('DOMContentLoaded', function() {
-        const cssFiles = [
-          { local: '/servicios-generales-nutech/global.css', fallback: 'https://raw.githubusercontent.com/Estremix-01100001/servicios-generales-nutech/main/public/global.css' },
-          { local: '/servicios-generales-nutech/animations.css', fallback: 'https://raw.githubusercontent.com/Estremix-01100001/servicios-generales-nutech/main/public/animations.css' },
-          { local: '/servicios-generales-nutech/components.css', fallback: 'https://raw.githubusercontent.com/Estremix-01100001/servicios-generales-nutech/main/public/components.css' },
-          { local: '/servicios-generales-nutech/tailwind.css', fallback: 'https://raw.githubusercontent.com/Estremix-01100001/servicios-generales-nutech/main/public/tailwind.css' }
-        ];
-
-        cssFiles.forEach(css => {
-          fetch(css.local)
-            .then(response => {
-              if (!response.ok) {
-                throw new Error('CSS not found');
-              }
-            })
-            .catch(() => {
-              // Load fallback CSS
-              const link = document.createElement('link');
-              link.rel = 'stylesheet';
-              link.href = css.fallback;
-              document.head.appendChild(link);
-            });
-        });
-      });
-
       // Smooth scrolling para enlaces internos
       document.addEventListener('DOMContentLoaded', function() {
         const links = document.querySelectorAll('a[href^="#"]');
