@@ -13,7 +13,7 @@ export const services: Service[] = [
     id: "rpa",
     title: "RPA",
     subtitle: "Robotic Process Automation",
-    image: "https://raw.githubusercontent.com/Estremix-01100001/servicios-generales-nutech/main/public/rpa.png",
+    image: "/rpa.png",
     description: "SERVICIOS DE RPA E IA QUE AUMENTARÁN LA PRODUCTIVIDAD",
     features: [
       "Automatización robótica de procesos empresariales",
@@ -25,7 +25,7 @@ export const services: Service[] = [
   {
     id: "human-robot",
     title: "Colaboración Humano-Robot",
-    image: "https://raw.githubusercontent.com/Estremix-01100001/servicios-generales-nutech/main/public/human-robot.png",
+    image: "/human-robot.png",
     description: "SOLUCIONES DE AUTOMATIZACIÓN PARA DIFERENTES INDUSTRIAS",
     features: [
       "Colaboración entre humanos y robots en procesos industriales",
@@ -38,7 +38,7 @@ export const services: Service[] = [
   {
     id: "ai",
     title: "Inteligencia Artificial", 
-    image: "https://raw.githubusercontent.com/Estremix-01100001/servicios-generales-nutech/main/public/automatización.png",
+    image: "/automatización.png",
     description: "PIONEROS EN LA AUTOMATIZACIÓN DE PROCESOS EMPRESARIALES",
     features: [
       "Inteligencia artificial para toma de decisiones",
