@@ -1,6 +1,5 @@
 import ServiceCard from './ServiceCard';
 import { services } from '../data/services';
-import '../../styles/components/MotionServiciosDetallados.css';
 
 export default function MotionServiciosDetallados() {
   return (

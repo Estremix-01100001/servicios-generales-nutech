@@ -1,5 +1,4 @@
 import { Service } from '../data/services';
-import '../styles/components/ServiceCard.css';
 
 interface ServiceCardProps {
   service: Service;

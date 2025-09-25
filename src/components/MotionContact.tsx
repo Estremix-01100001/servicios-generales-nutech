@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import '../../styles/components/MotionContact.css';
 
 interface FormData {
   name: string;

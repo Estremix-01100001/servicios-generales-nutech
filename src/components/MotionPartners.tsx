@@ -1,5 +1,4 @@
 import { motion } from 'motion/react';
-import '../../styles/components/MotionPartners.css';
 
 export default function MotionPartners() {
   const partners = [
