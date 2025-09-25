@@ -46,16 +46,6 @@ export default function ServiceCard({ service, delay = 0 }: ServiceCardProps) {
           alt={service.title} 
           className="w-full h-full object-cover rounded-lg"
           loading="lazy"
-          onError={(e) => {
-            console.log('Error loading image:', service.image);
-            e.currentTarget.style.display = 'none';
-            // Mostrar un icono de fallback
-            const fallbackIcon = document.createElement('div');
-            fallbackIcon.className = 'w-full h-full flex items-center justify-center bg-gradient-to-br from-blue-500 to-purple-600 text-white font-bold text-xs';
-            fallbackIcon.textContent = service.title.charAt(0);
-            e.currentTarget.parentNode?.appendChild(fallbackIcon);
-          }}
-          onLoad={() => console.log('Image loaded successfully:', service.image)}
         />
       </motion.div>
       
