@@ -9,7 +9,7 @@ interface ServiceCardProps {
 export default function ServiceCard({ service, delay = 0 }: ServiceCardProps) {
   return (
     <motion.div
-      className="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow duration-300"
+      className="bg-white rounded-xl shadow-lg p-6 sm:p-8 hover:shadow-xl transition-shadow duration-300"
       initial={{ 
         opacity: 0,
         y: 50
@@ -29,37 +29,32 @@ export default function ServiceCard({ service, delay = 0 }: ServiceCardProps) {
       }}
       viewport={{ once: true }}
     >
-      {/* Imagen del servicio */}
-      <div 
-        className="w-20 h-20 rounded-lg flex items-center justify-center mb-6 overflow-hidden bg-gray-100 border-2 border-gray-200"
-      >
-        <img 
-          src={service.image} 
-          alt={service.title} 
-          className="w-full h-full object-cover rounded-lg"
-          loading="lazy"
-        />
+      {/* Imagen del servicio con fondo oscuro */}
+      <div className="mb-4 sm:mb-6">
+        <div className="w-full h-40 sm:h-48 bg-secondary-800 rounded-lg flex items-center justify-center mb-4 overflow-hidden">
+          <img 
+            src={service.image} 
+            alt={service.title} 
+            className="w-full h-full object-contain p-4"
+            loading="lazy"
+          />
+        </div>
       </div>
       
       {/* Título */}
-      <h3 className="text-2xl font-bold text-secondary-800 mb-6">
-        {service.title}
+      <h3 className="text-lg sm:text-xl font-bold text-secondary-800 mb-3 sm:mb-4 leading-tight">
+        {service.description}
       </h3>
       
-      {/* Lista de características */}
-      <ul className="space-y-3 mb-6">
-        {service.features.map((feature, index) => (
-          <li key={index} className="flex items-start">
-            <span className="text-accent-600 mr-3 mt-1">•</span>
-            <span className="text-secondary-600">{feature}</span>
-          </li>
-        ))}
-      </ul>
+      {/* Descripción de características */}
+      <p className="text-sm sm:text-base text-secondary-600 leading-relaxed">
+        {service.features[0]}
+      </p>
       
       {/* Botón opcional */}
       {service.hasButton && (
-        <div>
-          <button className="btn-outline w-full">
+        <div className="mt-4">
+          <button className="btn-outline w-full text-sm px-4 py-2">
             LEER MAS
           </button>
         </div>

@@ -20,7 +20,7 @@ export default function MotionServiciosDetallados() {
           transition={{ duration: 0.6 }}
         >
           <div className="inline-flex items-center px-4 py-2 bg-accent-100 border border-accent-200 rounded-full">
-            <span className="text-accent-600 text-sm font-semibold">Servicios</span>
+            <span className="text-accent-600 text-sm font-semibold">Crecimiento</span>
           </div>
         </motion.div>
 
@@ -37,7 +37,7 @@ export default function MotionServiciosDetallados() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
-            Somos su socio de transformación digital desde los primeros pasos hasta las automatizaciones a gran escala
+            Crecimiento y productividad de la transformación digital
           </motion.h2>
           
           <motion.p 
