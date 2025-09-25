@@ -180,3 +180,122 @@ section[id]::after {
     @apply block text-sm font-medium text-gray-700 mb-2;
   }
 }
+
+/* Estilos específicos para Hero Section y Footer */
+section[id="inicio"],
+footer {
+  padding-left: 100px !important;
+  padding-right: 100px !important;
+  padding-top: 100px !important;
+  padding-bottom: 100px !important;
+  outline: 2px dashed red !important;
+  outline-offset: 5px !important;
+  position: relative !important;
+}
+
+/* Visualización específica para Hero Section */
+section[id="inicio"]::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+  background: rgba(255, 0, 0, 0.1);
+  border-top: 3px dashed red;
+  border-bottom: 3px dashed red;
+  border-left: 3px dashed red;
+  border-right: 3px dashed red;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+section[id="inicio"]::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+  background: rgba(255, 0, 0, 0.1);
+  border-top: 3px dashed red;
+  border-bottom: 3px dashed red;
+  border-left: 3px dashed red;
+  border-right: 3px dashed red;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+/* Visualización específica para Footer */
+footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+  background: rgba(255, 0, 0, 0.1);
+  border-top: 3px dashed red;
+  border-bottom: 3px dashed red;
+  border-left: 3px dashed red;
+  border-right: 3px dashed red;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+footer::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+  background: rgba(255, 0, 0, 0.1);
+  border-top: 3px dashed red;
+  border-bottom: 3px dashed red;
+  border-left: 3px dashed red;
+  border-right: 3px dashed red;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+/* Ajustes responsive para Hero Section y Footer */
+@media (max-width: 768px) {
+  section[id="inicio"],
+  footer {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    padding-top: 20px !important;
+    padding-bottom: 20px !important;
+    outline: 2px dashed blue !important;
+  }
+  
+  section[id="inicio"]::before,
+  section[id="inicio"]::after,
+  footer::before,
+  footer::after {
+    height: 20px !important;
+    background: rgba(0, 0, 255, 0.1) !important;
+    border: 3px dashed blue !important;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  section[id="inicio"],
+  footer {
+    padding-left: 50px !important;
+    padding-right: 50px !important;
+    padding-top: 50px !important;
+    padding-bottom: 50px !important;
+    outline: 2px dashed green !important;
+  }
+  
+  section[id="inicio"]::before,
+  section[id="inicio"]::after,
+  footer::before,
+  footer::after {
+    height: 50px !important;
+    background: rgba(0, 128, 0, 0.1) !important;
+    border: 3px dashed green !important;
+  }
+}
