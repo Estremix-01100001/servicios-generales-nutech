@@ -34,41 +34,9 @@ export interface Service {
   hasButton?: boolean;
 }
 
-export interface Partner {
-  name: string;
-  color: string;
-  logo?: string;
-  website?: string;
-}
-
 export interface FormData {
   name: string;
   email: string;
   phone: string;
   message: string;
-}
-
-export interface FormErrors {
-  name?: string;
-  email?: string;
-  phone?: string;
-  message?: string;
-}
-
-export interface NavItem {
-  href: string;
-  label: string;
-  icon?: string;
-}
-
-export interface AnimationConfig {
-  duration: number;
-  delay?: number;
-  ease?: string;
-}
-
-export interface ResponsiveBreakpoints {
-  mobile: number;
-  tablet: number;
-  desktop: number;
 }
