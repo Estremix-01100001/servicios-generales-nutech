@@ -7,8 +7,10 @@ html, body {
   overflow-x: hidden;
 }
 
-/* Márgenes globales de 100px en todas las secciones */
-.container {
+/* Márgenes globales de 100px en todas las secciones - Mayor especificidad */
+body .container,
+body div.container,
+body .container.mx-auto {
   padding-left: 100px !important;
   padding-right: 100px !important;
   padding-top: 100px !important;
@@ -18,8 +20,10 @@ html, body {
   position: relative !important;
 }
 
-/* Asegurar que todas las secciones tengan los márgenes correctos */
-section {
+/* Asegurar que todas las secciones tengan los márgenes correctos - Mayor especificidad */
+body section,
+main section,
+section[id] {
   padding-left: 100px !important;
   padding-right: 100px !important;
   padding-top: 100px !important;
@@ -62,10 +66,14 @@ section::after {
   z-index: 1000;
 }
 
-/* Ajustar para móviles */
+/* Ajustar para móviles - Mayor especificidad */
 @media (max-width: 768px) {
-  .container,
-  section {
+  body .container,
+  body div.container,
+  body .container.mx-auto,
+  body section,
+  main section,
+  section[id] {
     padding-left: 20px !important;
     padding-right: 20px !important;
     padding-top: 20px !important;
@@ -75,23 +83,31 @@ section::after {
   }
   
   /* Visualización de márgenes verticales en móviles */
-  section::before {
+  body section::before,
+  main section::before,
+  section[id]::before {
     height: 20px !important;
     background: rgba(0, 0, 255, 0.1) !important;
     border: 3px dashed blue !important;
   }
   
-  section::after {
+  body section::after,
+  main section::after,
+  section[id]::after {
     height: 20px !important;
     background: rgba(0, 0, 255, 0.1) !important;
     border: 3px dashed blue !important;
   }
 }
 
-/* Ajustar para tablets */
+/* Ajustar para tablets - Mayor especificidad */
 @media (min-width: 769px) and (max-width: 1024px) {
-  .container,
-  section {
+  body .container,
+  body div.container,
+  body .container.mx-auto,
+  body section,
+  main section,
+  section[id] {
     padding-left: 50px !important;
     padding-right: 50px !important;
     padding-top: 50px !important;
@@ -101,13 +117,17 @@ section::after {
   }
   
   /* Visualización de márgenes verticales en tablets */
-  section::before {
+  body section::before,
+  main section::before,
+  section[id]::before {
     height: 50px !important;
     background: rgba(0, 128, 0, 0.1) !important;
     border: 3px dashed green !important;
   }
   
-  section::after {
+  body section::after,
+  main section::after,
+  section[id]::after {
     height: 50px !important;
     background: rgba(0, 128, 0, 0.1) !important;
     border: 3px dashed green !important;
