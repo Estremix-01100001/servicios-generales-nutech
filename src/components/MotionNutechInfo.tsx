@@ -81,7 +81,7 @@ export default function MotionNutechInfo() {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
         </svg>
       ),
-      text: "14 años (y contando) en el negocio"
+      text: "+ 10 años (y contando) en el negocio"
     },
     {
       icon: (

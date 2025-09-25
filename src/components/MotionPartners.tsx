@@ -8,7 +8,10 @@ export default function MotionPartners() {
     { name: "ARUMA", color: "text-purple-600" },
     { name: "NIUBIZ", color: "text-red-600" },
     { name: "RENIEC", color: "text-blue-600" },
-    { name: "PROMPERU", color: "text-secondary-600" }
+    { name: "PROMPERU", color: "text-secondary-600" },
+    { name: "Tambo+", color: "text-green-600" },
+    { name: "ARUMA", color: "text-purple-600" },
+    { name: "NIUBIZ", color: "text-red-600" }
   ];
 
   return (
@@ -59,11 +62,13 @@ export default function MotionPartners() {
         </motion.div>
 
         {/* Partners Logos - Infinite Loop */}
-        <motion.div 
-          className="relative overflow-hidden"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
+        <div 
+           className="relative mx-auto"
+           style={{ 
+             width: '720px',
+             height: '80px',
+             overflow: 'hidden'
+           }}
         >
           <motion.div 
             className="flex animate-scroll"
@@ -76,11 +81,11 @@ export default function MotionPartners() {
             }}
           >
             {/* First set of logos */}
-            <div className="flex items-center space-x-6 sm:space-x-8 lg:space-x-12 flex-shrink-0">
+            <div className="flex items-center space-x-4 flex-shrink-0">
               {partners.map((partner, index) => (
                 <motion.div 
                   key={`first-${index}`}
-                  className="w-24 h-12 sm:w-28 sm:h-14 lg:w-32 lg:h-16 bg-white rounded-lg shadow-md flex items-center justify-center hover:shadow-lg transition-shadow duration-300"
+                  className="w-20 h-10 sm:w-24 sm:h-12 lg:w-28 lg:h-14 bg-white rounded-xl shadow-lg flex items-center justify-center hover:shadow-xl transition-all duration-300"
                   initial={{ 
                     backgroundColor: "rgb(240, 248, 255)",
                     scale: 0.8,
@@ -103,7 +108,7 @@ export default function MotionPartners() {
                   }}
                   viewport={{ once: true }}
                 >
-                  <span className={`${partner.color} font-bold text-sm sm:text-base lg:text-lg`}>
+                  <span className={`${partner.color} font-bold text-sm sm:text-base lg:text-lg text-center whitespace-nowrap`}>
                     {partner.name}
                   </span>
                 </motion.div>
@@ -111,11 +116,11 @@ export default function MotionPartners() {
             </div>
             
             {/* Duplicate set for seamless loop */}
-            <div className="flex items-center space-x-6 sm:space-x-8 lg:space-x-12 flex-shrink-0">
+            <div className="flex items-center space-x-4 flex-shrink-0">
               {partners.map((partner, index) => (
                 <motion.div 
                   key={`second-${index}`}
-                  className="w-24 h-12 sm:w-28 sm:h-14 lg:w-32 lg:h-16 bg-white rounded-lg shadow-md flex items-center justify-center hover:shadow-lg transition-shadow duration-300"
+                  className="w-20 h-10 sm:w-24 sm:h-12 lg:w-28 lg:h-14 bg-white rounded-xl shadow-lg flex items-center justify-center hover:shadow-xl transition-all duration-300"
                   initial={{ 
                     backgroundColor: "rgb(240, 248, 255)",
                     scale: 0.8,
@@ -138,14 +143,14 @@ export default function MotionPartners() {
                   }}
                   viewport={{ once: true }}
                 >
-                  <span className={`${partner.color} font-bold text-sm sm:text-base lg:text-lg`}>
+                  <span className={`${partner.color} font-bold text-sm sm:text-base lg:text-lg text-center whitespace-nowrap`}>
                     {partner.name}
                   </span>
                 </motion.div>
               ))}
             </div>
           </motion.div>
-        </motion.div>
+        </div>
       </div>
 
       <style jsx>{`

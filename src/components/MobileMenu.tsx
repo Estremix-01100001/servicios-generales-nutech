@@ -47,9 +47,13 @@ export default function MobileMenu() {
     <div className="lg:hidden relative">
       {/* Mobile Menu Button */}
       <motion.button 
-        className="p-2 rounded-lg hover:bg-white/10 transition-colors fixed top-4 right-4 z-50 bg-transparent backdrop-blur-md"
+        className="p-2 rounded-lg hover:bg-orange-500/20 transition-all duration-300 fixed top-3 right-4 z-50 bg-black/30 backdrop-blur-md border border-white/20"
         onClick={toggleMenu}
-        whileHover={{ scale: 1.05 }}
+        whileHover={{ 
+          scale: 1.05,
+          backgroundColor: "rgba(249, 115, 22, 0.2)",
+          borderColor: "rgba(249, 115, 22, 0.5)"
+        }}
         whileTap={{ scale: 0.95 }}
         initial={{ opacity: 0, x: 20 }}
         animate={{ opacity: 1, x: 0 }}
@@ -81,7 +85,7 @@ export default function MobileMenu() {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            className="fixed top-[128px] left-0 right-0 bg-black/80 backdrop-blur-md z-40"
+            className="fixed top-20 left-0 right-0 bg-gradient-to-b from-black/90 via-black/80 to-black/90 backdrop-blur-md z-40 border-t border-orange-500/30"
             initial={{ opacity: 0, y: -20, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -20, scale: 0.95 }}
@@ -98,15 +102,25 @@ export default function MobileMenu() {
                   <motion.a
                     key={link.href}
                     href={link.href}
-                    className="text-white font-semibold text-base py-3 px-4 rounded-lg hover:bg-white/15 transition-all duration-300 relative overflow-hidden"
+                    className="text-white font-semibold text-base py-4 px-6 rounded-xl hover:bg-gradient-to-r hover:from-orange-500/20 hover:to-orange-600/20 transition-all duration-300 relative overflow-hidden border border-transparent hover:border-orange-500/30"
                     onClick={closeMenu}
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.3, delay: 0.1 + (index * 0.05) }}
-                    whileHover={{ x: 5 }}
+                    whileHover={{ 
+                      x: 8,
+                      color: "#f97316",
+                      textShadow: "0 0 8px rgba(249, 115, 22, 0.6)"
+                    }}
                     whileTap={{ scale: 0.95 }}
                   >
                     {link.text}
+                    <motion.div
+                      className="absolute left-0 top-1/2 w-1 h-0 bg-gradient-to-b from-orange-400 to-orange-600 rounded-r-full"
+                      initial={{ height: 0, y: "-50%" }}
+                      whileHover={{ height: "60%", y: "-50%" }}
+                      transition={{ duration: 0.3 }}
+                    />
                   </motion.a>
                 ))}
               </motion.div>

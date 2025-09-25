@@ -5,9 +5,9 @@ import MotionLogo from '../MotionLogo';
 import MobileMenu from '../MobileMenu';
 ---
 
-<header id="main-header" class="bg-transparent backdrop-blur-md fixed top-0 left-0 right-0 z-50 transition-all duration-500">
-  <nav class="container mx-auto ">
-    <div class="flex items-center justify-between">
+<header id="main-header" class="bg-transparent backdrop-blur-md fixed top-0 left-0 right-0 z-50 transition-all duration-500 border-b border-transparent">
+  <nav class="w-[100px] lg:w-[1200px] mx-auto px-12 sm:px-16">
+    <div class="flex items-center justify-between py-2">
       <!-- Logo -->
       <MotionLogo client:load />
 
@@ -35,18 +35,18 @@ import MobileMenu from '../MobileMenu';
       
       // Si estamos en la hero section (transparente)
       if (scrollPosition < heroHeight - 100) {
-        header.classList.remove('bg-black/80', 'bg-black/90');
-        header.classList.add('bg-transparent', 'backdrop-blur-md');
+        header.classList.remove('bg-black/80', 'bg-black/90', 'border-orange-500/30');
+        header.classList.add('bg-transparent', 'backdrop-blur-md', 'border-transparent');
       }
-      // Si estamos en la sección de crecimiento (negro opaco como menú hamburguesa)
+      // Si estamos en la sección de crecimiento (negro opaco con borde naranja)
       else if (scrollPosition >= crecimientoTop - 100 && scrollPosition < crecimientoTop + crecimientoHeight + 100) {
-        header.classList.remove('bg-transparent', 'bg-black/90');
-        header.classList.add('bg-black/80', 'backdrop-blur-md');
+        header.classList.remove('bg-transparent', 'bg-black/90', 'border-transparent');
+        header.classList.add('bg-black/80', 'backdrop-blur-md', 'border-orange-500/30');
       }
       // Todas las demás secciones (mismo color que crecimiento)
       else {
-        header.classList.remove('bg-transparent', 'bg-black/90');
-        header.classList.add('bg-black/80', 'backdrop-blur-md');
+        header.classList.remove('bg-transparent', 'bg-black/90', 'border-transparent');
+        header.classList.add('bg-black/80', 'backdrop-blur-md', 'border-orange-500/30');
       }
     }
     

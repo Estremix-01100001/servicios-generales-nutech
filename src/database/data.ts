@@ -5,11 +5,11 @@ export const companyInfo: CompanyInfo = {
   name: "Nutech",
   description: "Especialistas en transformación digital, automatización de procesos (RPA) e inteligencia artificial para empresas.",
   address: "Av. Principal 123, Lima, Perú",
-  phone: "+1 (555) 123-4567",
-  email: "contacto@nutech.com",
+  phone: "+1 (813) 595-4933",
+  email: "sfernandez@nutechcorp.com",
   website: "https://nutech.com",
   socialMedia: {
-    linkedin: "https://linkedin.com/company/nutech"
+    linkedin: "https://www.linkedin.com/company/nutechglobal/?originalSubdomain=pe"
   },
   businessHours: {
     monday: "8:30 AM - 6:30 PM",
