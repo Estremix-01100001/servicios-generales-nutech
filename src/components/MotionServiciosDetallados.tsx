@@ -14,7 +14,7 @@ export default function MotionServiciosDetallados() {
         <div className="absolute bottom-0 left-1/2 w-96 h-96 bg-pink-500 rounded-full mix-blend-multiply filter blur-xl animate-pulse animation-delay-4000"></div>
       </div>
 
-      <div className="container mx-auto px-8 sm:px-12 lg:px-16 relative z-10">
+      <div className="container mx-auto px-8 sm:px-12 lg:px-16 relative z-10" style={{marginLeft: '100px', marginRight: '100px', outline: '2px dashed red', outlineOffset: '5px'}}>
         {/* Section Badge */}
         <div className="text-center mb-8">
           <div className="inline-flex items-center px-4 py-2 bg-accent-10 border border-accent-200 rounded-full">

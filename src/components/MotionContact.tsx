@@ -95,7 +95,7 @@ export default function MotionContact() {
           <div className="w-full h-full bg-gradient-to-br from-primary-400/10 to-accent-400/10"></div>
         </div>
       </div>
-      <div className="container mx-auto px-12 sm:px-16 relative z-10">
+      <div className="container mx-auto px-12 sm:px-16 relative z-10" style={{marginLeft: '100px', marginRight: '100px', outline: '2px dashed red', outlineOffset: '5px'}}>
         <div className="max-w-3xl mx-auto">
         {/* Section Badge */}
         <motion.div 
