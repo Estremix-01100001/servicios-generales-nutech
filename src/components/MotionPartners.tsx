@@ -2,13 +2,13 @@ import { motion } from 'motion/react';
 
 export default function MotionPartners() {
   const partners = [
-    { name: "dzine", color: "text-secondary-600" },
-    { name: "ROCKETBOT", color: "text-red-600" },
-    { name: "AUTOMATION ANYWHERE", color: "text-blue-600" },
-    { name: "Global Seis", color: "text-secondary-600" },
-    { name: "Autonomy", color: "text-secondary-600" },
-    { name: "ACEROYALTY", color: "text-secondary-600" },
-    { name: "UiPath", color: "text-red-600" }
+    { name: "Hayduk", color: "text-blue-600" },
+    { name: "Lindcorp", color: "text-secondary-600" },
+    { name: "Tambo+", color: "text-green-600" },
+    { name: "ARUMA", color: "text-purple-600" },
+    { name: "NIUBIZ", color: "text-red-600" },
+    { name: "RENIEC", color: "text-blue-600" },
+    { name: "PROMPERU", color: "text-secondary-600" }
   ];
 
   return (
