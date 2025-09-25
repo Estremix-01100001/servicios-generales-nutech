@@ -7,6 +7,113 @@ html, body {
   overflow-x: hidden;
 }
 
+/* Márgenes globales de 100px en todas las secciones */
+.container {
+  padding-left: 100px !important;
+  padding-right: 100px !important;
+  padding-top: 100px !important;
+  padding-bottom: 100px !important;
+  outline: 2px dashed red !important;
+  outline-offset: 5px !important;
+  position: relative !important;
+}
+
+/* Asegurar que todas las secciones tengan los márgenes correctos */
+section {
+  padding-left: 100px !important;
+  padding-right: 100px !important;
+  padding-top: 100px !important;
+  padding-bottom: 100px !important;
+  outline: 2px dashed red !important;
+  outline-offset: 5px !important;
+  position: relative !important;
+}
+
+/* Visualización de márgenes verticales */
+section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+  background: rgba(255, 0, 0, 0.1);
+  border-top: 3px dashed red;
+  border-bottom: 3px dashed red;
+  border-left: 3px dashed red;
+  border-right: 3px dashed red;
+  pointer-events: none;
+  z-index: 1000;
+}
+
+section::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+  background: rgba(255, 0, 0, 0.1);
+  border-top: 3px dashed red;
+  border-bottom: 3px dashed red;
+  border-left: 3px dashed red;
+  border-right: 3px dashed red;
+  pointer-events: none;
+  z-index: 1000;
+}
+
+/* Ajustar para móviles */
+@media (max-width: 768px) {
+  .container,
+  section {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    padding-top: 20px !important;
+    padding-bottom: 20px !important;
+    outline: 2px dashed blue !important;
+    outline-offset: 5px !important;
+  }
+  
+  /* Visualización de márgenes verticales en móviles */
+  section::before {
+    height: 20px !important;
+    background: rgba(0, 0, 255, 0.1) !important;
+    border: 3px dashed blue !important;
+  }
+  
+  section::after {
+    height: 20px !important;
+    background: rgba(0, 0, 255, 0.1) !important;
+    border: 3px dashed blue !important;
+  }
+}
+
+/* Ajustar para tablets */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .container,
+  section {
+    padding-left: 50px !important;
+    padding-right: 50px !important;
+    padding-top: 50px !important;
+    padding-bottom: 50px !important;
+    outline: 2px dashed green !important;
+    outline-offset: 5px !important;
+  }
+  
+  /* Visualización de márgenes verticales en tablets */
+  section::before {
+    height: 50px !important;
+    background: rgba(0, 128, 0, 0.1) !important;
+    border: 3px dashed green !important;
+  }
+  
+  section::after {
+    height: 50px !important;
+    background: rgba(0, 128, 0, 0.1) !important;
+    border: 3px dashed green !important;
+  }
+}
+
 /* Estilos personalizados con nueva paleta de colores azules */
 @layer components {
   .btn-primary {

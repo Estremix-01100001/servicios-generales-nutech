@@ -22,7 +22,7 @@ export default function MotionPartners() {
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
     >
-      <div className="container mx-auto px-12 sm:px-16" style={{paddingLeft: '100px', paddingRight: '100px', outline: '2px dashed red', outlineOffset: '5px'}}>
+      <div className="container mx-auto px-12 sm:px-16">
         {/* Section Badge */}
         <motion.div 
           className="text-center mb-6 sm:mb-8"
