@@ -5,7 +5,7 @@ export default function MotionServiciosDetallados() {
   return (
     <section 
       id="servicios-detallados" 
-      className="py-20 bg-gradient-to-br from-gray-50 via-white to-blue-50 relative overflow-hidden"
+      className="py-20 bg-gradient-to-br from-white via-gray-50 to-white relative overflow-hidden"
     >
       {/* Background decoration */}
       <div className="absolute inset-0 opacity-5">
@@ -17,18 +17,18 @@ export default function MotionServiciosDetallados() {
       <div className="container mx-auto px-8 sm:px-12 lg:px-16 relative z-10">
         {/* Section Badge */}
         <div className="text-center mb-8">
-          <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-500 to-indigo-600 text-white rounded-full shadow-lg">
-            <span className="text-sm font-semibold">Nuestros Servicios</span>
+          <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-primary-500 to-accent-500 border border-primary-400/30 rounded-full shadow-lg backdrop-blur-sm">
+            <span className="text-sm font-semibold text-white">Nuestros Servicios</span>
           </div>
         </div>
 
         {/* Section Header */}
         <div className="text-center mb-20">
-          <h2 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-gray-900 via-blue-800 to-indigo-800 bg-clip-text text-transparent mb-6">
+          <h2 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-white via-primary-100 to-accent-200 bg-clip-text text-transparent mb-6">
             Transformamos su empresa con tecnología de vanguardia
           </h2>
           
-          <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-xl text-secondary-600 max-w-4xl mx-auto leading-relaxed">
             Soluciones integrales de automatización e inteligencia artificial que revolucionan sus procesos empresariales y maximizan la productividad de su equipo.
           </p>
         </div>
@@ -44,18 +44,18 @@ export default function MotionServiciosDetallados() {
         </div>
 
         {/* CTA Section */}
-        <div className="text-center bg-gradient-to-r from-primary-600 via-primary-900 to-primary-800 rounded-3xl p-12 shadow-2xl">
+        <div className="text-center bg-gradient-to-r from-secondary-900 via-primary-900 to-secondary-800 rounded-3xl p-12 shadow-2xl">
           <h3 className="text-3xl md:text-4xl font-bold text-white mb-6">
             ¿Listo para revolucionar sus procesos?
           </h3>
           
-          <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
             Descubra cómo nuestras soluciones de automatización pueden transformar su empresa y aumentar su productividad hasta en un 300%.
           </p>
           
           <a 
             href="#contacto" 
-            className="inline-flex items-center bg-white text-blue-600 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-50 transition-all duration-300 transform hover:scale-105 shadow-lg"
+            className="inline-flex items-center bg-gradient-to-r from-primary-600 to-accent-600 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:from-primary-700 hover:to-accent-700 transition-all duration-300 transform hover:scale-105 shadow-lg"
           >
             Solicitar Consulta Gratuita
             <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
