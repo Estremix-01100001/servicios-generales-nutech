@@ -1,7 +1,7 @@
 /* Estilos específicos para el componente MotionContact */
 
 .contact-section {
-  @apply py-20 bg-gradient-to-br from-secondary-900 via-primary-900 to-secondary-800 relative overflow-hidden;
+  @apply py-12 bg-gradient-to-br from-secondary-900 via-primary-900 to-secondary-800 relative overflow-hidden;
 }
 
 .contact-background {
@@ -29,11 +29,11 @@
 }
 
 .contact-badge {
-  @apply text-center mb-8;
+  @apply text-center mb-4;
 }
 
 .contact-badge-inner {
-  @apply inline-flex items-center px-6 py-3 bg-gradient-to-r from-primary-500 to-accent-500 border border-primary-400/30 rounded-full shadow-lg backdrop-blur-sm;
+  @apply inline-flex items-center px-4 py-2 bg-gradient-to-r from-primary-500 to-accent-500 border border-primary-400/30 rounded-full shadow-lg backdrop-blur-sm;
 }
 
 .contact-badge-text {
@@ -41,19 +41,19 @@
 }
 
 .contact-header {
-  @apply text-center mb-16;
+  @apply text-center mb-8;
 }
 
 .contact-title {
-  @apply text-4xl md:text-6xl font-bold text-white mb-6 bg-gradient-to-r from-white via-primary-100 to-accent-200 bg-clip-text text-transparent;
+  @apply text-2xl md:text-4xl font-bold text-white mb-4 bg-gradient-to-r from-white via-primary-100 to-accent-200 bg-clip-text text-transparent;
 }
 
 .contact-description {
-  @apply text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed;
+  @apply text-base text-gray-300 max-w-2xl mx-auto leading-relaxed;
 }
 
 .contact-form-container {
-  @apply w-full max-w-md sm:max-w-lg lg:max-w-2xl mx-auto bg-white/95 backdrop-blur-sm rounded-3xl p-4 sm:p-6 shadow-2xl border border-white/20;
+  @apply w-full max-w-sm sm:max-w-md mx-auto bg-white/95 backdrop-blur-sm rounded-2xl p-4 shadow-2xl border border-white/20;
   transition: transform 0.3s ease;
 }
 
@@ -62,15 +62,15 @@
 }
 
 .contact-form-title {
-  @apply text-2xl font-bold text-gray-800 mb-4 bg-gradient-to-r from-primary-600 to-accent-600 bg-clip-text text-transparent text-center;
+  @apply text-lg font-bold text-gray-800 mb-3 bg-gradient-to-r from-primary-600 to-accent-600 bg-clip-text text-transparent text-center;
 }
 
 .contact-form {
-  @apply space-y-3;
+  @apply space-y-2;
 }
 
 .contact-form-fields {
-  @apply space-y-2;
+  @apply space-y-1;
 }
 
 .contact-field {
@@ -82,7 +82,7 @@
 }
 
 .contact-input {
-  @apply w-full px-3 py-1.5 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-300 bg-white/80 backdrop-blur-sm text-sm;
+  @apply w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-300 bg-white/80 backdrop-blur-sm text-sm;
 }
 
 .contact-input.error {
@@ -110,7 +110,7 @@
 }
 
 .contact-submit-button {
-  @apply w-full font-semibold py-3 px-6 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 text-sm;
+  @apply w-full font-semibold py-2 px-4 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 text-sm;
 }
 
 .contact-submit-button.submitting {
@@ -122,7 +122,7 @@
 }
 
 .contact-privacy {
-  @apply text-xs text-gray-600 text-center mt-3;
+  @apply text-xs text-gray-600 text-center mt-2;
 }
 
 .contact-privacy-link {
