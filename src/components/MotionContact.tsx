@@ -1,98 +1,34 @@
-import { useState } from 'react';
-
-interface FormData {
-  name: string;
-  email: string;
-  phone: string;
-  message: string;
-}
-
-interface FormErrors {
-  name?: string;
-  email?: string;
-  phone?: string;
-  message?: string;
-}
+import { useForm } from '../hooks/useForm';
+import { FormData } from '../types';
 
 export default function MotionContact() {
-  const [formData, setFormData] = useState<FormData>({
+  const initialFormData: FormData = {
     name: '',
     email: '',
     phone: '',
     message: ''
-  });
-  const [errors, setErrors] = useState<FormErrors>({});
-  const [isSubmitting, setIsSubmitting] = useState(false);
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
-    // Clear error when user starts typing
-    if (errors[name as keyof FormErrors]) {
-      setErrors(prev => ({
-        ...prev,
-        [name]: ''
-      }));
-    }
   };
 
-  const validateForm = () => {
-    const newErrors: FormErrors = {};
-    
-    if (!formData.name.trim()) {
-      newErrors.name = 'El nombre es requerido';
-    }
-    
-    if (!formData.email.trim()) {
-      newErrors.email = 'El email es requerido';
-    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      newErrors.email = 'El email no es válido';
-    }
-    
-    if (!formData.phone.trim()) {
-      newErrors.phone = 'El teléfono es requerido';
-    }
-    
-    if (!formData.message.trim()) {
-      newErrors.message = 'El mensaje es requerido';
-    }
-    
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
+  const {
+    formData,
+    errors,
+    isSubmitting,
+    handleInputChange,
+    handleSubmit: handleFormSubmit,
+    resetForm
+  } = useForm(initialFormData);
+
+  const onSubmit = async (data: FormData) => {
+    // Simular envío del formulario
+    await new Promise(resolve => setTimeout(resolve, 2000));
+    alert('¡Gracias por su consulta! Nos pondremos en contacto con usted pronto.');
+    resetForm();
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    
-    if (!validateForm()) {
-      return;
-    }
-    
-    setIsSubmitting(true);
-    
-    try {
-      // Simulate form submission
-      await new Promise(resolve => setTimeout(resolve, 2000));
-      
-      // Show success message
-      alert('¡Gracias por su consulta! Nos pondremos en contacto con usted pronto.');
-      
-      // Reset form
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        message: ''
-      });
-    } catch (error) {
-      alert('Hubo un error al enviar el formulario. Por favor, intente nuevamente.');
-    } finally {
-      setIsSubmitting(false);
-    }
+  const handleSubmit = (e: React.FormEvent) => {
+    handleFormSubmit(e, onSubmit);
   };
+
   return (
     <section 
       id="contacto" 
