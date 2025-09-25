@@ -1,4 +1,5 @@
 import { motion } from 'motion/react';
+import '../../styles/components/MotionPartners.css';
 
 export default function MotionPartners() {
   const partners = [
@@ -17,33 +18,33 @@ export default function MotionPartners() {
   return (
     <motion.section 
       id="partners" 
-      className="py-12 sm:py-16 lg:py-20 bg-gradient-to-b from-white via-blue-50 to-white overflow-hidden"
+      className="partners-section"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
     >
-      <div className="container mx-auto px-12 sm:px-16">
+      <div className="partners-container">
         {/* Section Badge */}
         <motion.div 
-          className="text-center mb-6 sm:mb-8"
+          className="partners-badge"
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <div className="inline-flex items-center px-3 py-1.5 sm:px-4 sm:py-2 bg-accent-100 border border-accent-200 rounded-full">
-            <span className="text-accent-600 text-xs sm:text-sm font-semibold">Partners</span>
+          <div className="partners-badge-inner">
+            <span className="partners-badge-text">Partners</span>
           </div>
         </motion.div>
 
         {/* Section Header */}
         <motion.div 
-          className="text-center mb-12 sm:mb-16"
+          className="partners-header"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
           <motion.h2 
-            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-secondary-800 mb-4 sm:mb-6"
+            className="partners-title"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
@@ -52,7 +53,7 @@ export default function MotionPartners() {
           </motion.h2>
           
           <motion.p 
-            className="text-base sm:text-lg lg:text-xl text-secondary-600 max-w-4xl mx-auto leading-relaxed"
+            className="partners-description"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
@@ -62,15 +63,9 @@ export default function MotionPartners() {
         </motion.div>
 
         {/* Partners Logos - Infinite Loop */}
-        <div 
-           className="relative mx-auto w-full max-w-4xl"
-           style={{ 
-             height: '80px',
-             overflow: 'hidden'
-           }}
-        >
+        <div className="partners-loop-container">
           <motion.div 
-            className="flex animate-scroll"
+            className="partners-loop"
             initial={{ x: 0 }}
             animate={{ x: "-50%" }}
             transition={{
@@ -80,11 +75,11 @@ export default function MotionPartners() {
             }}
           >
             {/* First set of logos */}
-            <div className="flex items-center space-x-4 flex-shrink-0">
+            <div className="partners-set">
               {partners.map((partner, index) => (
                 <motion.div 
                   key={`first-${index}`}
-                  className="w-20 h-10 sm:w-24 sm:h-12 lg:w-28 lg:h-14 bg-white rounded-xl shadow-lg flex items-center justify-center hover:shadow-xl transition-all duration-300"
+                  className="partners-card"
                   initial={{ 
                     backgroundColor: "rgb(240, 248, 255)",
                     scale: 0.8,
@@ -107,7 +102,7 @@ export default function MotionPartners() {
                   }}
                   viewport={{ once: true }}
                 >
-                  <span className={`${partner.color} font-bold text-sm sm:text-base lg:text-lg text-center whitespace-nowrap`}>
+                  <span className={`partners-card-text ${partner.color.replace('text-', '')}`}>
                     {partner.name}
                   </span>
                 </motion.div>
@@ -115,11 +110,11 @@ export default function MotionPartners() {
             </div>
             
             {/* Duplicate set for seamless loop */}
-            <div className="flex items-center space-x-4 flex-shrink-0">
+            <div className="partners-set">
               {partners.map((partner, index) => (
                 <motion.div 
                   key={`second-${index}`}
-                  className="w-20 h-10 sm:w-24 sm:h-12 lg:w-28 lg:h-14 bg-white rounded-xl shadow-lg flex items-center justify-center hover:shadow-xl transition-all duration-300"
+                  className="partners-card"
                   initial={{ 
                     backgroundColor: "rgb(240, 248, 255)",
                     scale: 0.8,
@@ -142,7 +137,7 @@ export default function MotionPartners() {
                   }}
                   viewport={{ once: true }}
                 >
-                  <span className={`${partner.color} font-bold text-sm sm:text-base lg:text-lg text-center whitespace-nowrap`}>
+                  <span className={`partners-card-text ${partner.color.replace('text-', '')}`}>
                     {partner.name}
                   </span>
                 </motion.div>
@@ -151,25 +146,6 @@ export default function MotionPartners() {
           </motion.div>
         </div>
       </div>
-
-      <style jsx>{`
-        @keyframes scroll {
-          0% {
-            transform: translateX(0);
-          }
-          100% {
-            transform: translateX(-50%);
-          }
-        }
-        
-        .animate-scroll {
-          animation: scroll 30s linear infinite;
-        }
-        
-        .animate-scroll:hover {
-          animation-play-state: paused;
-        }
-      `}</style>
     </motion.section>
   );
 }
