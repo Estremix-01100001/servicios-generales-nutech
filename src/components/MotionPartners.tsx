@@ -63,9 +63,8 @@ export default function MotionPartners() {
 
         {/* Partners Logos - Infinite Loop */}
         <div 
-           className="relative mx-auto"
+           className="relative mx-auto w-full max-w-4xl"
            style={{ 
-             width: '720px',
              height: '80px',
              overflow: 'hidden'
            }}

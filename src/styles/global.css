@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Prevenir overflow horizontal */
+html, body {
+  overflow-x: hidden;
+}
+
 /* Estilos personalizados con nueva paleta de colores azules */
 @layer components {
   .btn-primary {
