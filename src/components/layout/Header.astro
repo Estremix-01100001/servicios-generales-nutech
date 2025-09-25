@@ -7,12 +7,16 @@ import MobileMenu from '../MobileMenu';
 
 <header id="main-header" class="bg-transparent backdrop-blur-md fixed top-0 left-0 right-0 z-50 transition-all duration-500 border-b border-transparent">
   <nav class="w-[100px] lg:w-[1200px] mx-auto px-12 sm:px-16">
-    <div class="flex items-center justify-start lg:justify-between py-2">
+    <div class="flex items-center py-2">
       <!-- Logo -->
-      <MotionLogo client:load />
+      <div class="flex-shrink-0">
+        <MotionLogo client:load />
+      </div>
 
       <!-- Desktop Navigation -->
-      <MotionNav client:load />
+      <div class="hidden lg:flex flex-1 justify-end">
+        <MotionNav client:load />
+      </div>
 
       <!-- Mobile Menu -->
       <MobileMenu client:load />
