@@ -9,18 +9,20 @@ interface ServiceCardProps {
 export default function ServiceCard({ service, delay = 0 }: ServiceCardProps) {
   return (
     <motion.div
-      className="bg-white rounded-xl shadow-lg p-6 sm:p-8 hover:shadow-xl transition-shadow duration-300"
+      className="bg-white rounded-2xl shadow-xl p-8 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100"
       initial={{ 
         opacity: 0,
-        y: 50
+        y: 50,
+        scale: 0.9
       }}
       whileInView={{ 
         opacity: 1,
-        y: 0
+        y: 0,
+        scale: 1
       }}
       whileHover={{
-        scale: 1.02,
-        y: -5
+        scale: 1.05,
+        y: -10
       }}
       transition={{
         duration: 0.6,
@@ -29,32 +31,49 @@ export default function ServiceCard({ service, delay = 0 }: ServiceCardProps) {
       }}
       viewport={{ once: true }}
     >
-      {/* Imagen del servicio con fondo oscuro */}
-      <div className="mb-4 sm:mb-6">
-        <div className="w-full h-40 sm:h-48 bg-secondary-800 rounded-lg flex items-center justify-center mb-4 overflow-hidden">
+      {/* Imagen del servicio */}
+      <div className="mb-6">
+        <div className="w-full h-48 bg-gradient-to-br from-blue-50 to-indigo-100 rounded-xl flex items-center justify-center mb-6 overflow-hidden border border-blue-100">
           <img 
             src={service.image} 
             alt={service.title} 
-            className="w-full h-full object-contain p-4"
+            className="w-full h-full object-contain p-6"
             loading="lazy"
           />
         </div>
       </div>
       
-      {/* Título */}
-      <h3 className="text-lg sm:text-xl font-bold text-secondary-800 mb-3 sm:mb-4 leading-tight">
-        {service.description}
-      </h3>
+      {/* Título del servicio */}
+      <div className="text-center mb-4">
+        <h3 className="text-2xl font-bold text-gray-900 mb-2">
+          {service.title}
+        </h3>
+        {service.subtitle && (
+          <p className="text-sm text-blue-600 font-medium">
+            {service.subtitle}
+          </p>
+        )}
+      </div>
       
-      {/* Descripción de características */}
-      <p className="text-sm sm:text-base text-secondary-600 leading-relaxed">
-        {service.features[0]}
-      </p>
+      {/* Descripción principal */}
+      <h4 className="text-lg font-semibold text-gray-800 mb-4 text-center">
+        {service.description}
+      </h4>
+      
+      {/* Lista de características */}
+      <ul className="space-y-3 mb-6">
+        {service.features.slice(0, 3).map((feature, index) => (
+          <li key={index} className="flex items-start">
+            <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+            <span className="text-gray-600 text-sm leading-relaxed">{feature}</span>
+          </li>
+        ))}
+      </ul>
       
       {/* Botón opcional */}
       {service.hasButton && (
-        <div className="mt-4">
-          <button className="btn-outline w-full text-sm px-4 py-2">
+        <div className="text-center">
+          <button className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-6 py-3 rounded-lg font-semibold hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 transform hover:scale-105">
             LEER MAS
           </button>
         </div>
