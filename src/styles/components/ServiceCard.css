@@ -1,0 +1,45 @@
+/* Estilos específicos para el componente ServiceCard */
+
+.service-card {
+  @apply bg-white rounded-xl shadow-lg p-6 sm:p-8 hover:shadow-xl transition-shadow duration-300;
+}
+
+.service-card-header {
+  @apply mb-4 sm:mb-6;
+}
+
+.service-card-image-container {
+  @apply w-full h-40 sm:h-48 bg-secondary-800 rounded-lg flex items-center justify-center mb-4 overflow-hidden;
+}
+
+.service-card-image {
+  @apply w-full h-full object-contain p-4;
+}
+
+.service-card-fallback {
+  @apply text-center text-white;
+}
+
+.service-card-fallback-title {
+  @apply text-3xl sm:text-4xl font-bold mb-2;
+}
+
+.service-card-fallback-subtitle {
+  @apply text-xs sm:text-sm text-gray-300;
+}
+
+.service-card-title {
+  @apply text-lg sm:text-xl font-bold text-secondary-800 mb-3 sm:mb-4 leading-tight;
+}
+
+.service-card-description {
+  @apply text-sm sm:text-base text-secondary-600 leading-relaxed;
+}
+
+.service-card-button-container {
+  @apply mt-4;
+}
+
+.service-card-button {
+  @apply bg-accent-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-accent-700 transition-colors duration-300;
+}

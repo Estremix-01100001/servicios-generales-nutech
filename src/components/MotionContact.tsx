@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import '../../styles/components/MotionContact.css';
 
 interface FormData {
   name: string;
@@ -96,45 +97,45 @@ export default function MotionContact() {
   return (
     <section 
       id="contacto" 
-      className="py-20 bg-gradient-to-br from-secondary-900 via-primary-900 to-secondary-800 relative overflow-hidden"
+      className="contact-section"
     >
       {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute inset-0 bg-gradient-to-r from-primary-600/20 to-accent-600/20"></div>
-        <div className="absolute top-0 left-0 w-full h-full opacity-20">
-          <div className="w-full h-full bg-gradient-to-br from-primary-400/10 to-accent-400/10"></div>
+      <div className="contact-background">
+        <div className="contact-background-pattern"></div>
+        <div className="contact-background-overlay">
+          <div className="contact-background-gradient"></div>
         </div>
       </div>
-      <div className="container mx-auto px-12 sm:px-16 relative z-10">
-        <div className="max-w-3xl mx-auto">
+      <div className="contact-container">
+        <div className="contact-content">
         {/* Section Badge */}
-        <div className="text-center mb-8">
-          <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-primary-500 to-accent-500 border border-primary-400/30 rounded-full shadow-lg backdrop-blur-sm">
-            <span className="text-white text-sm font-semibold">Contacto</span>
+        <div className="contact-badge">
+          <div className="contact-badge-inner">
+            <span className="contact-badge-text">Contacto</span>
           </div>
         </div>
 
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 bg-gradient-to-r from-white via-primary-100 to-accent-200 bg-clip-text text-transparent">
+        <div className="contact-header">
+          <h2 className="contact-title">
             Conversemos sobre el futuro de su empresa
           </h2>
-          <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
+          <p className="contact-description">
             ¿Quiere saber cómo la automatización puede transformar sus procesos?<br />
             Agenda una reunión gratuita con nuestros especialistas y reciba un diagnóstico inicial adaptado a sus objetivos.
           </p>
         </div>
 
         {/* Contact Form */}
-        <div className="w-full max-w-md sm:max-w-lg lg:max-w-2xl mx-auto bg-white/95 backdrop-blur-sm rounded-3xl p-4 sm:p-6 shadow-2xl border border-white/20 hover:scale-105 transition-transform duration-300">
-          <h3 className="text-2xl font-bold text-gray-800 mb-4 bg-gradient-to-r from-primary-600 to-accent-600 bg-clip-text text-transparent text-center">
+        <div className="contact-form-container">
+          <h3 className="contact-form-title">
             Solicitar Consulta Gratuita
           </h3>
           
-            <form className="space-y-3" id="contact-form" onSubmit={handleSubmit}>
-            <div className="space-y-2">
-              <div>
-                <label htmlFor="name" className="block text-xs font-semibold text-gray-700 mb-1">Nombre *</label>
+            <form className="contact-form" id="contact-form" onSubmit={handleSubmit}>
+            <div className="contact-form-fields">
+              <div className="contact-field">
+                <label htmlFor="name" className="contact-label">Nombre *</label>
                 <input 
                   type="text" 
                   id="name" 
@@ -142,18 +143,16 @@ export default function MotionContact() {
                   required 
                   value={formData.name}
                   onChange={handleInputChange}
-                  className={`w-full px-3 py-1.5 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-300 bg-white/80 backdrop-blur-sm text-sm ${
-                    errors.name ? 'border-red-500' : 'border-gray-300'
-                  }`}
+                  className={`contact-input ${errors.name ? 'error' : ''}`}
                   placeholder="Tu nombre"
                 />
                 {errors.name && (
-                  <p className="text-red-500 text-xs mt-1">{errors.name}</p>
+                  <p className="contact-error">{errors.name}</p>
                 )}
               </div>
               
-              <div>
-                <label htmlFor="email" className="block text-xs font-semibold text-gray-700 mb-1">Email *</label>
+              <div className="contact-field">
+                <label htmlFor="email" className="contact-label">Email *</label>
                 <input 
                   type="email" 
                   id="email" 
@@ -161,18 +160,16 @@ export default function MotionContact() {
                   required 
                   value={formData.email}
                   onChange={handleInputChange}
-                  className={`w-full px-3 py-1.5 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-300 bg-white/80 backdrop-blur-sm text-sm ${
-                    errors.email ? 'border-red-500' : 'border-gray-300'
-                  }`}
+                  className={`contact-input ${errors.email ? 'error' : ''}`}
                   placeholder="tu@email.com"
                 />
                 {errors.email && (
-                  <p className="text-red-500 text-xs mt-1">{errors.email}</p>
+                  <p className="contact-error">{errors.email}</p>
                 )}
               </div>
 
-              <div>
-                <label htmlFor="phone" className="block text-xs font-semibold text-gray-700 mb-1">Teléfono *</label>
+              <div className="contact-field">
+                <label htmlFor="phone" className="contact-label">Teléfono *</label>
                 <input 
                   type="tel" 
                   id="phone" 
@@ -180,19 +177,17 @@ export default function MotionContact() {
                   required 
                   value={formData.phone}
                   onChange={handleInputChange}
-                  className={`w-full px-3 py-1.5 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-300 bg-white/80 backdrop-blur-sm text-sm ${
-                    errors.phone ? 'border-red-500' : 'border-gray-300'
-                  }`}
+                  className={`contact-input ${errors.phone ? 'error' : ''}`}
                   placeholder="+1 (555) 123-4567"
                 />
                 {errors.phone && (
-                  <p className="text-red-500 text-xs mt-1">{errors.phone}</p>
+                  <p className="contact-error">{errors.phone}</p>
                 )}
               </div>
             </div>
             
-            <div>
-              <label htmlFor="message" className="block text-xs font-semibold text-gray-700 mb-1">¿Cómo podemos ayudarte? *</label>
+            <div className="contact-field">
+              <label htmlFor="message" className="contact-label">¿Cómo podemos ayudarte? *</label>
               <textarea 
                 id="message" 
                 name="message" 
@@ -200,31 +195,25 @@ export default function MotionContact() {
                 required 
                 value={formData.message}
                 onChange={handleInputChange}
-                className={`w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-300 bg-white/80 backdrop-blur-sm resize-none text-sm ${
-                  errors.message ? 'border-red-500' : 'border-gray-300'
-                }`}
+                className={`contact-textarea ${errors.message ? 'error' : ''}`}
                 placeholder="Cuéntanos brevemente sobre tu proyecto..."
               ></textarea>
               {errors.message && (
-                <p className="text-red-500 text-xs mt-1">{errors.message}</p>
+                <p className="contact-error">{errors.message}</p>
               )}
             </div>
             
             <button 
               type="submit" 
               disabled={isSubmitting}
-              className={`w-full font-semibold py-3 px-6 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 text-sm ${
-                isSubmitting 
-                  ? 'bg-gray-400 cursor-not-allowed' 
-                  : 'bg-gradient-to-r from-primary-600 to-accent-600 text-white hover:from-primary-700 hover:to-accent-700'
-              }`}
+              className={`contact-submit-button ${isSubmitting ? 'submitting' : ''}`}
             >
               {isSubmitting ? 'Enviando...' : 'Solicitar Consulta'}
             </button>
             
-            <p className="text-xs text-gray-600 text-center mt-3">
+            <p className="contact-privacy">
               Al enviar este formulario, acepta que procesemos sus datos de acuerdo con nuestra{' '}
-              <a href="#" className="text-primary-600 hover:text-primary-700 underline">
+              <a href="#" className="contact-privacy-link">
                 Política de Privacidad
               </a>
               .

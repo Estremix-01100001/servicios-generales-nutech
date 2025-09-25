@@ -1,0 +1,98 @@
+/* Estilos específicos para el componente MotionPartners */
+
+.partners-section {
+  @apply py-12 sm:py-16 lg:py-20 bg-gradient-to-b from-white via-blue-50 to-white overflow-hidden;
+}
+
+.partners-container {
+  @apply container mx-auto px-12 sm:px-16;
+}
+
+.partners-badge {
+  @apply text-center mb-6 sm:mb-8;
+}
+
+.partners-badge-inner {
+  @apply inline-flex items-center px-3 py-1.5 sm:px-4 sm:py-2 bg-accent-100 border border-accent-200 rounded-full;
+}
+
+.partners-badge-text {
+  @apply text-accent-600 text-xs sm:text-sm font-semibold;
+}
+
+.partners-header {
+  @apply text-center mb-12 sm:mb-16;
+}
+
+.partners-title {
+  @apply text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-secondary-800 mb-4 sm:mb-6;
+}
+
+.partners-description {
+  @apply text-base sm:text-lg lg:text-xl text-secondary-600 max-w-4xl mx-auto leading-relaxed;
+}
+
+.partners-loop-container {
+  @apply relative mx-auto w-full max-w-4xl;
+  height: 80px;
+  overflow: hidden;
+}
+
+.partners-loop {
+  @apply flex animate-scroll;
+}
+
+.partners-set {
+  @apply flex items-center space-x-4 flex-shrink-0;
+}
+
+.partners-card {
+  @apply w-20 h-10 sm:w-24 sm:h-12 lg:w-28 lg:h-14 bg-white rounded-xl shadow-lg flex items-center justify-center hover:shadow-xl transition-all duration-300;
+}
+
+.partners-card:hover {
+  @apply scale-105;
+  transform: translateY(-2px);
+}
+
+.partners-card-text {
+  @apply font-bold text-sm sm:text-base lg:text-lg text-center whitespace-nowrap;
+}
+
+.partners-card-text.blue {
+  @apply text-blue-600;
+}
+
+.partners-card-text.secondary {
+  @apply text-secondary-600;
+}
+
+.partners-card-text.green {
+  @apply text-green-600;
+}
+
+.partners-card-text.purple {
+  @apply text-purple-600;
+}
+
+.partners-card-text.red {
+  @apply text-red-600;
+}
+
+/* Animación del scroll infinito */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll {
+  animation: scroll 30s linear infinite;
+}
+
+.animate-scroll:hover {
+  animation-play-state: paused;
+}
