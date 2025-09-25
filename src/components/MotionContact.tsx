@@ -127,7 +127,7 @@ export default function MotionContact() {
 
         {/* Contact Form */}
         <motion.div 
-   className="w-[680px] h-[480px] mx-auto bg-white/95 backdrop-blur-sm rounded-3xl p-6 shadow-2xl border border-white/20"
+   className="w-full max-w-md sm:max-w-lg lg:max-w-2xl mx-auto bg-white/95 backdrop-blur-sm rounded-3xl p-4 sm:p-6 shadow-2xl border border-white/20"
   initial={{
             backgroundColor: "rgba(255, 255, 255, 0.8)",
             opacity: 0,
