@@ -44,10 +44,10 @@ export default function MobileMenu() {
   ];
 
   return (
-    <div className="lg:hidden relative">
+    <div className="lg:hidden relative ml-auto">
       {/* Mobile Menu Button */}
       <motion.button 
-        className="p-2 rounded-lg hover:bg-orange-500/20 transition-all duration-300 fixed top-3 right-4 z-50 bg-black/30 backdrop-blur-md border border-white/20"
+        className="p-2 rounded-lg hover:bg-orange-500/20 transition-all duration-300 bg-black/30 backdrop-blur-md border border-white/20"
         onClick={toggleMenu}
         whileHover={{ 
           scale: 1.05,
