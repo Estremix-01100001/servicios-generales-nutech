@@ -24,16 +24,6 @@ export interface CompanyInfo {
   };
 }
 
-export interface Service {
-  id: string;
-  title: string;
-  subtitle?: string;
-  image: string;
-  description: string;
-  features: string[];
-  hasButton?: boolean;
-}
-
 export interface FormData {
   name: string;
   email: string;
