@@ -44,7 +44,7 @@ export default function MotionNav() {
     { href: "#crecimiento", label: "Crecimiento" },
     { href: "#servicios-detallados", label: "Servicios" },
     { href: "#partners", label: "Partners" },
-    { href: "#nutech-info", label: "Nutech" },
+    { href: "#academia", label: "Academia" },
     { href: "#perspectiva", label: "Perspectiva" },
     { href: "#contacto", label: "Contacto" }
   ];

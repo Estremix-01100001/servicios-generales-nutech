@@ -2,9 +2,9 @@
 import { companyInfo } from '../../database/data';
 ---
 
-<section id="inicio" class="relative min-h-screen flex items-center justify-center overflow-hidden">
-  <!-- Video Background -->
-  <div class="absolute inset-0 w-full h-full bg-gradient-to-br from-blue-900 via-purple-900 to-blue-800">
+<section id="inicio" class="relative min-h-screen flex items-center justify-center overflow-hidden w-full">
+  <!-- Video Background - extendido para cubrir el header -->
+  <div class="absolute inset-0 w-full h-full bg-gradient-to-br from-blue-900 via-purple-900 to-blue-800 overflow-hidden" style="height: calc(100vh + 80px); top: -80px;">
     <video 
       class="w-full h-full object-cover video-zoom-out" 
       autoplay 
@@ -19,17 +19,19 @@ import { companyInfo } from '../../database/data';
       <source src="https://raw.githubusercontent.com/Estremix-01100001/servicios-generales-nutech/main/public/video-hersection.mp4" type="video/mp4">
       Tu navegador no soporta el elemento de video.
     </video>
-    <!-- Overlay para contraste -->
-    <div class="absolute inset-0 bg-gradient-to-br from-blue-900/30 via-transparent to-orange-900/30"></div>
-    <!-- Degradado hacia la siguiente sección -->
-    <div class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white via-white/80 to-transparent"></div>
   </div>
 
+  <!-- Caja negra superpuesta con z-index - extendida para cubrir el header -->
+  <div class="absolute inset-0 w-full h-full bg-black z-10 overflow-hidden" style="height: calc(100vh + 80px); top: -80px; opacity: 0.5;"></div>
+
+  <!-- Degradado hacia la siguiente sección -->
+  <div class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-white via-white/80 to-transparent z-20"></div>
+
   <!-- Contenido centrado -->
-  <div class="relative z-10 w-full h-full flex items-center justify-center">
-    <div class="text-center max-w-5xl mx-auto px-4">
+  <div class="relative z-30 w-full h-full flex items-center justify-center overflow-hidden">
+    <div class="text-center w-full max-w-full px-4">
       <!-- Texto Principal -->
-      <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl font-bold leading-tight mb-6 md:mb-8 text-white">
+        <h1 class="text-4xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight text-white mb-4 md:mb-6">
         <span class="block">Agrega valor a las</span>
         <span class="block">organizaciones</span>
         <span class="block">a través de la</span>
@@ -39,9 +41,10 @@ import { companyInfo } from '../../database/data';
       </h1>
       
       <!-- Subtítulo -->
-      <p class="text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-200 mb-6 md:mb-8 leading-relaxed max-w-4xl mx-auto">
-        Optimizamos sus Procesos de Negocio,
-        con Automatización e Inteligencia Artificial de vanguardia
+      <p class="text-base sm:text-lg md:text-xl lg:text-2xl text-white mb-4 md:mb-6 leading-tight max-w-lg mx-auto px-4" style="text-shadow: 1px 1px 3px rgba(0,0,0,0.8), 0 0 6px rgba(0,0,0,0.4);">
+        <span class="block">Optimizamos sus Procesos de Negocio,</span>
+        <span class="block">con Automatización e Inteligencia Artificial</span>
+        <span class="block">de vanguardia</span>
       </p>
       
       <!-- Botones -->
@@ -96,7 +99,7 @@ import { companyInfo } from '../../database/data';
 <style>
   /* Efecto de alejamiento para el video */
   .video-zoom-out {
-    transform: scale(1.2);
+    transform: scale(1);
     transition: transform 0.3s ease-in-out;
   }
   

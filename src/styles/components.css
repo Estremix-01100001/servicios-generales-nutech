@@ -136,6 +136,30 @@
   @apply text-white font-semibold text-lg mb-4;
 }
 
+/* Prevenir desbordamiento horizontal en móvil */
+html, body {
+  overflow-x: hidden !important;
+  max-width: 100vw !important;
+  width: 100% !important;
+}
+
+* {
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+/* Prevenir desbordamiento en todos los contenedores */
+.container, .container-fluid {
+  max-width: 100% !important;
+  overflow-x: hidden !important;
+}
+
+/* Prevenir desbordamiento en secciones */
+section {
+  max-width: 100vw !important;
+  overflow-x: hidden !important;
+}
+
 /* Responsive utilities */
 @media (max-width: 768px) {
   .hero-text {
@@ -148,5 +172,14 @@
   
   .service-card {
     @apply p-6;
+  }
+  
+  /* Prevenir scroll horizontal en móvil */
+  body {
+    overflow-x: hidden;
+  }
+  
+  section {
+    overflow-x: hidden;
   }
 }
