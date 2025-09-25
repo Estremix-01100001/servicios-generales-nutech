@@ -24,7 +24,7 @@ export default function MotionServiciosDetallados() {
 
         {/* Section Header */}
         <div className="text-center mb-20">
-          <h2 className="text-4xl md:text-5xl font-bold text-secondary-800 mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-secondary-800 mb-12">
             Transformamos su empresa con tecnología de vanguardia
           </h2>
           
