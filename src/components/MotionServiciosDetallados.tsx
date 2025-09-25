@@ -44,7 +44,7 @@ export default function MotionServiciosDetallados() {
         </div>
 
         {/* CTA Section */}
-        <div className="text-center bg-gradient-to-r from-blue-600 to-indigo-700 rounded-3xl p-12 shadow-2xl">
+        <div className="text-center bg-gradient-to-r from-primary-600 via-primary-900 to-primary-800 rounded-3xl p-12 shadow-2xl">
           <h3 className="text-3xl md:text-4xl font-bold text-white mb-6">
             ¿Listo para revolucionar sus procesos?
           </h3>
