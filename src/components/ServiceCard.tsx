@@ -1,4 +1,3 @@
-import { motion } from 'motion/react';
 import { Service } from '../data/services';
 
 interface ServiceCardProps {
@@ -6,31 +5,9 @@ interface ServiceCardProps {
   delay?: number;
 }
 
-export default function ServiceCard({ service, delay = 0 }: ServiceCardProps) {
+export default function ServiceCard({ service }: ServiceCardProps) {
   return (
-    <motion.div
-      className="bg-white rounded-2xl shadow-xl p-8 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100"
-      initial={{ 
-        opacity: 0,
-        y: 50,
-        scale: 0.9
-      }}
-      whileInView={{ 
-        opacity: 1,
-        y: 0,
-        scale: 1
-      }}
-      whileHover={{
-        scale: 1.05,
-        y: -10
-      }}
-      transition={{
-        duration: 0.6,
-        delay: delay,
-        ease: "easeOut"
-      }}
-      viewport={{ once: true }}
-    >
+    <div className="bg-white rounded-2xl shadow-xl p-8 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100">
       {/* Imagen del servicio */}
       <div className="mb-6">
         <div className="w-full h-48 bg-gradient-to-br from-blue-50 to-indigo-100 rounded-xl flex items-center justify-center mb-6 overflow-hidden border border-blue-100">
@@ -78,6 +55,6 @@ export default function ServiceCard({ service, delay = 0 }: ServiceCardProps) {
           </button>
         </div>
       )}
-    </motion.div>
+    </div>
   );
 }
