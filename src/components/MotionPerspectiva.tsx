@@ -104,7 +104,7 @@ export default function MotionPerspectiva() {
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
     >
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-12 sm:px-16">
         {/* Section Badge */}
         <motion.div 
           className="text-center mb-8"

@@ -10,7 +10,7 @@ const NavLink = ({ href, children, index = 0 }: NavLinkProps) => {
   return (
     <motion.a
       href={href}
-      className="text-white font-medium relative px-2 py-1"
+      className="text-white font-medium relative px-3 py-2"
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ 

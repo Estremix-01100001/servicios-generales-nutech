@@ -81,13 +81,13 @@ export default function MobileMenu() {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            className="fixed top-[144px] left-0 right-0 bg-black/80 backdrop-blur-md z-40"
+            className="fixed top-[128px] left-0 right-0 bg-black/80 backdrop-blur-md z-40"
             initial={{ opacity: 0, y: -20, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -20, scale: 0.95 }}
             transition={{ duration: 0.3, ease: "easeOut" }}
           >
-            <div className="container mx-auto px-4 py-4 bg-transparent">
+            <div className="container mx-auto px-12 sm:px-16 py-4 bg-transparent">
               <motion.div 
                 className="flex flex-col space-y-3"
                 initial={{ opacity: 0 }}

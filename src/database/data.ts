@@ -2,145 +2,29 @@
 import type { Service, ServiceCategory, Testimonial, TeamMember, CompanyInfo } from './schema';
 
 export const companyInfo: CompanyInfo = {
-  name: "Servicios Generales Pro",
-  description: "Ofrecemos servicios de limpieza, mantenimiento y soluciones integrales para hogares y empresas.",
-  address: "Av. Principal 123, Ciudad, País",
+  name: "Nutech",
+  description: "Especialistas en transformación digital, automatización de procesos (RPA) e inteligencia artificial para empresas.",
+  address: "Av. Principal 123, Lima, Perú",
   phone: "+1 (555) 123-4567",
-  email: "info@serviciosgenerales.com",
-  website: "https://serviciosgenerales.com",
+  email: "contacto@nutech.com",
+  website: "https://nutech.com",
   socialMedia: {
-    facebook: "https://facebook.com/serviciosgenerales",
-    instagram: "https://instagram.com/serviciosgenerales",
-    linkedin: "https://linkedin.com/company/serviciosgenerales"
+    linkedin: "https://linkedin.com/company/nutech"
   },
   businessHours: {
-    monday: "8:00 AM - 6:00 PM",
-    tuesday: "8:00 AM - 6:00 PM",
-    wednesday: "8:00 AM - 6:00 PM",
-    thursday: "8:00 AM - 6:00 PM",
-    friday: "8:00 AM - 6:00 PM",
-    saturday: "9:00 AM - 4:00 PM",
+    monday: "8:30 AM - 6:30 PM",
+    tuesday: "8:30 AM - 6:30 PM",
+    wednesday: "8:30 AM - 6:30 PM",
+    thursday: "8:30 AM - 6:30 PM",
+    friday: "8:30 AM - 6:30 PM",
+    saturday: "9:30 AM - 4:30 PM",
     sunday: "Cerrado"
   }
 };
 
-export const serviceCategories: ServiceCategory[] = [
-  {
-    id: "1",
-    name: "Limpieza",
-    description: "Servicios de limpieza residencial y comercial",
-    icon: "🧹",
-    color: "#3B82F6",
-    isActive: true
-  },
-  {
-    id: "2",
-    name: "Mantenimiento",
-    description: "Mantenimiento preventivo y correctivo",
-    icon: "🔧",
-    color: "#10B981",
-    isActive: true
-  },
-  {
-    id: "3",
-    name: "Jardinería",
-    description: "Cuidado y mantenimiento de jardines",
-    icon: "🌱",
-    color: "#059669",
-    isActive: true
-  },
-  {
-    id: "4",
-    name: "Seguridad",
-    description: "Servicios de seguridad y vigilancia",
-    icon: "🛡️",
-    color: "#DC2626",
-    isActive: true
-  }
-];
+export const serviceCategories: ServiceCategory[] = [];
 
-export const services: Service[] = [
-  {
-    id: "1",
-    name: "Limpieza Residencial",
-    description: "Servicio completo de limpieza para hogares, incluyendo todas las habitaciones, baños, cocina y áreas comunes.",
-    shortDescription: "Limpieza completa de hogares",
-    icon: "🏠",
-    image: "/assets/images/limpieza-residencial.jpg",
-    price: "Desde $50/hora",
-    features: [
-      "Limpieza de todas las habitaciones",
-      "Desinfección de baños y cocina",
-      "Aspirado y trapeado",
-      "Limpieza de ventanas",
-      "Productos ecológicos"
-    ],
-    category: serviceCategories[0],
-    isActive: true,
-    createdAt: new Date(),
-    updatedAt: new Date()
-  },
-  {
-    id: "2",
-    name: "Limpieza Comercial",
-    description: "Servicios de limpieza para oficinas, tiendas y espacios comerciales con horarios flexibles.",
-    shortDescription: "Limpieza para espacios comerciales",
-    icon: "🏢",
-    image: "/assets/images/limpieza-comercial.jpg",
-    price: "Desde $80/hora",
-    features: [
-      "Limpieza nocturna disponible",
-      "Mantenimiento de oficinas",
-      "Limpieza de cristales",
-      "Desinfección profunda",
-      "Personal capacitado"
-    ],
-    category: serviceCategories[0],
-    isActive: true,
-    createdAt: new Date(),
-    updatedAt: new Date()
-  },
-  {
-    id: "3",
-    name: "Mantenimiento Eléctrico",
-    description: "Servicios de mantenimiento y reparación eléctrica para hogares y empresas.",
-    shortDescription: "Reparaciones y mantenimiento eléctrico",
-    icon: "⚡",
-    image: "/assets/images/mantenimiento-electrico.jpg",
-    price: "Desde $100/hora",
-    features: [
-      "Instalaciones eléctricas",
-      "Reparación de cortocircuitos",
-      "Instalación de luminarias",
-      "Mantenimiento preventivo",
-      "Certificaciones vigentes"
-    ],
-    category: serviceCategories[1],
-    isActive: true,
-    createdAt: new Date(),
-    updatedAt: new Date()
-  },
-  {
-    id: "4",
-    name: "Jardinería y Paisajismo",
-    description: "Diseño, mantenimiento y cuidado de jardines residenciales y comerciales.",
-    shortDescription: "Cuidado y diseño de jardines",
-    icon: "🌿",
-    image: "/assets/images/jardineria.jpg",
-    price: "Desde $60/hora",
-    features: [
-      "Diseño de jardines",
-      "Podado y mantenimiento",
-      "Sistema de riego",
-      "Plantación de especies",
-      "Mantenimiento mensual"
-    ],
-    category: serviceCategories[2],
-    isActive: true,
-    createdAt: new Date(),
-    updatedAt: new Date()
-  }
-];
+export const services: Service[] = [];
 
 export const testimonials: Testimonial[] = [
   {

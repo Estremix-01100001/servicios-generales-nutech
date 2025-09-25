@@ -68,7 +68,7 @@ const ServiceColumn = ({ icon, title, items, button, delay = 0 }: ServiceColumnP
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: delay + 0.8 + (index * 0.1) }}
           >
-            <span className="text-accent-600 mr-3 mt-1">&gt;</span>
+            <span className="text-accent-600 mr-3 mt-1">•</span>
             <span className="text-secondary-600">{item}</span>
           </motion.li>
         ))}
@@ -148,7 +148,7 @@ export default function MotionServiciosDetallados() {
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
     >
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-12 sm:px-16">
         {/* Section Badge */}
         <motion.div 
           className="text-center mb-8"

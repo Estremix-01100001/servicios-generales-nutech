@@ -1,6 +1,87 @@
 import { motion } from 'motion/react';
+import { useState } from 'react';
 
 export default function MotionContact() {
+  const [formData, setFormData] = useState({
+    name: '',
+    company: '',
+    email: '',
+    phone: '',
+    message: ''
+  });
+  const [errors, setErrors] = useState({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+    // Clear error when user starts typing
+    if (errors[name]) {
+      setErrors(prev => ({
+        ...prev,
+        [name]: ''
+      }));
+    }
+  };
+
+  const validateForm = () => {
+    const newErrors = {};
+    
+    if (!formData.name.trim()) {
+      newErrors.name = 'El nombre es requerido';
+    }
+    
+    if (!formData.company.trim()) {
+      newErrors.company = 'La empresa es requerida';
+    }
+    
+    if (!formData.email.trim()) {
+      newErrors.email = 'El email es requerido';
+    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+      newErrors.email = 'El email no es válido';
+    }
+    
+    if (!formData.message.trim()) {
+      newErrors.message = 'El mensaje es requerido';
+    }
+    
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    
+    if (!validateForm()) {
+      return;
+    }
+    
+    setIsSubmitting(true);
+    
+    try {
+      // Simulate form submission
+      await new Promise(resolve => setTimeout(resolve, 2000));
+      
+      // Show success message
+      alert('¡Gracias por su consulta! Nos pondremos en contacto con usted pronto.');
+      
+      // Reset form
+      setFormData({
+        name: '',
+        company: '',
+        email: '',
+        phone: '',
+        message: ''
+      });
+    } catch (error) {
+      alert('Hubo un error al enviar el formulario. Por favor, intente nuevamente.');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
   return (
     <motion.section 
       id="contacto" 
@@ -16,7 +97,7 @@ export default function MotionContact() {
           <div className="w-full h-full bg-gradient-to-br from-primary-400/10 to-accent-400/10"></div>
         </div>
       </div>
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto px-12 sm:px-16 relative z-10">
         {/* Section Badge */}
         <motion.div 
           className="text-center mb-8"
@@ -41,7 +122,7 @@ export default function MotionContact() {
           </h2>
           <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
             ¿Quiere saber cómo la automatización puede transformar sus procesos?<br />
-            Agende una reunión gratuita con nuestros especialistas y reciba un diagnóstico inicial adaptado a sus objetivos.
+            Agenda una reunión gratuita con nuestros especialistas y reciba un diagnóstico inicial adaptado a sus objetivos.
           </p>
         </motion.div>
 
@@ -77,7 +158,7 @@ export default function MotionContact() {
               Solicitar Consulta Gratuita
             </motion.h3>
             
-            <form className="space-y-6" id="contact-form">
+            <form className="space-y-6" id="contact-form" onSubmit={handleSubmit}>
               <motion.div 
                 className="grid grid-cols-1 md:grid-cols-2 gap-6"
                 initial={{ opacity: 0 }}
@@ -91,9 +172,16 @@ export default function MotionContact() {
                     id="name" 
                     name="name" 
                     required 
-                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-300 bg-white/80 backdrop-blur-sm"
+                    value={formData.name}
+                    onChange={handleInputChange}
+                    className={`w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-300 bg-white/80 backdrop-blur-sm ${
+                      errors.name ? 'border-red-500' : 'border-gray-300'
+                    }`}
                     placeholder="Su nombre completo"
                   />
+                  {errors.name && (
+                    <p className="text-red-500 text-sm mt-1">{errors.name}</p>
+                  )}
                 </div>
                 <div>
                   <label htmlFor="company" className="block text-sm font-semibold text-gray-700 mb-2">Empresa *</label>
@@ -102,9 +190,16 @@ export default function MotionContact() {
                     id="company" 
                     name="company" 
                     required 
-                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-300 bg-white/80 backdrop-blur-sm"
+                    value={formData.company}
+                    onChange={handleInputChange}
+                    className={`w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-300 bg-white/80 backdrop-blur-sm ${
+                      errors.company ? 'border-red-500' : 'border-gray-300'
+                    }`}
                     placeholder="Nombre de su empresa"
                   />
+                  {errors.company && (
+                    <p className="text-red-500 text-sm mt-1">{errors.company}</p>
+                  )}
                 </div>
               </motion.div>
               
@@ -121,9 +216,16 @@ export default function MotionContact() {
                     id="email" 
                     name="email" 
                     required 
-                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-300 bg-white/80 backdrop-blur-sm"
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    className={`w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-300 bg-white/80 backdrop-blur-sm ${
+                      errors.email ? 'border-red-500' : 'border-gray-300'
+                    }`}
                     placeholder="su@empresa.com"
                   />
+                  {errors.email && (
+                    <p className="text-red-500 text-sm mt-1">{errors.email}</p>
+                  )}
                 </div>
                 <div>
                   <label htmlFor="phone" className="block text-sm font-semibold text-gray-700 mb-2">Teléfono</label>
@@ -131,6 +233,8 @@ export default function MotionContact() {
                     type="tel" 
                     id="phone" 
                     name="phone" 
+                    value={formData.phone}
+                    onChange={handleInputChange}
                     className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-300 bg-white/80 backdrop-blur-sm"
                     placeholder="+1 (555) 123-4567"
                   />
@@ -148,22 +252,47 @@ export default function MotionContact() {
                   name="message" 
                   rows={4} 
                   required 
-                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 bg-white/80 backdrop-blur-sm resize-none"
+                  value={formData.message}
+                  onChange={handleInputChange}
+                  className={`w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 bg-white/80 backdrop-blur-sm resize-none ${
+                    errors.message ? 'border-red-500' : 'border-gray-300'
+                  }`}
                   placeholder="Cuéntenos sobre sus objetivos de automatización y los procesos que le gustaría optimizar..."
                 ></textarea>
+                {errors.message && (
+                  <p className="text-red-500 text-sm mt-1">{errors.message}</p>
+                )}
               </motion.div>
               
               <motion.button 
                 type="submit" 
-                className="w-full bg-gradient-to-r from-primary-600 to-accent-600 text-white font-semibold py-4 px-8 rounded-xl hover:from-primary-700 hover:to-accent-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                disabled={isSubmitting}
+                className={`w-full font-semibold py-4 px-8 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 ${
+                  isSubmitting 
+                    ? 'bg-gray-400 cursor-not-allowed' 
+                    : 'bg-gradient-to-r from-primary-600 to-accent-600 text-white hover:from-primary-700 hover:to-accent-700'
+                }`}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
+                whileHover={isSubmitting ? {} : { scale: 1.02 }}
+                whileTap={isSubmitting ? {} : { scale: 0.98 }}
                 transition={{ duration: 0.5, delay: 0.7 }}
               >
-                Solicitar Consulta Gratuita
+                {isSubmitting ? 'Enviando...' : 'Solicitar Consulta Gratuita'}
               </motion.button>
+              
+              <motion.p 
+                className="text-sm text-gray-600 text-center mt-4"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ duration: 0.5, delay: 0.8 }}
+              >
+                Al enviar este formulario, acepta que procesemos sus datos de acuerdo con nuestra{' '}
+                <a href="#" className="text-primary-600 hover:text-primary-700 underline">
+                  Política de Privacidad
+                </a>
+                .
+              </motion.p>
             </form>
           </motion.div>
 
@@ -229,7 +358,7 @@ export default function MotionContact() {
                 
                 <div className="flex items-center space-x-4">
                   <motion.div 
-                    className="w-12 h-12 bg-accent-100 rounded-lg flex items-center justify-center flex-shrink-0"
+                    className="w-12 h-12 bg-gradient-to-br from-primary-500 to-accent-500 rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg"
                     initial={{ rotate: -180, scale: 0 }}
                     whileInView={{ rotate: 0, scale: 1 }}
                     transition={{ duration: 0.6, delay: 0.7 }}
@@ -240,7 +369,7 @@ export default function MotionContact() {
                   </motion.div>
                   <div>
                     <h4 className="font-semibold text-white">Teléfono</h4>
-                    <a href="tel:+15551234567" className="text-accent-600 hover:text-accent-500 transition-colors">
+                    <a href="tel:+15551234567" className="text-gray-300 hover:text-accent-500 transition-colors">
                       +1 (555) 123-4567
                     </a>
                   </div>
@@ -248,7 +377,7 @@ export default function MotionContact() {
                 
                 <div className="flex items-center space-x-4">
                   <motion.div 
-                    className="w-12 h-12 bg-accent-100 rounded-lg flex items-center justify-center flex-shrink-0"
+                    className="w-12 h-12 bg-gradient-to-br from-primary-500 to-accent-500 rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg"
                     initial={{ rotate: -180, scale: 0 }}
                     whileInView={{ rotate: 0, scale: 1 }}
                     transition={{ duration: 0.6, delay: 0.8 }}
@@ -259,7 +388,7 @@ export default function MotionContact() {
                   </motion.div>
                   <div>
                     <h4 className="font-semibold text-white">Email</h4>
-                    <a href="mailto:contacto@nutech.com" className="text-accent-600 hover:text-accent-500 transition-colors">
+                    <a href="mailto:contacto@nutech.com" className="text-gray-300 hover:text-accent-500 transition-colors">
                       contacto@nutech.com
                     </a>
                   </div>
@@ -296,11 +425,11 @@ export default function MotionContact() {
               >
                 <div className="flex justify-between">
                   <span className="text-gray-300">Lunes - Viernes:</span>
-                  <span className="font-semibold text-white">9:00 AM - 6:00 PM</span>
+                  <span className="font-semibold text-white">8:30 AM - 6:30 PM</span>
                 </div>
                 <div className="flex justify-between">
                   <span className="text-gray-300">Sábado:</span>
-                  <span className="font-semibold text-white">9:00 AM - 2:00 PM</span>
+                  <span className="font-semibold text-white">9:30 AM - 4:30 PM</span>
                 </div>
                 <div className="flex justify-between">
                   <span className="text-gray-300">Domingo:</span>
