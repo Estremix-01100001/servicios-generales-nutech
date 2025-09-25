@@ -17,14 +17,14 @@ export default function MotionServiciosDetallados() {
       <div className="container mx-auto px-8 sm:px-12 lg:px-16 relative z-10">
         {/* Section Badge */}
         <div className="text-center mb-8">
-          <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-primary-500 to-accent-500 border border-primary-400/30 rounded-full shadow-lg backdrop-blur-sm">
-            <span className="text-sm font-semibold text-white">Nuestros Servicios</span>
+          <div className="inline-flex items-center px-4 py-2 bg-accent-100 border border-accent-200 rounded-full">
+            <span className="text-accent-600 text-sm font-semibold">Nuestros Servicios</span>
           </div>
         </div>
 
         {/* Section Header */}
         <div className="text-center mb-20">
-          <h2 className="text-4xl md:text-6xl text-black">
+          <h2 className="text-4xl md:text-5xl font-bold text-secondary-800 mb-6">
             Transformamos su empresa con tecnología de vanguardia
           </h2>
           
