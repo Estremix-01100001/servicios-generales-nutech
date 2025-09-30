@@ -8,7 +8,7 @@ interface ServiceCardProps {
 export default function ServiceCard({ service }: ServiceCardProps) {
   return (
     <div className="service-card">
-      {/* Solo imagen ocupando toda la caja */}
+      {/* Imagen */}
       <div className="service-card-image-container">
         <img 
           src={service.image} 
@@ -21,6 +21,16 @@ export default function ServiceCard({ service }: ServiceCardProps) {
           }}
         />
       </div>
+      
+      {/* Título */}
+      <h3 className="service-card-title">
+        {service.title}
+      </h3>
+      
+      {/* Descripción */}
+      <p className="service-card-description">
+        {service.features[0]}
+      </p>
       
       {/* Botón opcional */}
       {service.hasButton && (
