@@ -17,10 +17,14 @@
 
 .service-card-title {
   @apply text-sm font-bold text-secondary-800 mb-1 leading-tight text-center;
+  display: block !important;
+  visibility: visible !important;
 }
 
 .service-card-description {
   @apply text-xs text-secondary-600 leading-tight text-center mb-2;
+  display: block !important;
+  visibility: visible !important;
 }
 
 .service-card-button-container {
