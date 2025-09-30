@@ -11,40 +11,27 @@ export interface Service {
 export const services: Service[] = [
   {
     id: "rpa",
-    title: "RPA",
-    subtitle: "Robotic Process Automation",
+    title: "",
+    subtitle: "",
     image: "/servicios-generales-nutech/rpa.png",
-    description: "SERVICIOS DE RPA E IA QUE AUMENTARÁN LA PRODUCTIVIDAD",
-    features: [
-      "Automatización robótica de procesos empresariales",
-      "Eliminación de tareas repetitivas y monótonas", 
-      "Aumento de productividad y eficiencia",
-      "Reducción de errores humanos"
-    ]
+    description: "",
+    features: []
   },
   {
     id: "human-robot",
-    title: "Colaboración Humano-Robot",
+    title: "",
+    subtitle: "",
     image: "/servicios-generales-nutech/human-robot.png",
-    description: "SOLUCIONES DE AUTOMATIZACIÓN PARA DIFERENTES INDUSTRIAS",
-    features: [
-      "Colaboración entre humanos y robots en procesos industriales",
-      "Optimización de flujos de trabajo híbridos",
-      "Interfaces intuitivas para operación conjunta",
-      "Capacitación para equipos de trabajo mixtos"
-    ],
+    description: "",
+    features: [],
     hasButton: true
   },
   {
     id: "ai",
-    title: "Inteligencia Artificial", 
+    title: "",
+    subtitle: "",
     image: "/servicios-generales-nutech/automatización.png",
-    description: "PIONEROS EN LA AUTOMATIZACIÓN DE PROCESOS EMPRESARIALES",
-    features: [
-      "Inteligencia artificial para toma de decisiones",
-      "Machine Learning y análisis predictivo",
-      "Chatbots y asistentes virtuales inteligentes",
-      "Procesamiento de lenguaje natural"
-    ]
+    description: "",
+    features: []
   }
 ];
