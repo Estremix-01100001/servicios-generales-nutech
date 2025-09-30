@@ -1,7 +1,7 @@
 /* Estilos específicos para el componente MotionServiciosDetallados */
 
 .servicios-section {
-  @apply py-20 bg-gradient-to-br from-white via-gray-50 to-white relative overflow-hidden;
+  @apply py-12 bg-gradient-to-br from-white via-gray-50 to-white relative overflow-hidden;
 }
 
 .servicios-background {
@@ -27,11 +27,11 @@
 }
 
 .servicios-container {
-  @apply container mx-auto px-8 sm:px-12 lg:px-16 relative z-10;
+  @apply container mx-auto px-4 sm:px-6 lg:px-8 relative z-10;
 }
 
 .servicios-badge {
-  @apply text-center mb-8;
+  @apply text-center mb-4;
 }
 
 .servicios-badge-inner {
@@ -43,11 +43,11 @@
 }
 
 .servicios-header {
-  @apply text-center mb-20;
+  @apply text-center mb-12;
 }
 
 .servicios-title {
-  @apply text-4xl md:text-5xl font-bold text-secondary-800 mb-12;
+  @apply text-4xl md:text-5xl font-bold text-secondary-800 mb-6;
 }
 
 .servicios-description {
@@ -55,23 +55,23 @@
 }
 
 .servicios-grid {
-  @apply grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12 mb-20;
+  @apply grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-6 mb-12;
 }
 
 .servicios-cta {
-  @apply text-center bg-gradient-to-r from-secondary-900 via-primary-900 to-secondary-800 rounded-3xl p-12 shadow-2xl;
+  @apply text-center bg-gradient-to-r from-secondary-900 via-primary-900 to-secondary-800 rounded-3xl p-6 shadow-2xl;
 }
 
 .servicios-cta-title {
-  @apply text-3xl md:text-4xl font-bold text-white mb-6;
+  @apply text-2xl md:text-3xl font-bold text-white mb-4;
 }
 
 .servicios-cta-description {
-  @apply text-xl text-gray-300 mb-8 max-w-2xl mx-auto;
+  @apply text-lg text-gray-300 mb-6 max-w-2xl mx-auto;
 }
 
 .servicios-cta-button {
-  @apply inline-flex items-center bg-gradient-to-r from-primary-600 to-accent-600 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:from-primary-700 hover:to-accent-700 transition-all duration-300 transform hover:scale-105 shadow-lg;
+  @apply inline-flex items-center bg-gradient-to-r from-primary-600 to-accent-600 text-white px-6 py-3 rounded-xl font-semibold text-base hover:from-primary-700 hover:to-accent-700 transition-all duration-300 transform hover:scale-105 shadow-lg;
 }
 
 .servicios-cta-button-icon {
