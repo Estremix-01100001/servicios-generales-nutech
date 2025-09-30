@@ -1,7 +1,7 @@
 /* Estilos específicos para el componente MotionServiciosDetallados */
 
 .servicios-section {
-  @apply py-8 bg-gradient-to-br from-white via-gray-50 to-white relative overflow-hidden;
+  @apply py-2 bg-gradient-to-br from-white via-gray-50 to-white relative overflow-hidden;
 }
 
 .servicios-background {
@@ -27,15 +27,15 @@
 }
 
 .servicios-container {
-  @apply container mx-auto px-2 sm:px-3 lg:px-4 relative z-10;
+  @apply container mx-auto px-1 relative z-10;
 }
 
 .servicios-badge {
-  @apply text-center mb-2;
+  @apply text-center mb-1;
 }
 
 .servicios-badge-inner {
-  @apply inline-flex items-center px-3 py-1.5 bg-accent-100 border border-accent-200 rounded-full;
+  @apply inline-flex items-center px-2 py-1 bg-accent-100 border border-accent-200 rounded-full;
 }
 
 .servicios-badge-text {
@@ -43,37 +43,37 @@
 }
 
 .servicios-header {
-  @apply text-center mb-8;
+  @apply text-center mb-3;
 }
 
 .servicios-title {
-  @apply text-3xl md:text-4xl font-bold text-secondary-800 mb-4;
+  @apply text-2xl md:text-3xl font-bold text-secondary-800 mb-2;
 }
 
 .servicios-description {
-  @apply text-lg text-secondary-600 max-w-3xl mx-auto leading-relaxed;
+  @apply text-sm text-secondary-600 max-w-xl mx-auto leading-tight;
 }
 
 .servicios-grid {
-  @apply grid grid-cols-1 lg:grid-cols-3 gap-3 lg:gap-4 mb-8;
+  @apply grid grid-cols-1 lg:grid-cols-3 gap-1 lg:gap-2 mb-3;
 }
 
 .servicios-cta {
-  @apply text-center bg-gradient-to-r from-secondary-900 via-primary-900 to-secondary-800 rounded-2xl p-4 shadow-2xl;
+  @apply text-center bg-gradient-to-r from-secondary-900 via-primary-900 to-secondary-800 rounded-lg p-2 shadow-2xl;
 }
 
 .servicios-cta-title {
-  @apply text-xl md:text-2xl font-bold text-white mb-3;
+  @apply text-lg md:text-xl font-bold text-white mb-1;
 }
 
 .servicios-cta-description {
-  @apply text-base text-gray-300 mb-4 max-w-xl mx-auto;
+  @apply text-xs text-gray-300 mb-2 max-w-sm mx-auto;
 }
 
 .servicios-cta-button {
-  @apply inline-flex items-center bg-gradient-to-r from-primary-600 to-accent-600 text-white px-4 py-2 rounded-lg font-semibold text-sm hover:from-primary-700 hover:to-accent-700 transition-all duration-300 transform hover:scale-105 shadow-lg;
+  @apply inline-flex items-center bg-gradient-to-r from-primary-600 to-accent-600 text-white px-2 py-1 rounded-md font-semibold text-xs hover:from-primary-700 hover:to-accent-700 transition-all duration-300 transform hover:scale-105 shadow-lg;
 }
 
 .servicios-cta-button-icon {
-  @apply w-4 h-4 ml-1;
+  @apply w-3 h-3 ml-0.5;
 }
