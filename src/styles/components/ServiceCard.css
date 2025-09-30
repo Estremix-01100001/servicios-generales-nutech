@@ -7,36 +7,12 @@
   min-width: 180px;
 }
 
-.service-card-header {
-  @apply mb-1;
-}
-
 .service-card-image-container {
-  @apply w-full h-16 bg-secondary-800 rounded-md flex items-center justify-center mb-1 overflow-hidden;
+  @apply w-full h-32 bg-secondary-800 rounded-md flex items-center justify-center mb-1 overflow-hidden;
 }
 
 .service-card-image {
   @apply w-full h-full object-contain p-1;
-}
-
-.service-card-fallback {
-  @apply text-center text-white;
-}
-
-.service-card-fallback-title {
-  @apply text-lg sm:text-xl font-bold mb-1;
-}
-
-.service-card-fallback-subtitle {
-  @apply text-xs text-gray-300;
-}
-
-.service-card-title {
-  @apply text-sm font-bold text-secondary-800 mb-1 leading-tight;
-}
-
-.service-card-description {
-  @apply text-xs text-secondary-600 leading-tight;
 }
 
 .service-card-button-container {

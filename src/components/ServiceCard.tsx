@@ -8,38 +8,19 @@ interface ServiceCardProps {
 export default function ServiceCard({ service }: ServiceCardProps) {
   return (
     <div className="service-card">
-      {/* Header con imagen y título */}
-      <div className="service-card-header">
-        <div className="service-card-image-container">
-          <img 
-            src={service.image} 
-            alt={service.title} 
-            className="service-card-image"
-            loading="lazy"
-            onError={(e) => {
-              console.log('Error loading image:', service.image);
-              e.currentTarget.style.display = 'none';
-            }}
-          />
-          {/* Fallback si la imagen no carga */}
-          <div className="service-card-fallback">
-            <div className="service-card-fallback-title">{service.title}</div>
-            {service.subtitle && (
-              <div className="service-card-fallback-subtitle">{service.subtitle}</div>
-            )}
-          </div>
-        </div>
+      {/* Solo imagen ocupando toda la caja */}
+      <div className="service-card-image-container">
+        <img 
+          src={service.image} 
+          alt={service.title} 
+          className="service-card-image"
+          loading="lazy"
+          onError={(e) => {
+            console.log('Error loading image:', service.image);
+            e.currentTarget.style.display = 'none';
+          }}
+        />
       </div>
-      
-      {/* Título principal */}
-      <h3 className="service-card-title">
-        {service.description}
-      </h3>
-      
-      {/* Descripción */}
-      <p className="service-card-description">
-        {service.features[0]}
-      </p>
       
       {/* Botón opcional */}
       {service.hasButton && (
