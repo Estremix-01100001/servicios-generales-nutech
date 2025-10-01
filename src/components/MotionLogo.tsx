@@ -9,7 +9,7 @@ export default function MotionLogo() {
       transition={{ duration: 0.6, ease: "easeOut" }}
     >
       <motion.img 
-        src="https://raw.githubusercontent.com/Estremix-01100001/servicios-generales-nutech/main/public/favicon.png" 
+        src="/servicios-generales-nutech/favicon.png" 
         alt="Nutech" 
         className="w-32 h-32"
         whileHover={{ 
