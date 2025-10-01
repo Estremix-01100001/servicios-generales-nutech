@@ -1,0 +1,274 @@
+/* Estilos específicos para el componente MotionContact */
+
+.contact-section {
+  @apply pt-0 pb-0 bg-gradient-to-br from-secondary-900 via-primary-900 to-secondary-800 relative overflow-hidden;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.contact-background {
+  @apply absolute inset-0 opacity-10;
+}
+
+.contact-background-pattern {
+  @apply absolute inset-0 bg-gradient-to-r from-primary-600/20 to-accent-600/20;
+}
+
+.contact-background-overlay {
+  @apply absolute top-0 left-0 w-full h-full opacity-20;
+}
+
+.contact-background-gradient {
+  @apply w-full h-full bg-gradient-to-br from-primary-400/10 to-accent-400/10;
+}
+
+.contact-container {
+  @apply container mx-auto px-8 relative z-10;
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+}
+
+.contact-content {
+  @apply mx-auto;
+  max-width: 1400px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 16px !important;
+  box-sizing: border-box !important;
+}
+
+@media (max-width: 1024px) {
+  .contact-content {
+    max-width: 600px !important;
+  }
+}
+
+.contact-badge {
+  @apply text-center mb-4;
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+.contact-badge-inner {
+  @apply inline-flex items-center px-4 py-2 bg-gradient-to-r from-primary-500 to-accent-500 border border-primary-400/30 rounded-full shadow-lg backdrop-blur-sm;
+}
+
+.contact-badge-text {
+  @apply text-white text-sm font-semibold;
+}
+
+.contact-header {
+  @apply text-center mb-8;
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+.contact-title {
+  @apply font-bold text-white bg-gradient-to-r from-white via-primary-100 to-accent-200 bg-clip-text text-transparent;
+  font-size: 2.25rem !important;
+  line-height: 1.2 !important;
+  margin: 0 0 16px 0 !important;
+  text-align: center !important;
+}
+
+.contact-description {
+  @apply text-gray-300 leading-relaxed;
+  font-size: 1rem !important;
+  line-height: 1.6 !important;
+  margin: 0 0 32px 0 !important;
+  text-align: center !important;
+  max-width: 600px !important;
+}
+
+/* Grid de Formulario e Información */
+.contact-grid {
+  @apply grid gap-8 w-full;
+  grid-template-columns: 1fr 1fr !important;
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+}
+
+@media (max-width: 1024px) {
+  .contact-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+}
+
+/* Contenedor de Información */
+.contact-info-container {
+  @apply space-y-6;
+}
+
+.contact-info-card {
+  @apply bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.contact-info-title {
+  @apply text-xl font-bold text-white mb-6;
+}
+
+.contact-info-item {
+  @apply flex items-start gap-4 mb-4;
+}
+
+.contact-info-icon {
+  @apply flex items-center justify-center w-12 h-12 bg-accent-500/20 rounded-lg flex-shrink-0;
+  color: white !important;
+}
+
+.contact-info-label {
+  @apply text-sm font-semibold text-gray-300 mb-1;
+}
+
+.contact-info-text {
+  @apply text-base text-white;
+}
+
+/* Horarios */
+.contact-schedule-item {
+  @apply flex justify-between items-center py-3 border-b border-white/10;
+}
+
+.contact-schedule-item:last-child {
+  @apply border-b-0;
+}
+
+.contact-schedule-day {
+  @apply text-gray-300 font-medium;
+}
+
+.contact-schedule-time {
+  @apply text-white font-semibold;
+}
+
+/* Tarjeta CTA */
+.contact-cta-card {
+  @apply bg-gradient-to-br from-accent-600 to-primary-700 rounded-2xl p-6 text-center;
+  box-shadow: 0 10px 40px rgba(249, 115, 22, 0.3);
+}
+
+.contact-cta-title {
+  @apply text-xl font-bold text-white mb-3;
+}
+
+.contact-cta-description {
+  @apply text-white/90 mb-4 text-sm;
+}
+
+.contact-cta-button {
+  @apply inline-flex items-center justify-center px-6 py-3 bg-white text-accent-700 font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1;
+}
+
+.contact-form-container {
+  @apply bg-white/95 backdrop-blur-sm rounded-2xl shadow-2xl border border-white/20;
+  transition: transform 0.3s ease;
+  width: 100% !important;
+  max-width: 100% !important;
+  padding: 32px !important;
+  margin: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  box-sizing: border-box !important;
+}
+
+.contact-form-container:hover {
+  @apply scale-105;
+}
+
+.contact-form-title {
+  @apply text-2xl font-bold text-gray-800 mb-8 bg-gradient-to-r from-primary-600 to-accent-600 bg-clip-text text-transparent text-center;
+}
+
+.contact-form {
+  @apply space-y-6;
+}
+
+.contact-form-fields {
+  @apply space-y-5;
+}
+
+.contact-field {
+  @apply block;
+}
+
+.contact-label {
+  @apply block text-sm font-semibold text-gray-700 mb-2;
+}
+
+.contact-input {
+  @apply w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-300 bg-white/80 backdrop-blur-sm text-base;
+}
+
+.contact-input.error {
+  @apply border-red-500;
+}
+
+.contact-input:not(.error) {
+  @apply border-gray-300;
+}
+
+.contact-textarea {
+  @apply w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-300 bg-white/80 backdrop-blur-sm resize-none text-base;
+  min-height: 120px !important;
+}
+
+.contact-textarea.error {
+  @apply border-red-500;
+}
+
+.contact-textarea:not(.error) {
+  @apply border-gray-300;
+}
+
+.contact-error {
+  @apply text-red-500 text-sm mt-2;
+}
+
+.contact-submit-button {
+  @apply w-full font-bold py-4 px-6 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 text-base;
+  margin-top: 1.5rem !important;
+}
+
+.contact-submit-button.submitting {
+  @apply bg-gray-400 cursor-not-allowed;
+}
+
+.contact-submit-button:not(.submitting) {
+  @apply bg-gradient-to-r from-primary-600 to-accent-600 text-white hover:from-primary-700 hover:to-accent-700;
+}
+
+.contact-privacy {
+  @apply text-sm text-gray-600 text-center;
+  margin-top: 1.5rem !important;
+  line-height: 1.6 !important;
+}
+
+.contact-privacy-link {
+  @apply text-primary-600 hover:text-primary-700 underline font-semibold;
+}
+
+/* Responsive design para el formulario */
+@media (max-width: 768px) {
+  .contact-form-container {
+    width: 90% !important;
+    max-width: 90% !important;
+    min-width: 280px !important;
+    padding: 20px !important;
+    margin: 16px auto 0 auto !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-form-container {
+    width: 95% !important;
+    max-width: 95% !important;
+    min-width: 260px !important;
+    padding: 16px !important;
+  }
+}

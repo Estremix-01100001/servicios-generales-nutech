@@ -1,59 +1,64 @@
 ---
 import { companyInfo } from '../../database/data';
+import MotionNav from '../MotionNav';
+import MotionLogo from '../MotionLogo';
+import MobileMenu from '../MobileMenu';
 ---
 
-<header class="bg-secondary-900/90 backdrop-blur-sm sticky top-0 z-50">
-  <nav class="container mx-auto px-4 py-3">
-    <div class="flex items-center justify-between">
+<header id="main-header" class="bg-transparent backdrop-blur-md fixed top-0 left-0 right-0 z-50 transition-all duration-500 border-b border-transparent">
+  <nav class="w-full lg:w-[1200px] mx-auto px-4 sm:px-8 lg:px-12">
+    <div class="flex items-center justify-between py-2">
       <!-- Logo -->
-      <div class="flex items-center">
-        <img src="/servicios-generales-nutech/favicon.png" alt="Nutech" class="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-lg" />
+      <div class="flex-shrink-0">
+        <MotionLogo client:load />
       </div>
 
       <!-- Desktop Navigation -->
-      <div class="hidden lg:flex items-center space-x-6 xl:space-x-8">
-        <a href="#inicio" class="nav-link text-sm xl:text-base">Inicio</a>
-        <a href="#crecimiento" class="nav-link text-sm xl:text-base">Crecimiento</a>
-        <a href="#servicios-detallados" class="nav-link text-sm xl:text-base">Servicios</a>
-        <a href="#partners" class="nav-link text-sm xl:text-base">Partners</a>
-        <a href="#nutech-info" class="nav-link text-sm xl:text-base">Nutech</a>
-        <a href="#perspectiva" class="nav-link text-sm xl:text-base">Perspectiva</a>
-        <a href="#contacto" class="nav-link text-sm xl:text-base">Contacto</a>
-      </div>
+      <MotionNav client:load />
 
-      <!-- Mobile Menu Button -->
-      <button id="mobile-menu-button" class="lg:hidden p-2 rounded-lg hover:bg-white/10 transition-colors">
-        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-        </svg>
-      </button>
-    </div>
-
-    <!-- Mobile Navigation -->
-    <div id="mobile-menu" class="lg:hidden hidden mt-4 pb-4 border-t border-white/20">
-      <div class="flex flex-col space-y-3 pt-4">
-        <a href="#inicio" class="nav-link text-base py-2">Inicio</a>
-        <a href="#crecimiento" class="nav-link text-base py-2">Crecimiento</a>
-        <a href="#servicios-detallados" class="nav-link text-base py-2">Servicios</a>
-        <a href="#partners" class="nav-link text-base py-2">Partners</a>
-        <a href="#nutech-info" class="nav-link text-base py-2">Nutech</a>
-        <a href="#perspectiva" class="nav-link text-base py-2">Perspectiva</a>
-        <a href="#contacto" class="nav-link text-base py-2">Contacto</a>
-      </div>
+      <!-- Mobile Menu -->
+      <MobileMenu client:load />
     </div>
   </nav>
 </header>
 
 <script>
-  // Mobile menu toggle
-  document.addEventListener('DOMContentLoaded', function() {
-    const mobileMenuButton = document.getElementById('mobile-menu-button');
-    const mobileMenu = document.getElementById('mobile-menu');
+  document.addEventListener('DOMContentLoaded', () => {
+    const header = document.getElementById('main-header');
+    const heroSection = document.getElementById('inicio');
     
-    if (mobileMenuButton && mobileMenu) {
-      mobileMenuButton.addEventListener('click', function() {
-        mobileMenu.classList.toggle('hidden');
-      });
+    // Función para cambiar el color del header según la sección
+    function updateHeaderColor() {
+      const scrollPosition = window.scrollY;
+      const heroHeight = heroSection ? heroSection.offsetHeight : 0;
+      const crecimientoSection = document.getElementById('crecimiento');
+      const crecimientoTop = crecimientoSection ? crecimientoSection.offsetTop : 0;
+      const crecimientoHeight = crecimientoSection ? crecimientoSection.offsetHeight : 0;
+      
+      // Si estamos en la hero section (transparente)
+      if (scrollPosition < heroHeight - 100) {
+        header.classList.remove('bg-black/80', 'bg-black/90', 'border-orange-500/30');
+        header.classList.add('bg-transparent', 'backdrop-blur-md', 'border-transparent');
+      }
+      // Si estamos en la sección de crecimiento (negro opaco con borde naranja)
+      else if (scrollPosition >= crecimientoTop - 100 && scrollPosition < crecimientoTop + crecimientoHeight + 100) {
+        header.classList.remove('bg-transparent', 'bg-black/90', 'border-transparent');
+        header.classList.add('bg-black/80', 'backdrop-blur-md', 'border-orange-500/30');
+      }
+      // Todas las demás secciones (mismo color que crecimiento)
+      else {
+        header.classList.remove('bg-transparent', 'bg-black/90', 'border-transparent');
+        header.classList.add('bg-black/80', 'backdrop-blur-md', 'border-orange-500/30');
+      }
     }
+    
+    // Ejecutar al cargar la página
+    updateHeaderColor();
+    
+    // Ejecutar al hacer scroll
+    window.addEventListener('scroll', updateHeaderColor);
+    
+    // Ejecutar al cambiar el tamaño de ventana
+    window.addEventListener('resize', updateHeaderColor);
   });
 </script>

@@ -1,0 +1,113 @@
+/* Estilos específicos para el Footer */
+
+.footer {
+  @apply bg-secondary-900 text-white;
+}
+
+.footer-container {
+  @apply container mx-auto px-12 sm:px-16 py-12;
+}
+
+.footer-grid {
+  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8;
+}
+
+.footer-company {
+  @apply space-y-4;
+}
+
+.footer-company-header {
+  @apply flex items-center space-x-3;
+}
+
+.footer-logo {
+  @apply w-20 h-20 rounded-lg;
+}
+
+.footer-company-info {
+  @apply text-xl font-bold;
+}
+
+.footer-company-subtitle {
+  @apply text-sm text-gray-400;
+}
+
+.footer-description {
+  @apply text-gray-400 leading-relaxed;
+}
+
+.footer-social {
+  @apply flex space-x-4;
+}
+
+.footer-social-link {
+  @apply text-gray-400 hover:text-primary-400 transition-colors duration-300;
+}
+
+.footer-social-icon {
+  @apply w-6 h-6;
+}
+
+.footer-section {
+  @apply space-y-4;
+}
+
+.footer-section-title {
+  @apply text-lg font-semibold text-white mb-4;
+}
+
+.footer-links {
+  @apply space-y-2;
+}
+
+.footer-link {
+  @apply text-gray-400 hover:text-primary-400 transition-colors duration-300;
+}
+
+.footer-contact-info {
+  @apply space-y-3;
+}
+
+.footer-contact-item {
+  @apply flex items-start space-x-3;
+}
+
+.footer-contact-icon {
+  @apply w-5 h-5 text-primary-400 mt-1 flex-shrink-0;
+}
+
+.footer-contact-text {
+  @apply text-gray-400;
+}
+
+.footer-business-hours {
+  @apply space-y-2 text-sm;
+}
+
+.footer-hours-item {
+  @apply flex justify-between;
+}
+
+.footer-hours-label {
+  @apply text-gray-400;
+}
+
+.footer-hours-value {
+  @apply text-white;
+}
+
+.footer-bottom {
+  @apply border-t border-gray-800 mt-8 pt-8;
+}
+
+.footer-bottom-content {
+  @apply flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0;
+}
+
+.footer-copyright {
+  @apply text-gray-400 text-sm;
+}
+
+.footer-legal-links {
+  @apply flex space-x-6 text-sm;
+}

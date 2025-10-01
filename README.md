@@ -172,7 +172,7 @@ Este proyecto está bajo la Licencia MIT. Ver `LICENSE` para más detalles.
 
 Para soporte, contacta a:
 - Email: info@serviciosgenerales.com
-- Teléfono: +1 (555) 123-4567
+- Teléfono: +1 (813) 595-4933
 
 ---
 

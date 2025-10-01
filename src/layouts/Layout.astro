@@ -14,21 +14,38 @@ const { title, description = "Servicios Generales Pro - Soluciones integrales pa
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/png" href="/favicon.png" />
-    <link rel="shortcut icon" href="/favicon.png" />
-    <link rel="apple-touch-icon" href="/favicon.png" />
+    <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/Estremix-01100001/servicios-generales-nutech/main/public/favicon.png" />
+    <link rel="shortcut icon" href="https://raw.githubusercontent.com/Estremix-01100001/servicios-generales-nutech/main/public/favicon.png" />
+    <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/Estremix-01100001/servicios-generales-nutech/main/public/favicon.png" />
     <meta name="generator" content={Astro.generator} />
     
     <!-- SEO Meta Tags -->
     <title>{title}</title>
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Nutech - Transformación Digital" />
+    <meta name="keywords" content="transformación digital, RPA, automatización, inteligencia artificial, procesos de negocio, consultoría tecnológica" />
+    
+    <!-- Open Graph Meta Tags -->
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={image} />
     <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://Estremix-01100001.github.io/servicios-generales-nutech" />
+    <meta property="og:site_name" content="Nutech - Transformación Digital" />
+    <meta property="og:locale" content="es_ES" />
+    
+    <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={image} />
+    <meta name="twitter:site" content="@nutech" />
+    <meta name="twitter:creator" content="@nutech" />
+    
+    <!-- Additional SEO -->
+    <link rel="canonical" href="https://Estremix-01100001.github.io/servicios-generales-nutech" />
+    <meta name="theme-color" content="#3B82F6" />
+    <meta name="msapplication-TileColor" content="#3B82F6" />
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -37,11 +54,11 @@ const { title, description = "Servicios Generales Pro - Soluciones integrales pa
     
     <!-- Styles -->
     <link rel="stylesheet" href="/src/styles/global.css" />
-    <link rel="stylesheet" href="/src/styles/animations.css" />
-    <link rel="stylesheet" href="/src/styles/components.css" />
   </head>
-  <body class="font-sans antialiased">
-    <slot />
+  <body class="font-sans antialiased overflow-x-hidden max-w-full">
+    <div class="w-full min-h-screen overflow-x-hidden">
+      <slot />
+    </div>
     
     <!-- Scripts -->
     <script>
@@ -60,6 +77,23 @@ const { title, description = "Servicios Generales Pro - Soluciones integrales pa
             }
           });
         });
+        
+        // Forzar overflow-x hidden en móvil
+        function preventHorizontalScroll() {
+          document.body.style.overflowX = 'hidden';
+          document.documentElement.style.overflowX = 'hidden';
+          
+          // Prevenir scroll horizontal en todos los elementos
+          const allElements = document.querySelectorAll('*');
+          allElements.forEach(el => {
+            el.style.maxWidth = '100vw';
+          });
+        }
+        
+        preventHorizontalScroll();
+        
+        // Re-aplicar en resize
+        window.addEventListener('resize', preventHorizontalScroll);
       });
     </script>
   </body>

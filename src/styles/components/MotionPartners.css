@@ -1,0 +1,353 @@
+/* Estilos específicos para el componente MotionPartners */
+
+.partners-section {
+  @apply pt-0 pb-0 bg-gradient-to-b from-white via-blue-50 to-white overflow-hidden;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.partners-container {
+  @apply container mx-auto px-8 relative z-10;
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+}
+
+.partners-badge {
+  @apply text-center mb-4;
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+.partners-badge-inner {
+  @apply inline-flex items-center px-3 py-1.5 sm:px-4 sm:py-2 bg-accent-100 border border-accent-200 rounded-full;
+}
+
+.partners-badge-text {
+  @apply text-accent-600 text-xs sm:text-sm font-semibold;
+}
+
+.partners-header {
+  @apply text-center mb-8;
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.partners-title {
+  @apply font-bold text-secondary-800;
+  font-size: 2.25rem !important;
+  line-height: 1.2 !important;
+  margin: 0 0 16px 0 !important;
+  text-align: center !important;
+  width: 100% !important;
+  max-width: 800px !important;
+}
+
+.partners-description {
+  @apply text-secondary-600 leading-relaxed;
+  font-size: 1rem !important;
+  line-height: 1.6 !important;
+  margin: 0 0 32px 0 !important;
+  text-align: center !important;
+  max-width: 800px !important;
+  width: 100% !important;
+}
+
+.partners-subtitle {
+  @apply font-bold text-secondary-700;
+  font-size: 1.875rem !important;
+  line-height: 1.2 !important;
+  margin: 0 0 24px 0 !important;
+  text-align: center !important;
+  width: 100% !important;
+  max-width: 800px !important;
+}
+
+/* Wrapper del Carrusel - Centrado con márgenes */
+.certifications-carousel-wrapper {
+  @apply relative mb-8 mx-auto;
+  width: 100% !important;
+  max-width: 1200px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0 3rem !important;
+}
+
+@media (max-width: 1024px) {
+  .certifications-carousel-wrapper {
+    padding: 0 2rem !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .certifications-carousel-wrapper {
+    padding: 0 1rem !important;
+  }
+}
+
+/* Botones de navegación */
+.carousel-nav-button {
+  @apply absolute z-20 bg-white rounded-full shadow-xl hover:shadow-2xl transition-all duration-300;
+  width: 48px !important;
+  height: 48px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border: 2px solid #e5e7eb !important;
+  color: #374151 !important;
+}
+
+.carousel-nav-button:hover {
+  @apply bg-primary-600 border-primary-600;
+  color: white !important;
+  transform: scale(1.1);
+}
+
+.carousel-nav-button.left {
+  left: 20px !important;
+}
+
+.carousel-nav-button.right {
+  right: 20px !important;
+}
+
+@media (max-width: 768px) {
+  .carousel-nav-button {
+    width: 40px !important;
+    height: 40px !important;
+  }
+  
+  .carousel-nav-button.left {
+    left: 10px !important;
+  }
+  
+  .carousel-nav-button.right {
+    right: 10px !important;
+  }
+}
+
+/* Contenedor del Carrusel */
+.certifications-carousel-container {
+  @apply relative;
+  width: 100% !important;
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  scroll-behavior: smooth !important;
+  padding: 1.5rem 4rem !important;
+  -ms-overflow-style: none !important;
+  scrollbar-width: none !important;
+}
+
+.certifications-carousel-container::-webkit-scrollbar {
+  display: none !important;
+}
+
+.certifications-carousel-row {
+  @apply flex gap-6;
+  width: fit-content !important;
+  padding: 0 2rem !important;
+}
+
+/* Badge de Certificación */
+.certification-badge {
+  @apply bg-white rounded-xl p-6 shadow-lg border border-gray-100 transition-all duration-300;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  min-height: 180px !important;
+  min-width: 200px !important;
+  max-width: 200px !important;
+  flex-shrink: 0 !important;
+}
+
+.certification-badge:hover {
+  @apply shadow-2xl border-primary-200;
+  transform: translateY(-8px) scale(1.02);
+}
+
+.certification-logo {
+  @apply mb-4;
+  width: 80px !important;
+  height: 80px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* Animación de estrella: de negro a azul con brillo y parpadeo */
+.certification-star .star-fill {
+  color: #111827 !important;
+  transition: all 0.4s ease-in-out;
+  filter: drop-shadow(0 0 0 transparent);
+}
+
+.certification-star .star-stroke {
+  color: #111827 !important;
+  transition: all 0.4s ease-in-out;
+}
+
+.certification-badge:hover .certification-star .star-fill {
+  color: #2563eb !important;
+  animation: starGlowBlink 1.2s ease-in-out infinite;
+  filter: drop-shadow(0 0 8px #3b82f6) drop-shadow(0 0 12px #60a5fa);
+}
+
+.certification-badge:hover .certification-star .star-stroke {
+  color: #2563eb !important;
+  animation: starBlink 1.2s ease-in-out infinite;
+}
+
+.certification-badge:hover .certification-logo {
+  animation: starPulse 1.2s ease-in-out infinite;
+}
+
+/* Keyframe para brillo azul con parpadeo */
+@keyframes starGlowBlink {
+  0% {
+    filter: drop-shadow(0 0 8px #3b82f6) drop-shadow(0 0 12px #60a5fa);
+    opacity: 1;
+  }
+  25% {
+    filter: drop-shadow(0 0 12px #2563eb) drop-shadow(0 0 20px #3b82f6) drop-shadow(0 0 28px #60a5fa);
+    opacity: 1;
+  }
+  50% {
+    filter: drop-shadow(0 0 16px #2563eb) drop-shadow(0 0 24px #3b82f6) drop-shadow(0 0 32px #60a5fa);
+    opacity: 0.85;
+  }
+  75% {
+    filter: drop-shadow(0 0 12px #2563eb) drop-shadow(0 0 20px #3b82f6) drop-shadow(0 0 28px #60a5fa);
+    opacity: 1;
+  }
+  100% {
+    filter: drop-shadow(0 0 8px #3b82f6) drop-shadow(0 0 12px #60a5fa);
+    opacity: 1;
+  }
+}
+
+/* Keyframe para parpadeo del stroke */
+@keyframes starBlink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+/* Keyframe para pulso de escala */
+@keyframes starPulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+.certification-logo-img {
+  @apply w-full h-full object-contain;
+  max-width: 80px !important;
+  max-height: 80px !important;
+}
+
+.certification-name {
+  @apply font-bold text-lg mb-2 text-gray-900;
+  transition: color 0.3s ease;
+}
+
+.certification-badge:hover .certification-name {
+  @apply text-primary-600;
+}
+
+.certification-type {
+  @apply text-sm text-secondary-500 font-medium;
+}
+
+/* Separador */
+.partners-divider {
+  @apply w-full border-t border-gray-200 my-12;
+  max-width: 1200px !important;
+  margin: 3rem auto !important;
+}
+
+.partners-loop-container {
+  @apply relative mx-auto;
+  width: 100% !important;
+  max-width: 800px !important;
+  min-width: 320px !important;
+  height: 70px !important;
+  overflow: hidden;
+  margin: 24px auto 0 auto !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  box-sizing: border-box !important;
+}
+
+.partners-loop {
+  @apply flex animate-scroll;
+}
+
+.partners-set {
+  @apply flex items-center space-x-4 flex-shrink-0;
+}
+
+.partners-card {
+  @apply w-20 h-10 sm:w-24 sm:h-12 lg:w-28 lg:h-14 bg-white rounded-xl shadow-lg flex items-center justify-center hover:shadow-xl transition-all duration-300;
+}
+
+.partners-card:hover {
+  @apply scale-105;
+  transform: translateY(-2px);
+}
+
+.partners-card-text {
+  @apply font-bold text-sm sm:text-base lg:text-lg text-center whitespace-nowrap;
+}
+
+.partners-card-text.blue {
+  @apply text-blue-600;
+}
+
+.partners-card-text.secondary {
+  @apply text-secondary-600;
+}
+
+.partners-card-text.green {
+  @apply text-green-600;
+}
+
+.partners-card-text.purple {
+  @apply text-purple-600;
+}
+
+.partners-card-text.red {
+  @apply text-red-600;
+}
+
+/* Animación del scroll infinito */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll {
+  animation: scroll 30s linear infinite;
+}
+
+.animate-scroll:hover {
+  animation-play-state: paused;
+}

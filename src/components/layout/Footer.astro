@@ -1,9 +1,10 @@
 ---
 import { companyInfo } from '../../database/data';
+import { mainServices, additionalServices } from '../../data/services';
 ---
 
 <footer class="bg-secondary-900 text-white">
-  <div class="container mx-auto px-4 py-12">
+  <div class="w-full lg:w-[1200px] mx-auto px-4 sm:px-8 lg:px-12 py-12">
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
       <!-- Company Info -->
       <div class="space-y-4">
@@ -46,11 +47,11 @@ import { companyInfo } from '../../database/data';
       <div>
         <h3 class="footer-section-title">Servicios</h3>
         <ul class="space-y-2">
-          <li><a href="#servicios" class="footer-link">Limpieza Residencial</a></li>
-          <li><a href="#servicios" class="footer-link">Limpieza Comercial</a></li>
-          <li><a href="#servicios" class="footer-link">Mantenimiento Eléctrico</a></li>
-          <li><a href="#servicios" class="footer-link">Jardinería</a></li>
-          <li><a href="#servicios" class="footer-link">Seguridad</a></li>
+          <li><a href="#servicios-detallados" class="footer-link">RPA y Automatización</a></li>
+          <li><a href="#servicios-adicionales" class="footer-link">Servicios Adicionales</a></li>
+          <li><a href="#servicios-detallados" class="footer-link">Inteligencia Artificial</a></li>
+          <li><a href="#servicios-adicionales" class="footer-link">Transformación Digital</a></li>
+          <li><a href="#servicios-adicionales" class="footer-link">Consultoría Tecnológica</a></li>
         </ul>
       </div>
 
@@ -104,7 +105,7 @@ import { companyInfo } from '../../database/data';
     <div class="border-t border-gray-800 mt-8 pt-8">
       <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
         <p class="text-gray-400 text-sm">
-          © 2024 {companyInfo.name}. Todos los derechos reservados.
+          © 2025 {companyInfo.name}. Todos los derechos reservados.
         </p>
         <div class="flex space-x-6 text-sm">
           <a href="#" class="footer-link">Política de Privacidad</a>

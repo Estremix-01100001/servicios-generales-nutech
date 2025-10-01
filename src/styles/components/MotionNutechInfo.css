@@ -1,0 +1,151 @@
+/* Estilos específicos para el componente MotionNutechInfo */
+
+.nutech-section {
+  @apply pt-0 pb-0 bg-gradient-to-br from-white via-gray-50 to-white relative overflow-hidden;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.nutech-container {
+  @apply container mx-auto px-8 relative z-10;
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+}
+
+.nutech-badge {
+  @apply text-center mb-4;
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+.nutech-badge-inner {
+  @apply inline-flex items-center px-3 py-1 bg-accent-100 border border-accent-200 rounded-full;
+}
+
+.nutech-badge-text {
+  @apply text-accent-600 text-sm font-semibold;
+}
+
+.nutech-header {
+  @apply text-center mb-8;
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.nutech-title {
+  @apply font-bold text-secondary-800;
+  font-size: 2.25rem !important;
+  line-height: 1.2 !important;
+  margin: 0 0 16px 0 !important;
+  text-align: center !important;
+  width: 100% !important;
+  max-width: 800px !important;
+}
+
+.nutech-description {
+  @apply text-secondary-600 leading-relaxed;
+  font-size: 1rem !important;
+  line-height: 1.6 !important;
+  margin: 0 0 20px 0 !important;
+  text-align: center !important;
+  max-width: 800px !important;
+  width: 100% !important;
+}
+
+.nutech-stats-container {
+  display: grid !important;
+  grid-template-columns: repeat(1, 1fr) !important;
+  gap: 32px !important;
+  margin-top: 40px !important;
+  max-width: 800px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  margin-bottom: 32px !important;
+  justify-items: center !important;
+}
+
+@media (min-width: 768px) {
+  .nutech-stats-container {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+.nutech-stat-card {
+  background-color: white !important;
+  border-radius: 12px !important;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05) !important;
+  width: 300px !important;
+  max-width: 300px !important;
+  min-width: 280px !important;
+  height: 200px !important;
+  padding: 24px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  box-sizing: border-box !important;
+  border: 1px solid rgba(0, 0, 0, 0.05) !important;
+  margin: 8px !important;
+}
+
+.nutech-stat-card:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04) !important;
+}
+
+.nutech-stat-icon {
+  width: 40px !important;
+  height: 40px !important;
+  margin-bottom: 12px !important;
+  color: #3b82f6 !important;
+}
+
+.nutech-stat-title {
+  @apply font-bold text-secondary-800;
+  font-size: 1.125rem !important;
+  line-height: 1.3 !important;
+  text-align: center !important;
+  margin: 0 0 8px 0 !important;
+}
+
+.nutech-stat-text {
+  @apply font-medium text-secondary-600;
+  font-size: 0.875rem !important;
+  line-height: 1.4 !important;
+  text-align: center !important;
+  margin: 0 !important;
+}
+
+/* Responsive adjustments for mobile */
+@media (max-width: 768px) {
+  .nutech-stats-container {
+    gap: 16px !important;
+    margin-top: 20px !important;
+    grid-template-columns: 1fr !important;
+  }
+  
+  .nutech-stat-card {
+    width: 280px !important;
+    max-width: 280px !important;
+    min-width: 260px !important;
+    height: 140px !important;
+    padding: 16px !important;
+  }
+  
+  .nutech-stat-icon {
+    width: 32px !important;
+    height: 32px !important;
+    margin-bottom: 8px !important;
+  }
+  
+  .nutech-stat-text {
+    font-size: 0.875rem !important;
+  }
+}
+
