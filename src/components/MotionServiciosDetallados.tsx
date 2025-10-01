@@ -1,5 +1,5 @@
 import ServiceCard from './ServiceCard';
-import { services } from '../data/services';
+import { mainServices } from '../data/services';
 
 export default function MotionServiciosDetallados() {
   return (
@@ -14,11 +14,11 @@ export default function MotionServiciosDetallados() {
         <div className="servicios-background-decoration pink"></div>
       </div>
 
-      <div className="servicios-container">
+      <div className="servicios-container ">
         {/* Section Badge */}
         <div className="servicios-badge">
           <div className="servicios-badge-inner">
-            <span className="servicios-badge-text">Nuestros Servicios</span>
+            <span className="servicios-badge-text">Crecimiento</span>
           </div>
         </div>
 
@@ -28,14 +28,12 @@ export default function MotionServiciosDetallados() {
             Transformamos su empresa con tecnología de vanguardia
           </h2>
           
-          <p className="servicios-description">
-            Soluciones integrales de automatización e inteligencia artificial que revolucionan sus procesos empresariales y maximizan la productividad de su equipo.
-          </p>
+          
         </div>
 
         {/* Services Grid */}
         <div className="servicios-grid">
-          {services.map((service) => (
+          {mainServices.map((service) => (
             <ServiceCard
               key={service.id}
               service={service}

@@ -2,49 +2,160 @@ export interface Service {
   id: string;
   title: string;
   subtitle?: string;
-  image: string;
+  image?: string;
+  icon?: string;
   description: string;
   features: string[];
-  hasButton?: boolean;
+  category?: 'core' | 'complementary' | 'consulting';
+  featured?: boolean;
 }
 
-export const services: Service[] = [
+// 🧩 CORE SERVICES - Servicios estratégicos principales
+export const coreServices: Service[] = [
   {
     id: "rpa",
-    title: "RPA",
-    subtitle: "Robotic Process Automation",
+    title: "RPA (Robotic Process Automation)",
+    subtitle: "Automatización Robótica de Procesos",
     image: "/servicios-generales-nutech/rpa.png",
-    description: "SERVICIOS DE RPA E IA QUE AUMENTARÁN LA PRODUCTIVIDAD",
+    description: "Automatización de tareas repetitivas para aumentar la productividad hasta en 300%",
     features: [
-      "Automatización robótica de procesos empresariales",
-      "Eliminación de tareas repetitivas y monótonas", 
-      "Aumento de productividad y eficiencia",
-      "Reducción de errores humanos"
-    ]
-  },
-  {
-    id: "human-robot",
-    title: "Colaboración Humano-Robot",
-    image: "/servicios-generales-nutech/human-robot.png",
-    description: "SOLUCIONES DE AUTOMATIZACIÓN PARA DIFERENTES INDUSTRIAS",
-    features: [
-      "Colaboración entre humanos y robots en procesos industriales",
-      "Optimización de flujos de trabajo híbridos",
-      "Interfaces intuitivas para operación conjunta",
-      "Capacitación para equipos de trabajo mixtos"
+      "Automatización de procesos back-office",
+      "Integración con sistemas legacy",
+      "Reducción de errores humanos",
+      "ROI comprobado en 6 meses"
     ],
-    hasButton: true
+    category: 'core',
+    featured: true
   },
   {
     id: "ai",
-    title: "Inteligencia Artificial", 
+    title: "Inteligencia Artificial",
+    subtitle: "Machine Learning & Analytics",
     image: "/servicios-generales-nutech/automatización.png",
-    description: "PIONEROS EN LA AUTOMATIZACIÓN DE PROCESOS EMPRESARIALES",
+    description: "Soluciones de IA para toma de decisiones inteligentes y análisis predictivo",
     features: [
-      "Inteligencia artificial para toma de decisiones",
-      "Machine Learning y análisis predictivo",
-      "Chatbots y asistentes virtuales inteligentes",
-      "Procesamiento de lenguaje natural"
-    ]
+      "Machine Learning y Deep Learning",
+      "Análisis predictivo avanzado",
+      "Procesamiento de lenguaje natural (NLP)",
+      "Computer Vision y OCR"
+    ],
+    category: 'core',
+    featured: true
+  },
+  {
+    id: "transformacion-digital",
+    title: "Transformación Digital",
+    subtitle: "Modernización Empresarial 360°",
+    image: "/servicios-generales-nutech/transformacion-digital.jpg",
+    description: "Transformación completa de procesos mediante tecnologías digitales avanzadas",
+    features: [
+      "Diagnóstico digital completo",
+      "Roadmap de transformación",
+      "Implementación ágil",
+      "Change management"
+    ],
+    category: 'core',
+    featured: true
   }
 ];
+
+// Mantener mainServices para compatibilidad
+export const mainServices = coreServices;
+
+// ⚙️ COMPLEMENTARIOS - Servicios de soporte técnico
+export const complementaryServices: Service[] = [
+  {
+    id: "cybersecurity",
+    title: "Seguridad & Ciberseguridad",
+    subtitle: "Protección Digital Integral",
+    image: "/servicios-generales-nutech/seguridad-ciberseguridad.jpg",
+    description: "Protección integral frente a amenazas digitales y cumplimiento normativo",
+    features: [
+      "Auditorías de seguridad",
+      "Gestión de vulnerabilidades",
+      "Cumplimiento ISO 27001",
+      "SOC y monitoreo 24/7"
+    ],
+    category: 'complementary'
+  },
+  {
+    id: "it-staffing",
+    title: "IT Staffing",
+    subtitle: "Talento Tecnológico Especializado",
+    image: "/servicios-generales-nutech/it-staffing.jpg",
+    description: "Outsourcing de personal TI altamente capacitado y certificado",
+    features: [
+      "Desarrolladores senior",
+      "Arquitectos de soluciones",
+      "Especialistas DevOps",
+      "Consultores certificados"
+    ],
+    category: 'complementary'
+  },
+  {
+    id: "web-mobile",
+    title: "Desarrollo Web / Mobile",
+    subtitle: "Aplicaciones Empresariales",
+    image: "/servicios-generales-nutech/desarrollo-web-mobile.jpg",
+    description: "Creación de plataformas digitales personalizadas y escalables",
+    features: [
+      "Apps móviles nativas",
+      "Progressive Web Apps",
+      "Integraciones API",
+      "Cloud-native architecture"
+    ],
+    category: 'complementary'
+  }
+];
+
+// 📈 CONSULTORÍA & FORMACIÓN - Servicios estratégicos y educativos
+export const consultingServices: Service[] = [
+  {
+    id: "executive-training",
+    title: "Capacitación Ejecutiva",
+    subtitle: "Formación de Líderes Digitales",
+    image: "/servicios-generales-nutech/capacitacion-ejecutiva.jpg",
+    description: "Programas de formación para líderes en transformación digital",
+    features: [
+      "Workshops ejecutivos",
+      "Certificaciones técnicas",
+      "Training on-demand",
+      "Mentoring estratégico"
+    ],
+    category: 'consulting'
+  },
+  {
+    id: "consultoria-tecnologica",
+    title: "Consultoría Tecnológica",
+    subtitle: "Asesoría Estratégica Digital",
+    image: "/servicios-generales-nutech/consultoria-tecnologica.jpg",
+    description: "Consultoría especializada para adopción de tecnologías emergentes",
+    features: [
+      "Assessment tecnológico",
+      "Arquitectura empresarial",
+      "Estrategia cloud",
+      "Roadmap de innovación"
+    ],
+    category: 'consulting'
+  },
+  {
+    id: "analisis-datos",
+    title: "Análisis de Datos",
+    subtitle: "Business Intelligence & Analytics",
+    image: "/servicios-generales-nutech/analisis-datos.jpg",
+    description: "Transformación de datos en insights accionables para decisiones estratégicas",
+    features: [
+      "Data warehousing",
+      "Dashboards ejecutivos",
+      "Análisis predictivo",
+      "Big Data & Analytics"
+    ],
+    category: 'consulting'
+  }
+];
+
+// Mantener additionalServices para compatibilidad
+export const additionalServices: Service[] = [...complementaryServices, ...consultingServices];
+
+// Mantener compatibilidad con el array original
+export const services: Service[] = [...mainServices, ...additionalServices];

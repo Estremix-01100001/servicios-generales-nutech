@@ -23,23 +23,17 @@ export default function ServiceCard({ service }: ServiceCardProps) {
       </div>
       
       {/* Título */}
-      <h3 className="service-card-title">
-        {service.title}
-      </h3>
+      {service.title && (
+        <h3 className="service-card-title">
+          {service.title}
+        </h3>
+      )}
       
       {/* Descripción */}
       <p className="service-card-description">
         {service.features[0]}
       </p>
       
-      {/* Botón opcional */}
-      {service.hasButton && (
-        <div className="service-card-button-container">
-          <button className="service-card-button">
-            LEER MAS
-          </button>
-        </div>
-      )}
     </div>
   );
 }

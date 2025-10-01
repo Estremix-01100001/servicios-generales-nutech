@@ -1,0 +1,113 @@
+/* Estilos para el Carrusel de Servicios Adicionales */
+
+/* Wrapper del Carrusel - Centrado respetando márgenes */
+.services-carousel-wrapper {
+  @apply relative;
+  width: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  position: relative !important;
+}
+
+/* Botones de navegación para Servicios */
+.services-nav-button {
+  @apply absolute z-20 bg-white rounded-full shadow-xl hover:shadow-2xl transition-all duration-300;
+  width: 48px !important;
+  height: 48px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border: 2px solid #e5e7eb !important;
+  color: #374151 !important;
+}
+
+.services-nav-button:hover {
+  @apply bg-primary-600 border-primary-600;
+  color: white !important;
+  transform: scale(1.1);
+}
+
+.services-nav-button.left {
+  left: -24px !important;
+}
+
+.services-nav-button.right {
+  right: -24px !important;
+}
+
+@media (max-width: 1280px) {
+  .services-nav-button.left {
+    left: -16px !important;
+  }
+  
+  .services-nav-button.right {
+    right: -16px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .services-nav-button {
+    width: 40px !important;
+    height: 40px !important;
+  }
+  
+  .services-nav-button.left {
+    left: -10px !important;
+  }
+  
+  .services-nav-button.right {
+    right: -10px !important;
+  }
+}
+
+/* Contenedor del Carrusel de Servicios */
+.services-carousel-container {
+  @apply relative;
+  width: 100% !important;
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  scroll-behavior: smooth !important;
+  padding: 1rem 0 !important;
+  -ms-overflow-style: none !important;
+  scrollbar-width: none !important;
+}
+
+.services-carousel-container::-webkit-scrollbar {
+  display: none !important;
+}
+
+.services-carousel-row {
+  @apply flex gap-8;
+  width: fit-content !important;
+  padding: 0 !important;
+}
+
+/* Tarjeta de Servicio en Carrusel */
+.service-card-carousel {
+  flex-shrink: 0 !important;
+  width: 380px !important;
+  max-width: 380px !important;
+  min-width: 380px !important;
+}
+
+@media (max-width: 1024px) {
+  .service-card-carousel {
+    width: 340px !important;
+    max-width: 340px !important;
+    min-width: 340px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .service-card-carousel {
+    width: 300px !important;
+    max-width: 300px !important;
+    min-width: 300px !important;
+  }
+  
+  .services-carousel-row {
+    gap: 1rem !important;
+  }
+}
+

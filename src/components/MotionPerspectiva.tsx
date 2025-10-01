@@ -9,59 +9,19 @@ interface InsightCardProps {
 
 const InsightCard = ({ icon, title, description, delay = 0 }: InsightCardProps) => {
   return (
-    <motion.div
-      className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300"
-      initial={{ 
-        backgroundColor: "rgb(240, 248, 255)",
-        opacity: 0,
-        y: 50,
-        scale: 0.9
-      }}
-      whileInView={{ 
-        backgroundColor: "rgb(255, 255, 255)",
-        opacity: 1,
-        y: 0,
-        scale: 1
-      }}
-      whileHover={{
-        backgroundColor: "rgb(248, 250, 252)",
-        scale: 1.02,
-        y: -5
-      }}
-      transition={{
-        duration: 0.6,
-        delay: delay,
-        ease: "easeOut"
-      }}
-      viewport={{ once: true, margin: "-100px" }}
-    >
-      <motion.div 
-        className="w-12 h-12 bg-accent-100 rounded-lg flex items-center justify-center mb-4"
-        initial={{ rotate: -180, scale: 0 }}
-        whileInView={{ rotate: 0, scale: 1 }}
-        transition={{ duration: 0.8, delay: delay + 0.2, ease: "easeOut" }}
-      >
+    <div className="perspectiva-insight-card">
+      <div className="perspectiva-insight-icon">
         {icon}
-      </motion.div>
+      </div>
       
-      <motion.h3 
-        className="text-xl font-bold text-secondary-800 mb-3"
-        initial={{ opacity: 0, x: -20 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.5, delay: delay + 0.4 }}
-      >
+      <h3 className="perspectiva-insight-title">
         {title}
-      </motion.h3>
+      </h3>
       
-      <motion.p 
-        className="text-secondary-600"
-        initial={{ opacity: 0, x: -20 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.5, delay: delay + 0.6 }}
-      >
+      <p className="perspectiva-insight-description">
         {description}
-      </motion.p>
-    </motion.div>
+      </p>
+    </div>
   );
 };
 
@@ -97,59 +57,31 @@ export default function MotionPerspectiva() {
   ];
 
   return (
-    <motion.section 
+    <section 
       id="perspectiva" 
-      className="py-20 bg-gradient-to-b from-white via-blue-50 to-white"
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      transition={{ duration: 0.8 }}
+      className="perspectiva-section"
     >
-      <div className="container mx-auto px-12 sm:px-16">
+      <div className="perspectiva-container">
         {/* Section Badge */}
-        <motion.div 
-          className="text-center mb-8"
-          initial={{ opacity: 0, y: -20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
-          <div className="inline-flex items-center px-4 py-2 bg-accent-100 border border-accent-200 rounded-full">
-            <span className="text-accent-600 text-sm font-semibold">Perspectivas</span>
+        <div className="perspectiva-badge">
+          <div className="perspectiva-badge-inner">
+            <span className="perspectiva-badge-text">Perspectivas</span>
           </div>
-        </motion.div>
+        </div>
 
         {/* Section Header */}
-        <motion.div 
-          className="text-center mb-16"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-        >
-          <motion.h2 
-            className="text-4xl md:text-5xl font-bold text-secondary-800 mb-6"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-          >
+        <div className="perspectiva-header">
+          <h2 className="perspectiva-title">
             Tendencias y conocimiento en transformación digital
-          </motion.h2>
+          </h2>
           
-          <motion.p 
-            className="text-xl text-secondary-600 max-w-4xl mx-auto"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-          >
+          <p className="perspectiva-description">
             En Nutech creemos que la innovación debe ser compartida. A través de nuestra sección de Perspectivas le brindamos análisis, artículos y casos de éxito sobre el impacto de la automatización, la inteligencia artificial y otras tecnologías claves para el crecimiento empresarial.
-          </motion.p>
-        </motion.div>
+          </p>
+        </div>
 
         {/* Content Grid */}
-        <motion.div 
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
-        >
+        <div className="perspectiva-insights-container">
           {insights.map((insight, index) => (
             <InsightCard
               key={index}
@@ -159,64 +91,23 @@ export default function MotionPerspectiva() {
               delay={index * 0.2}
             />
           ))}
-        </motion.div>
+        </div>
 
         {/* CTA Section */}
-        <motion.div 
-          className="text-center mt-16"
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.7 }}
-        >
-          <motion.div 
-            className="bg-white rounded-2xl shadow-xl p-8 max-w-4xl mx-auto"
-            initial={{ 
-              backgroundColor: "rgb(240, 248, 255)",
-              scale: 0.9
-            }}
-            whileInView={{ 
-              backgroundColor: "rgb(255, 255, 255)",
-              scale: 1
-            }}
-            whileHover={{
-              backgroundColor: "rgb(248, 250, 252)",
-              scale: 1.02,
-              y: -5
-            }}
-            transition={{ duration: 0.6, delay: 0.8 }}
-          >
-            <motion.h3 
-              className="text-3xl font-bold text-secondary-800 mb-4"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.9 }}
-            >
-              ¿Quiere mantenerse actualizado?
-            </motion.h3>
-            
-            <motion.p 
-              className="text-lg text-secondary-600 mb-8"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 1.0 }}
-            >
-              Suscríbase a nuestro newsletter y reciba las últimas tendencias en transformación digital directamente en su correo.
-            </motion.p>
-            
-            <motion.a 
-              href="#contacto" 
-              className="btn-primary"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              transition={{ duration: 0.5, delay: 1.1 }}
-            >
-              Suscribirse Ahora
-            </motion.a>
-          </motion.div>
-        </motion.div>
+        <div className="perspectiva-header">
+          <h3 className="perspectiva-title">
+            ¿Quiere mantenerse actualizado?
+          </h3>
+          
+          <p className="perspectiva-description">
+            Suscríbase a nuestro newsletter y reciba las últimas tendencias en transformación digital directamente en su correo.
+          </p>
+          
+          <a href="#contacto" className="btn-primary">
+            Suscribirse Ahora
+          </a>
+        </div>
       </div>
-    </motion.section>
+    </section>
   );
 }

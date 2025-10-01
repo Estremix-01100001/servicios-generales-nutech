@@ -85,7 +85,7 @@ export default function MobileMenu() {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            className="fixed top-20 left-0 right-0 bg-gradient-to-b from-black/90 via-black/80 to-black/90 backdrop-blur-md z-40 border-t border-orange-500/30"
+            className="fixed top-[143px] left-0 right-0 bg-gradient-to-b from-black/90 via-black/80 to-black/90 backdrop-blur-md z-40 border-t border-orange-500/30"
             initial={{ opacity: 0, y: -20, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -20, scale: 0.95 }}

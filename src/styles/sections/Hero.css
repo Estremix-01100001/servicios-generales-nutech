@@ -2,6 +2,10 @@
 
 .hero-section {
   @apply relative min-h-[80vh] sm:min-h-[85vh] lg:min-h-screen flex items-center justify-center overflow-hidden w-full max-w-full;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
 }
 
 .hero-background {
@@ -22,7 +26,7 @@
 }
 
 .hero-gradient-bottom {
-  @apply absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-white via-white/80 to-transparent z-20;
+  @apply absolute bottom-0 left-0 right-0 h-16 bg-transparent z-20;
 }
 
 .hero-content-container {
@@ -30,9 +34,14 @@
 }
 
 .hero-content {
-  @apply text-center w-full max-w-full px-12 sm:px-16;
+  @apply text-center w-full max-w-4xl mx-auto;
   margin-top: 0;
-  padding-top: 1rem;
+  padding: 24px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  box-sizing: border-box !important;
 }
 
 @media (min-width: 640px) {
@@ -48,21 +57,36 @@
 }
 
 .hero-title {
-  @apply text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-6 sm:mb-8 leading-tight;
+  @apply font-bold text-white leading-tight;
   text-shadow: 
     1px 1px 3px rgba(0, 0, 0, 0.9),
     0 0 10px rgba(0, 0, 0, 0.6);
+  font-size: 2.5rem !important;
+  line-height: 1.2 !important;
+  margin: 0 0 16px 0 !important;
+  max-width: 800px !important;
+  text-align: center !important;
 }
 
 .hero-subtitle {
-  @apply text-lg sm:text-xl md:text-2xl lg:text-3xl text-white mb-8 sm:mb-10 leading-relaxed max-w-2xl mx-auto px-4;
+  @apply text-white leading-relaxed;
   text-shadow: 
     1px 1px 3px rgba(0, 0, 0, 0.9),
     0 0 8px rgba(0, 0, 0, 0.5);
+  font-size: 1.125rem !important;
+  line-height: 1.6 !important;
+  margin: 0 0 24px 0 !important;
+  max-width: 600px !important;
+  text-align: center !important;
 }
 
 .hero-buttons {
-  @apply flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center px-4 sm:px-0;
+  @apply flex flex-col sm:flex-row justify-center items-center;
+  gap: 12px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100% !important;
+  max-width: 400px !important;
 }
 
 .hero-button {

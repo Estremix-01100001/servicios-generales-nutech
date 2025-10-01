@@ -3,6 +3,9 @@
 @import './components/MotionContact.css';
 @import './components/MotionPartners.css';
 @import './components/MotionServiciosDetallados.css';
+@import './components/MotionServiciosAdicionales.css';
+@import './components/MotionNutechInfo.css';
+@import './components/MotionPerspectiva.css';
 @import './components/ServiceCard.css';
 @import './sections/Hero.css';
 @import './layout/Header.css';
