@@ -222,7 +222,7 @@ import { companyInfo } from '../../database/data';
   // Advanced Security utilities
   const SecurityUtils = {
     // Enhanced input sanitization
-    sanitizeInput: function(input) {
+    sanitizeInput: function(input: string): string {
       if (typeof input !== 'string') return '';
       
       return input
@@ -243,25 +243,25 @@ import { companyInfo } from '../../database/data';
     },
     
     // Enhanced email validation
-    validateEmail: function(email) {
+    validateEmail: function(email: string): boolean {
       const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
       return emailRegex.test(email) && email.length <= 254;
     },
     
     // Enhanced name validation
-    validateName: function(name) {
+    validateName: function(name: string): boolean {
       const nameRegex = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]{2,50}$/;
       return nameRegex.test(name);
     },
     
     // Validate phone number
-    validatePhone: function(phone) {
+    validatePhone: function(phone: string): boolean {
       const phoneRegex = /^[\+]?[1-9][\d]{0,15}$/;
       return phoneRegex.test(phone.replace(/[\s\-\(\)]/g, ''));
     },
     
     // Detect XSS attacks
-    detectXSS: function(input) {
+    detectXSS: function(input: string): boolean {
       const xssPatterns = [
         /<script/i, /javascript:/i, /vbscript:/i, /onload=/i, /onerror=/i,
         /onclick=/i, /<iframe/i, /<object/i, /<embed/i, /<form/i,
@@ -271,7 +271,7 @@ import { companyInfo } from '../../database/data';
     },
     
     // Detect SQL injection attempts
-    detectSQLInjection: function(input) {
+    detectSQLInjection: function(input: string): boolean {
       const sqlPatterns = [
         /(\b(SELECT|INSERT|UPDATE|DELETE|DROP|CREATE|ALTER|EXEC|UNION|SCRIPT)\b)/i,
         /(\b(OR|AND)\b.*\b(SELECT|INSERT|UPDATE|DELETE)\b)/i,
@@ -281,12 +281,12 @@ import { companyInfo } from '../../database/data';
     },
     
     // Enhanced rate limiting with IP simulation
-    rateLimit: function(key, maxRequests = 3, windowMs = 60000) {
+    rateLimit: function(key: string, maxRequests = 3, windowMs = 60000): boolean {
       const now = Date.now();
       const requests = JSON.parse(localStorage.getItem(`rate_limit_${key}`) || '[]');
       
       // Remove old requests
-      const validRequests = requests.filter(time => now - time < windowMs);
+      const validRequests = requests.filter((time: number) => now - time < windowMs);
       
       if (validRequests.length >= maxRequests) {
         this.logSecurityEvent('Rate limit exceeded', { key, attempts: validRequests.length }, 'warn');
@@ -299,7 +299,7 @@ import { companyInfo } from '../../database/data';
     },
     
     // Security logging
-    logSecurityEvent: function(event, details, level = 'warn') {
+    logSecurityEvent: function(event: string, details: any, level = 'warn'): void {
       const timestamp = new Date().toISOString();
       const logEntry = {
         timestamp,
@@ -341,30 +341,32 @@ import { companyInfo } from '../../database/data';
         }
         
         // Get form data
-        const formData = new FormData(form);
+        const formData = new FormData(form as HTMLFormElement);
         const data = Object.fromEntries(formData);
         
         // Security checks before sanitization
         const rawData = {
-          name: data.name || '',
-          email: data.email || '',
-          company: data.company || '',
-          phone: data.phone || '',
-          message: data.message || ''
+          name: (data.name as string) || '',
+          email: (data.email as string) || '',
+          company: (data.company as string) || '',
+          phone: (data.phone as string) || '',
+          message: (data.message as string) || ''
         };
 
         // Detect potential attacks
         for (const [field, value] of Object.entries(rawData)) {
-          if (SecurityUtils.detectXSS(value)) {
-            SecurityUtils.logSecurityEvent('XSS attack detected', { field, value: value.substring(0, 100) }, 'error');
-            alert('Entrada no válida detectada. Por favor, revise sus datos.');
-            return;
-          }
-          
-          if (SecurityUtils.detectSQLInjection(value)) {
-            SecurityUtils.logSecurityEvent('SQL injection attempt detected', { field, value: value.substring(0, 100) }, 'error');
-            alert('Entrada no válida detectada. Por favor, revise sus datos.');
-            return;
+          if (typeof value === 'string') {
+            if (SecurityUtils.detectXSS(value)) {
+              SecurityUtils.logSecurityEvent('XSS attack detected', { field, value: value.substring(0, 100) }, 'error');
+              alert('Entrada no válida detectada. Por favor, revise sus datos.');
+              return;
+            }
+            
+            if (SecurityUtils.detectSQLInjection(value)) {
+              SecurityUtils.logSecurityEvent('SQL injection attempt detected', { field, value: value.substring(0, 100) }, 'error');
+              alert('Entrada no válida detectada. Por favor, revise sus datos.');
+              return;
+            }
           }
         }
         
@@ -422,19 +424,25 @@ import { companyInfo } from '../../database/data';
         }, 'info');
         
         // Simulate secure form submission
-        const submitButton = form.querySelector('button[type="submit"]');
-        const originalText = submitButton.textContent;
+        const submitButton = form.querySelector('button[type="submit"]') as HTMLButtonElement | null;
+        const originalText = submitButton?.textContent || 'Agendar Consulta Gratuita';
         
-        submitButton.textContent = 'Enviando...';
-        submitButton.disabled = true;
+        if (submitButton) {
+          submitButton.textContent = 'Enviando...';
+          submitButton.disabled = true;
+        }
         
         // Simulate API call with sanitized data
         setTimeout(() => {
           console.log('Form submitted with sanitized data:', sanitizedData);
           alert('¡Gracias por su solicitud! Nos pondremos en contacto con usted pronto para agendar su consulta gratuita.');
-          form.reset();
-          submitButton.textContent = originalText;
-          submitButton.disabled = false;
+          if (form instanceof HTMLFormElement) {
+            form.reset();
+          }
+          if (submitButton) {
+            submitButton.textContent = originalText;
+            submitButton.disabled = false;
+          }
         }, 2000);
       });
     }

@@ -2,7 +2,6 @@
 import { services } from '../../database/data';
 import InfiniteScroll from './InfiniteScroll.astro';
 import ScrollReveal from '../animations/ScrollReveal.tsx';
-import CardReveal from '../animations/CardReveal.tsx';
 import OptimizedImage from '../OptimizedImage.astro';
 
 const imageMap: { [key: string]: string } = {
@@ -41,7 +40,7 @@ const imageMap: { [key: string]: string } = {
     <ScrollReveal direction="up" delay={0.2} client:visible>
       <div class="max-w-xs md:max-w-none mx-auto">
         <InfiniteScroll speed="slow" direction="left">
-      {services.map((service, index) => {
+      {services.map((service) => {
         const imageName = imageMap[service.name] || 'seguridad-ciberseguridad.jpg';
         
         return (

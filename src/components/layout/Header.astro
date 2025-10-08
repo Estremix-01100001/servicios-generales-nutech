@@ -1,5 +1,4 @@
 ---
-import { companyInfo } from '../../database/data';
 ---
 
 <header id="main-header" class="bg-secondary-900/40 backdrop-blur-sm fixed top-0 left-0 right-0 z-50 transition-all duration-300">
@@ -69,14 +68,16 @@ import { companyInfo } from '../../database/data';
     window.addEventListener('scroll', function() {
       const heroHeight = heroSection ? heroSection.offsetHeight : 0;
       
-      if (window.scrollY > heroHeight - 100) {
-        // Más oscuro cuando pasa del hero
-        header.classList.remove('bg-secondary-900/40');
-        header.classList.add('bg-secondary-900/85');
-      } else {
-        // Transparente en el hero
-        header.classList.remove('bg-secondary-900/85');
-        header.classList.add('bg-secondary-900/40');
+      if (header) {
+        if (window.scrollY > heroHeight - 100) {
+          // Más oscuro cuando pasa del hero
+          header.classList.remove('bg-secondary-900/40');
+          header.classList.add('bg-secondary-900/85');
+        } else {
+          // Transparente en el hero
+          header.classList.remove('bg-secondary-900/85');
+          header.classList.add('bg-secondary-900/40');
+        }
       }
     });
   });

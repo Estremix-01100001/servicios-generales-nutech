@@ -39,7 +39,7 @@ const { speed = 'slow', direction = 'left', class: className = '' } = Astro.prop
 
       // Para cada item, clonarlo y agregarlo al final
       scrollerContent.forEach((item) => {
-        const duplicatedItem = item.cloneNode(true);
+        const duplicatedItem = item.cloneNode(true) as Element;
         duplicatedItem.setAttribute("aria-hidden", "true");
         scrollerInner.appendChild(duplicatedItem);
       });

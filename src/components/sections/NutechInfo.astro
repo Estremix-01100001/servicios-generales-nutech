@@ -1,6 +1,5 @@
 ---
 import ScrollReveal from '../animations/ScrollReveal.tsx';
-import CardReveal from '../animations/CardReveal.tsx';
 ---
 
 <section id="nutech-info" class="py-12 sm:py-16 lg:py-24 bg-gradient-to-b from-white via-accent-50 to-white">
@@ -208,8 +207,11 @@ import CardReveal from '../animations/CardReveal.tsx';
   document.addEventListener('DOMContentLoaded', () => {
     const counters = document.querySelectorAll('.counter');
     
-    const animateCounter = (counter) => {
-      const target = parseInt(counter.getAttribute('data-target'));
+    const animateCounter = (counter: Element) => {
+      const targetAttr = counter.getAttribute('data-target');
+      if (!targetAttr) return;
+      
+      const target = parseInt(targetAttr);
       const duration = 2000;
       const increment = target / (duration / 16);
       let current = 0;
@@ -217,10 +219,10 @@ import CardReveal from '../animations/CardReveal.tsx';
       const updateCounter = () => {
         current += increment;
         if (current < target) {
-          counter.textContent = Math.floor(current);
+          counter.textContent = Math.floor(current).toString();
           requestAnimationFrame(updateCounter);
         } else {
-          counter.textContent = target;
+          counter.textContent = target.toString();
         }
       };
       
@@ -266,12 +268,14 @@ import CardReveal from '../animations/CardReveal.tsx';
         });
         
         // Agregar clase active al marcador clickeado
-        marker.classList.add('active');
-        
-        // Remover la clase después de la animación
-        setTimeout(() => {
-          marker.classList.remove('active');
-        }, 600);
+        if (marker) {
+          marker.classList.add('active');
+          
+          // Remover la clase después de la animación
+          setTimeout(() => {
+            marker.classList.remove('active');
+          }, 600);
+        }
       });
     });
   });
@@ -288,20 +292,28 @@ import CardReveal from '../animations/CardReveal.tsx';
   // Observer para el globo terráqueo
   const globeObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-      const texture = entry.target.querySelector('.world-texture');
-      const sphere = entry.target.querySelector('.world-sphere');
+      const texture = entry.target.querySelector('.world-texture') as HTMLElement | null;
+      const sphere = entry.target.querySelector('.world-sphere') as HTMLElement | null;
       const flags = document.querySelectorAll('.orbiting-flag');
       
       if (entry.isIntersecting) {
         // Reanudar animaciones
         if (texture) texture.style.animationPlayState = 'running';
         if (sphere) sphere.style.animationPlayState = 'running';
-        flags.forEach(flag => flag.style.animationPlayState = 'running');
+        flags.forEach(flag => {
+          if (flag instanceof HTMLElement) {
+            flag.style.animationPlayState = 'running';
+          }
+        });
       } else {
         // Pausar animaciones cuando no está visible
         if (texture) texture.style.animationPlayState = 'paused';
         if (sphere) sphere.style.animationPlayState = 'paused';
-        flags.forEach(flag => flag.style.animationPlayState = 'paused');
+        flags.forEach(flag => {
+          if (flag instanceof HTMLElement) {
+            flag.style.animationPlayState = 'paused';
+          }
+        });
       }
     });
   }, observerOptions);
@@ -317,28 +329,31 @@ import CardReveal from '../animations/CardReveal.tsx';
     entries.forEach(entry => {
       if (entry.isIntersecting && !entry.target.classList.contains('counted')) {
         entry.target.classList.add('counted');
-        const target = parseInt(entry.target.getAttribute('data-target'));
-        animateCounter(entry.target, target);
+        const targetAttr = entry.target.getAttribute('data-target');
+        if (targetAttr) {
+          const target = parseInt(targetAttr);
+          animateCounter(entry.target, target);
+        }
       }
     });
   }, observerOptions);
-
-  // Animar contadores cuando son visibles
-  function animateCounter(element, target) {
+  
+  function animateCounter(element: Element, target: number): void {
     const duration = 2000;
-    const start = 0;
     const increment = target / (duration / 16);
-    let current = start;
+    let current = 0;
     
-    const timer = setInterval(() => {
+    const updateCounter = () => {
       current += increment;
-      if (current >= target) {
-        element.textContent = target;
-        clearInterval(timer);
+      if (current < target) {
+        element.textContent = Math.floor(current).toString();
+        requestAnimationFrame(updateCounter);
       } else {
-        element.textContent = Math.floor(current);
+        element.textContent = target.toString();
       }
-    }, 16);
+    };
+    
+    updateCounter();
   }
 
   // Observar todos los contadores

@@ -1,5 +1,4 @@
 ---
-import { companyInfo } from '../../database/data';
 ---
 
   <section id="inicio" class="hero-section relative min-h-[70vh] sm:h-screen lg:min-h-[115vh] flex items-start sm:items-center justify-center overflow-hidden pt-24 lg:pt-32">
@@ -92,7 +91,7 @@ import { companyInfo } from '../../database/data';
   const video = document.getElementById('hero-video');
   if (video) {
     video.addEventListener('loadeddata', () => {
-      const gradient = document.querySelector('.hero-gradient');
+      const gradient = document.querySelector('.hero-gradient') as HTMLElement;
       if (gradient) {
         gradient.style.opacity = '0';
       }
@@ -169,10 +168,14 @@ document.addEventListener('DOMContentLoaded', () => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         heroSection?.classList.remove('paused');
-        if (heroVideo) heroVideo.play();
+        if (heroVideo && heroVideo instanceof HTMLVideoElement) {
+          heroVideo.play();
+        }
       } else {
         heroSection?.classList.add('paused');
-        if (heroVideo) heroVideo.pause();
+        if (heroVideo && heroVideo instanceof HTMLVideoElement) {
+          heroVideo.pause();
+        }
       }
     });
   }, {
