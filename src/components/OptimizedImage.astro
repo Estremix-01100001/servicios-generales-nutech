@@ -1,0 +1,39 @@
+---
+export interface Props {
+  src: string;
+  alt: string;
+  webpSrc?: string;
+  className?: string;
+  loading?: 'lazy' | 'eager';
+  sizes?: string;
+  width?: number;
+  height?: number;
+}
+
+const { 
+  src, 
+  alt, 
+  webpSrc, 
+  className = '', 
+  loading = 'lazy',
+  sizes = '(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw',
+  width,
+  height
+} = Astro.props;
+
+// Generar WebP src si no se proporciona
+const webpSource = webpSrc || src.replace(/\.(jpg|jpeg|png)$/i, '.webp');
+---
+
+<picture>
+  <source srcset={webpSource} type="image/webp">
+  <img 
+    src={src}
+    alt={alt}
+    class={className}
+    loading={loading}
+    sizes={sizes}
+    width={width}
+    height={height}
+  />
+</picture>

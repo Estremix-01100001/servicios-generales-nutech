@@ -1,97 +1,121 @@
 ---
+import InfiniteScroll from './InfiniteScroll.astro';
+import ScrollReveal from '../animations/ScrollReveal.tsx';
 ---
 
-<section id="partners" class="py-12 sm:py-16 lg:py-20 bg-gradient-to-b from-white via-blue-50 to-white overflow-hidden">
-  <div class="container mx-auto px-4">
+<section id="partners" class="py-12 sm:py-16 lg:py-24 bg-gradient-to-b from-white via-accent-50 to-white overflow-hidden">
+  <div class="container mx-auto px-4 sm:px-6 md:px-8 lg:px-36 xl:px-44 2xl:px-52">
     <!-- Section Badge -->
     <div class="text-center mb-6 sm:mb-8">
-      <div class="inline-flex items-center px-3 py-1.5 sm:px-4 sm:py-2 bg-accent-100 border border-accent-200 rounded-full">
-        <span class="text-accent-600 text-xs sm:text-sm font-semibold">Partners</span>
+      <div class="group relative inline-flex items-center px-3 py-1.5 sm:px-4 sm:py-2 bg-gradient-to-br from-accent-100 to-accent-200 border-2 border-accent-300 rounded-full shadow-lg hover:shadow-2xl hover:shadow-accent-500/50 transition-all duration-500 hover:scale-110 overflow-hidden cursor-pointer">
+        <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+        <span class="relative text-accent-700 text-xs sm:text-sm font-bold group-hover:text-accent-800 transition-colors duration-300">Partners</span>
       </div>
     </div>
 
     <!-- Section Header -->
-    <div class="text-center mb-12 sm:mb-16">
-      <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-secondary-800 mb-4 sm:mb-6">
-        Nuestros Partners
-      </h2>
-      <p class="text-base sm:text-lg lg:text-xl text-secondary-600 max-w-4xl mx-auto leading-relaxed">
-        Contamos con los mejores Partners en Latinoamérica que nos permite brindarles las mejores soluciones de negocio y enfocados a la transformación digital para su empresa.
-      </p>
-    </div>
-
-    <!-- Partners Logos - Infinite Loop -->
-    <div class="relative overflow-hidden">
-      <div class="flex animate-scroll">
-        <!-- First set of logos -->
-        <div class="flex items-center space-x-6 sm:space-x-8 lg:space-x-12 flex-shrink-0">
-          <div class="w-24 h-12 sm:w-28 sm:h-14 lg:w-32 lg:h-16 bg-white rounded-lg shadow-md flex items-center justify-center">
-            <span class="text-secondary-600 font-bold text-sm sm:text-base lg:text-lg">dzine</span>
-          </div>
-          <div class="w-24 h-12 sm:w-28 sm:h-14 lg:w-32 lg:h-16 bg-white rounded-lg shadow-md flex items-center justify-center">
-            <span class="text-red-600 font-bold text-sm sm:text-base lg:text-lg">ROCKETBOT</span>
-          </div>
-          <div class="w-24 h-12 sm:w-28 sm:h-14 lg:w-32 lg:h-16 bg-white rounded-lg shadow-md flex items-center justify-center">
-            <span class="text-blue-600 font-bold text-xs sm:text-sm lg:text-sm">AUTOMATION ANYWHERE</span>
-          </div>
-          <div class="w-24 h-12 sm:w-28 sm:h-14 lg:w-32 lg:h-16 bg-white rounded-lg shadow-md flex items-center justify-center">
-            <span class="text-secondary-600 font-bold text-sm sm:text-base lg:text-lg">Global Seis</span>
-          </div>
-          <div class="w-24 h-12 sm:w-28 sm:h-14 lg:w-32 lg:h-16 bg-white rounded-lg shadow-md flex items-center justify-center">
-            <span class="text-secondary-600 font-bold text-sm sm:text-base lg:text-lg">Autonomy</span>
-          </div>
-          <div class="w-24 h-12 sm:w-28 sm:h-14 lg:w-32 lg:h-16 bg-white rounded-lg shadow-md flex items-center justify-center">
-            <span class="text-secondary-600 font-bold text-sm sm:text-base lg:text-lg">ACEROYALTY</span>
-          </div>
-          <div class="w-24 h-12 sm:w-28 sm:h-14 lg:w-32 lg:h-16 bg-white rounded-lg shadow-md flex items-center justify-center">
-            <span class="text-red-600 font-bold text-sm sm:text-base lg:text-lg">UiPath</span>
-          </div>
-        </div>
-        
-        <!-- Duplicate set for seamless loop -->
-        <div class="flex items-center space-x-6 sm:space-x-8 lg:space-x-12 flex-shrink-0">
-          <div class="w-24 h-12 sm:w-28 sm:h-14 lg:w-32 lg:h-16 bg-white rounded-lg shadow-md flex items-center justify-center">
-            <span class="text-secondary-600 font-bold text-sm sm:text-base lg:text-lg">dzine</span>
-          </div>
-          <div class="w-24 h-12 sm:w-28 sm:h-14 lg:w-32 lg:h-16 bg-white rounded-lg shadow-md flex items-center justify-center">
-            <span class="text-red-600 font-bold text-sm sm:text-base lg:text-lg">ROCKETBOT</span>
-          </div>
-          <div class="w-24 h-12 sm:w-28 sm:h-14 lg:w-32 lg:h-16 bg-white rounded-lg shadow-md flex items-center justify-center">
-            <span class="text-blue-600 font-bold text-xs sm:text-sm lg:text-sm">AUTOMATION ANYWHERE</span>
-          </div>
-          <div class="w-24 h-12 sm:w-28 sm:h-14 lg:w-32 lg:h-16 bg-white rounded-lg shadow-md flex items-center justify-center">
-            <span class="text-secondary-600 font-bold text-sm sm:text-base lg:text-lg">Global Seis</span>
-          </div>
-          <div class="w-24 h-12 sm:w-28 sm:h-14 lg:w-32 lg:h-16 bg-white rounded-lg shadow-md flex items-center justify-center">
-            <span class="text-secondary-600 font-bold text-sm sm:text-base lg:text-lg">Autonomy</span>
-          </div>
-          <div class="w-24 h-12 sm:w-28 sm:h-14 lg:w-32 lg:h-16 bg-white rounded-lg shadow-md flex items-center justify-center">
-            <span class="text-secondary-600 font-bold text-sm sm:text-base lg:text-lg">ACEROYALTY</span>
-          </div>
-          <div class="w-24 h-12 sm:w-28 sm:h-14 lg:w-32 lg:h-16 bg-white rounded-lg shadow-md flex items-center justify-center">
-            <span class="text-red-600 font-bold text-sm sm:text-base lg:text-lg">UiPath</span>
-          </div>
-        </div>
+    <ScrollReveal direction="up" delay={0} client:visible>
+      <div class="text-center mb-8 sm:mb-10 lg:mb-12">
+        <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-secondary-800 mb-4 px-4">
+          Certificaciones y Alianzas
+        </h2>
+        <p class="text-base sm:text-lg lg:text-xl text-secondary-600 max-w-4xl mx-auto leading-relaxed px-4">
+          Reconocidos por las principales plataformas tecnológicas
+        </p>
       </div>
+    </ScrollReveal>
+
+    <!-- Certificaciones Scroll Infinito -->
+    <ScrollReveal direction="up" delay={0.2} client:visible>
+      <div class="mb-10 lg:mb-12 max-w-xs md:max-w-none mx-auto">
+      <InfiniteScroll speed="slow" direction="left">
+        <div class="group relative bg-gradient-to-br from-white to-accent-50 rounded-2xl shadow-xl p-3 sm:p-6 text-center hover:shadow-2xl transition-all duration-500 overflow-hidden border-2 border-transparent hover:border-accent-200 min-w-[280px]">
+          <div class="absolute inset-0 bg-gradient-to-r from-transparent via-accent-200/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+          <div class="relative">
+            <img src={`${import.meta.env.BASE_URL}images/partners/azure.png`} alt="Microsoft Azure" class="w-20 h-20 mx-auto mb-3 object-contain group-hover:scale-110 transition-transform duration-300" loading="lazy" />
+            <div class="text-secondary-800 font-bold text-lg mb-2 group-hover:text-accent-700 transition-colors duration-300">Microsoft Azure</div>
+            <div class="text-secondary-600 text-sm">Certified</div>
+          </div>
+        </div>
+        <div class="group relative bg-gradient-to-br from-white to-accent-50 rounded-2xl shadow-xl p-3 sm:p-6 text-center hover:shadow-2xl transition-all duration-500 overflow-hidden border-2 border-transparent hover:border-accent-200 min-w-[280px]">
+          <div class="absolute inset-0 bg-gradient-to-r from-transparent via-accent-200/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+          <div class="relative">
+            <img src={`${import.meta.env.BASE_URL}images/partners/aws.png`} alt="AWS" class="w-20 h-20 mx-auto mb-3 object-contain group-hover:scale-110 transition-transform duration-300" loading="lazy" />
+            <div class="text-secondary-800 font-bold text-lg mb-2 group-hover:text-accent-700 transition-colors duration-300">AWS</div>
+            <div class="text-secondary-600 text-sm">Partner</div>
+          </div>
+        </div>
+        <div class="group relative bg-gradient-to-br from-white to-accent-50 rounded-2xl shadow-xl p-3 sm:p-6 text-center hover:shadow-2xl transition-all duration-500 overflow-hidden border-2 border-transparent hover:border-accent-200 min-w-[280px]">
+          <div class="absolute inset-0 bg-gradient-to-r from-transparent via-accent-200/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+          <div class="relative">
+            <img src={`${import.meta.env.BASE_URL}images/partners/powerAutonate.jpg`} alt="Power Automate" class="w-20 h-20 mx-auto mb-3 object-contain group-hover:scale-110 transition-transform duration-300" loading="lazy" />
+            <div class="text-secondary-800 font-bold text-lg mb-2 group-hover:text-accent-700 transition-colors duration-300">Power Automate</div>
+            <div class="text-secondary-600 text-sm">Expert</div>
+          </div>
+        </div>
+        <div class="group relative bg-gradient-to-br from-white to-accent-50 rounded-2xl shadow-xl p-3 sm:p-6 text-center hover:shadow-2xl transition-all duration-500 overflow-hidden border-2 border-transparent hover:border-accent-200 min-w-[280px]">
+          <div class="absolute inset-0 bg-gradient-to-r from-transparent via-accent-200/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+          <div class="relative">
+            <img src={`${import.meta.env.BASE_URL}images/partners/sap.png`} alt="SAP" class="w-20 h-20 mx-auto mb-3 object-contain group-hover:scale-110 transition-transform duration-300" loading="lazy" />
+            <div class="text-secondary-800 font-bold text-lg mb-2 group-hover:text-accent-700 transition-colors duration-300">SAP</div>
+            <div class="text-secondary-600 text-sm">Technology Partner</div>
+          </div>
+        </div>
+        <div class="group relative bg-gradient-to-br from-white to-accent-50 rounded-2xl shadow-xl p-3 sm:p-6 text-center hover:shadow-2xl transition-all duration-500 overflow-hidden border-2 border-transparent hover:border-accent-200 min-w-[280px]">
+          <div class="absolute inset-0 bg-gradient-to-r from-transparent via-accent-200/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+          <div class="relative">
+            <img src={`${import.meta.env.BASE_URL}images/partners/uipath.png`} alt="UiPath" class="w-20 h-20 mx-auto mb-3 object-contain group-hover:scale-110 transition-transform duration-300" loading="lazy" />
+            <div class="text-secondary-800 font-bold text-lg mb-2 group-hover:text-accent-700 transition-colors duration-300">UiPath</div>
+            <div class="text-secondary-600 text-sm">Certified</div>
+          </div>
+        </div>
+      </InfiniteScroll>
     </div>
+    </ScrollReveal>
+
+    <!-- Clientes que Confían en Nosotros -->
+    <ScrollReveal direction="up" delay={0} client:visible>
+      <div class="text-center mb-8">
+        <h3 class="text-2xl sm:text-3xl font-bold text-secondary-800 mb-8 px-4">
+          Clientes que Confían en Nosotros
+        </h3>
+      </div>
+    </ScrollReveal>
+
+    <!-- Clientes Scroll Infinito -->
+    <ScrollReveal direction="up" delay={0.2} client:visible>
+      <div class="max-w-xs md:max-w-none mx-auto">
+      <InfiniteScroll speed="slow" direction="left">
+      <div class="group relative bg-gradient-to-br from-white to-accent-50 rounded-2xl shadow-xl p-3 sm:p-6 flex items-center justify-center hover:shadow-2xl transition-all duration-500 overflow-hidden border-2 border-transparent hover:border-accent-200 min-w-[200px] h-[120px]">
+        <div class="absolute inset-0 bg-gradient-to-r from-transparent via-accent-200/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+        <img src={`${import.meta.env.BASE_URL}images/hayduk.png`} alt="Hayduk" class="relative h-12 w-auto object-contain grayscale hover:grayscale-0 group-hover:scale-110 transition-all duration-300" loading="lazy" />
+      </div>
+      <div class="group relative bg-gradient-to-br from-white to-accent-50 rounded-2xl shadow-xl p-3 sm:p-6 flex items-center justify-center hover:shadow-2xl transition-all duration-500 overflow-hidden border-2 border-transparent hover:border-accent-200 min-w-[200px] h-[120px]">
+        <div class="absolute inset-0 bg-gradient-to-r from-transparent via-accent-200/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+        <img src={`${import.meta.env.BASE_URL}images/lindcorp.jpeg`} alt="Lindcorp" class="relative h-12 w-auto object-contain grayscale hover:grayscale-0 group-hover:scale-110 transition-all duration-300" loading="lazy" />
+      </div>
+      <div class="group relative bg-gradient-to-br from-white to-accent-50 rounded-2xl shadow-xl p-3 sm:p-6 flex items-center justify-center hover:shadow-2xl transition-all duration-500 overflow-hidden border-2 border-transparent hover:border-accent-200 min-w-[200px] h-[120px]">
+        <div class="absolute inset-0 bg-gradient-to-r from-transparent via-accent-200/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+        <img src={`${import.meta.env.BASE_URL}images/tambo.png`} alt="Tambo+" class="relative h-12 w-auto object-contain grayscale hover:grayscale-0 group-hover:scale-110 transition-all duration-300" loading="lazy" />
+      </div>
+      <div class="group relative bg-gradient-to-br from-white to-accent-50 rounded-2xl shadow-xl p-3 sm:p-6 flex items-center justify-center hover:shadow-2xl transition-all duration-500 overflow-hidden border-2 border-transparent hover:border-accent-200 min-w-[200px] h-[120px]">
+        <div class="absolute inset-0 bg-gradient-to-r from-transparent via-accent-200/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+        <img src={`${import.meta.env.BASE_URL}images/aruma.png`} alt="ARUMA" class="relative h-12 w-auto object-contain grayscale hover:grayscale-0 group-hover:scale-110 transition-all duration-300" loading="lazy" />
+      </div>
+      <div class="group relative bg-gradient-to-br from-white to-accent-50 rounded-2xl shadow-xl p-3 sm:p-6 flex items-center justify-center hover:shadow-2xl transition-all duration-500 overflow-hidden border-2 border-transparent hover:border-accent-200 min-w-[200px] h-[120px]">
+        <div class="absolute inset-0 bg-gradient-to-r from-transparent via-accent-200/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+        <img src={`${import.meta.env.BASE_URL}images/niubiz.png`} alt="NIUBIZ" class="relative h-12 w-auto object-contain grayscale hover:grayscale-0 group-hover:scale-110 transition-all duration-300" loading="lazy" />
+      </div>
+      <div class="group relative bg-gradient-to-br from-white to-accent-50 rounded-2xl shadow-xl p-3 sm:p-6 flex items-center justify-center hover:shadow-2xl transition-all duration-500 overflow-hidden border-2 border-transparent hover:border-accent-200 min-w-[200px] h-[120px]">
+        <div class="absolute inset-0 bg-gradient-to-r from-transparent via-accent-200/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+        <img src={`${import.meta.env.BASE_URL}images/reniec.png`} alt="RENIEC" class="relative h-12 w-auto object-contain grayscale hover:grayscale-0 group-hover:scale-110 transition-all duration-300" loading="lazy" />
+      </div>
+      <div class="group relative bg-gradient-to-br from-white to-accent-50 rounded-2xl shadow-xl p-3 sm:p-6 flex items-center justify-center hover:shadow-2xl transition-all duration-500 overflow-hidden border-2 border-transparent hover:border-accent-200 min-w-[200px] h-[120px]">
+        <div class="absolute inset-0 bg-gradient-to-r from-transparent via-accent-200/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+        <img src={`${import.meta.env.BASE_URL}images/promperu.png`} alt="PROMPERU" class="relative h-12 w-auto object-contain grayscale hover:grayscale-0 group-hover:scale-110 transition-all duration-300" loading="lazy" />
+      </div>
+    </InfiniteScroll>
+    </div>
+    </ScrollReveal>
   </div>
 </section>
-
-<style>
-  @keyframes scroll {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(-50%);
-    }
-  }
-  
-  .animate-scroll {
-    animation: scroll 30s linear infinite;
-  }
-  
-  .animate-scroll:hover {
-    animation-play-state: paused;
-  }
-</style>

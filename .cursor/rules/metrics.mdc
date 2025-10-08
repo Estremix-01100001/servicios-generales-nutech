@@ -1,0 +1,23 @@
+---
+alwaysApply: true
+---
+Create a Markdown file named "medidas.md" that will serve as the base design guideline for the project.
+
+It should include sections to define:
+
+1. Logo sizes (desktop, tablet, mobile)  
+2. Max width and padding of containers  
+3. Borders and border radius  
+4. Vertical and horizontal margins per device  
+5. Padding for text content (paragraphs and headings)  
+6. Color palette (primary, secondary, background, text, borders)  
+7. Typography (fonts, sizes for H1–H6 and base text)  
+8. Content and icon alignment rules  
+9. Image behavior and dimensions  
+10. Header dimensions (height, padding, border thickness, etc.)
+
+This file will be used to apply layout and spacing rules consistently and symmetrically across the entire page.
+
+When invoked, you must ask me whether the defined changes should be applied globally or only to a specific section before implementing them.
+
+If any value inside "medidas.md" is changed or updated, you must automatically read and reflect those changes in the layout, but always confirm with me before applying them.

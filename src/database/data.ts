@@ -2,24 +2,24 @@
 import type { Service, ServiceCategory, Testimonial, TeamMember, CompanyInfo } from './schema';
 
 export const companyInfo: CompanyInfo = {
-  name: "Servicios Generales Pro",
-  description: "Ofrecemos servicios de limpieza, mantenimiento y soluciones integrales para hogares y empresas.",
-  address: "Av. Principal 123, Ciudad, País",
-  phone: "+1 (555) 123-4567",
-  email: "info@serviciosgenerales.com",
-  website: "https://serviciosgenerales.com",
+  name: "Nutech",
+  description: "Especialistas en transformación digital, automatización de procesos (RPA) e inteligencia artificial para empresas.",
+  address: "Av. Javier Prado Este 4200, San Isidro, Lima",
+  phone: "+1 (813) 595-4933",
+  email: "sfernandez@nutechcorp.com",
+  website: "https://nutechcorp.com",
   socialMedia: {
-    facebook: "https://facebook.com/serviciosgenerales",
-    instagram: "https://instagram.com/serviciosgenerales",
-    linkedin: "https://linkedin.com/company/serviciosgenerales"
+    facebook: "https://facebook.com/nutechcorp",
+    instagram: "https://instagram.com/nutechcorp",
+    linkedin: "https://linkedin.com/company/nutechcorp"
   },
   businessHours: {
-    monday: "8:00 AM - 6:00 PM",
-    tuesday: "8:00 AM - 6:00 PM",
-    wednesday: "8:00 AM - 6:00 PM",
-    thursday: "8:00 AM - 6:00 PM",
-    friday: "8:00 AM - 6:00 PM",
-    saturday: "9:00 AM - 4:00 PM",
+    monday: "8:30 AM - 6:30 PM",
+    tuesday: "8:30 AM - 6:30 PM",
+    wednesday: "8:30 AM - 6:30 PM",
+    thursday: "8:30 AM - 6:30 PM",
+    friday: "8:30 AM - 6:30 PM",
+    saturday: "9:30 AM - 4:30 PM",
     sunday: "Cerrado"
   }
 };
@@ -27,34 +27,26 @@ export const companyInfo: CompanyInfo = {
 export const serviceCategories: ServiceCategory[] = [
   {
     id: "1",
-    name: "Limpieza",
-    description: "Servicios de limpieza residencial y comercial",
-    icon: "🧹",
+    name: "RPA - Automatización Robótica",
+    description: "Automatización Robótica de Procesos",
+    icon: "🤖",
     color: "#3B82F6",
     isActive: true
   },
   {
     id: "2",
-    name: "Mantenimiento",
-    description: "Mantenimiento preventivo y correctivo",
-    icon: "🔧",
+    name: "Inteligencia Artificial",
+    description: "Machine Learning & Analytics",
+    icon: "🧠",
     color: "#10B981",
     isActive: true
   },
   {
     id: "3",
-    name: "Jardinería",
-    description: "Cuidado y mantenimiento de jardines",
-    icon: "🌱",
-    color: "#059669",
-    isActive: true
-  },
-  {
-    id: "4",
-    name: "Seguridad",
-    description: "Servicios de seguridad y vigilancia",
-    icon: "🛡️",
-    color: "#DC2626",
+    name: "Transformación Digital",
+    description: "Modernización Empresarial",
+    icon: "🚀",
+    color: "#F59E0B",
     isActive: true
   }
 ];
@@ -62,80 +54,114 @@ export const serviceCategories: ServiceCategory[] = [
 export const services: Service[] = [
   {
     id: "1",
-    name: "Limpieza Residencial",
-    description: "Servicio completo de limpieza para hogares, incluyendo todas las habitaciones, baños, cocina y áreas comunes.",
-    shortDescription: "Limpieza completa de hogares",
-    icon: "🏠",
-    image: "/assets/images/limpieza-residencial.jpg",
-    price: "Desde $50/hora",
+    name: "Seguridad & Ciberseguridad",
+    description: "Protección integral frente a amenazas digitales y cumplimiento normativo",
+    shortDescription: "Protección Digital Integral",
+    icon: "🛡️",
+    image: "/assets/images/seguridad.jpg",
+    price: "Consultar",
     features: [
-      "Limpieza de todas las habitaciones",
-      "Desinfección de baños y cocina",
-      "Aspirado y trapeado",
-      "Limpieza de ventanas",
-      "Productos ecológicos"
+      "Auditorías de seguridad",
+      "Gestión de vulnerabilidades",
+      "Cumplimiento ISO 27001",
+      "SOC y monitoreo 24/7"
     ],
-    category: serviceCategories[0],
+    category: serviceCategories[2],
     isActive: true,
     createdAt: new Date(),
     updatedAt: new Date()
   },
   {
     id: "2",
-    name: "Limpieza Comercial",
-    description: "Servicios de limpieza para oficinas, tiendas y espacios comerciales con horarios flexibles.",
-    shortDescription: "Limpieza para espacios comerciales",
-    icon: "🏢",
-    image: "/assets/images/limpieza-comercial.jpg",
-    price: "Desde $80/hora",
+    name: "IT Staffing",
+    description: "Outsourcing de personal TI altamente capacitado y certificado",
+    shortDescription: "Talento Tecnológico Especializado",
+    icon: "👥",
+    image: "/assets/images/staffing.jpg",
+    price: "Consultar",
     features: [
-      "Limpieza nocturna disponible",
-      "Mantenimiento de oficinas",
-      "Limpieza de cristales",
-      "Desinfección profunda",
-      "Personal capacitado"
+      "Desarrolladores senior",
+      "Arquitectos de soluciones",
+      "Especialistas DevOps",
+      "Consultores certificados"
     ],
-    category: serviceCategories[0],
+    category: serviceCategories[2],
     isActive: true,
     createdAt: new Date(),
     updatedAt: new Date()
   },
   {
     id: "3",
-    name: "Mantenimiento Eléctrico",
-    description: "Servicios de mantenimiento y reparación eléctrica para hogares y empresas.",
-    shortDescription: "Reparaciones y mantenimiento eléctrico",
-    icon: "⚡",
-    image: "/assets/images/mantenimiento-electrico.jpg",
-    price: "Desde $100/hora",
+    name: "Desarrollo Web / Mobile",
+    description: "Creación de plataformas digitales personalizadas y escalables",
+    shortDescription: "Aplicaciones Empresariales",
+    icon: "📱",
+    image: "/assets/images/desarrollo.jpg",
+    price: "Consultar",
     features: [
-      "Instalaciones eléctricas",
-      "Reparación de cortocircuitos",
-      "Instalación de luminarias",
-      "Mantenimiento preventivo",
-      "Certificaciones vigentes"
+      "Apps móviles nativas",
+      "Progressive Web Apps",
+      "Integraciones API",
+      "Cloud-native architecture"
     ],
-    category: serviceCategories[1],
+    category: serviceCategories[2],
     isActive: true,
     createdAt: new Date(),
     updatedAt: new Date()
   },
   {
     id: "4",
-    name: "Jardinería y Paisajismo",
-    description: "Diseño, mantenimiento y cuidado de jardines residenciales y comerciales.",
-    shortDescription: "Cuidado y diseño de jardines",
-    icon: "🌿",
-    image: "/assets/images/jardineria.jpg",
-    price: "Desde $60/hora",
+    name: "Capacitación Ejecutiva",
+    description: "Programas de formación para líderes en transformación digital",
+    shortDescription: "Formación de Líderes Digitales",
+    icon: "🎓",
+    image: "/assets/images/capacitacion.jpg",
+    price: "Consultar",
     features: [
-      "Diseño de jardines",
-      "Podado y mantenimiento",
-      "Sistema de riego",
-      "Plantación de especies",
-      "Mantenimiento mensual"
+      "Workshops ejecutivos",
+      "Certificaciones técnicas",
+      "Training on-demand",
+      "Mentoring estratégico"
     ],
     category: serviceCategories[2],
+    isActive: true,
+    createdAt: new Date(),
+    updatedAt: new Date()
+  },
+  {
+    id: "5",
+    name: "Consultoría Tecnológica",
+    description: "Consultoría especializada para adopción de tecnologías emergentes",
+    shortDescription: "Asesoría Estratégica Digital",
+    icon: "💡",
+    image: "/assets/images/consultoria.jpg",
+    price: "Consultar",
+    features: [
+      "Assessment tecnológico",
+      "Arquitectura empresarial",
+      "Estrategia cloud",
+      "Roadmap de innovación"
+    ],
+    category: serviceCategories[2],
+    isActive: true,
+    createdAt: new Date(),
+    updatedAt: new Date()
+  },
+  {
+    id: "6",
+    name: "Análisis de Datos",
+    description: "Transformación de datos en insights accionables para decisiones estratégicas",
+    shortDescription: "Business Intelligence & Analytics",
+    icon: "📊",
+    image: "/assets/images/analytics.jpg",
+    price: "Consultar",
+    features: [
+      "Data warehousing",
+      "Dashboards ejecutivos",
+      "Análisis predictivo",
+      "Big Data & Analytics"
+    ],
+    category: serviceCategories[1],
     isActive: true,
     createdAt: new Date(),
     updatedAt: new Date()

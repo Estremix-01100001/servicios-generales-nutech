@@ -1,130 +1,105 @@
 ---
+import ScrollReveal from '../animations/ScrollReveal.tsx';
+import CardReveal from '../animations/CardReveal.tsx';
 ---
 
-<section id="crecimiento" class="py-12 sm:py-16 lg:py-20 bg-gradient-to-b from-white via-blue-50 to-white">
-  <div class="container mx-auto px-4">
+<section id="crecimiento" class="py-12 sm:py-16 lg:py-24 bg-gradient-to-b from-white via-accent-50 to-white">
+  <div class="container mx-auto px-4 sm:px-6 md:px-8 lg:px-36 xl:px-44 2xl:px-52">
     <!-- Section Badge -->
     <div class="text-center mb-6 sm:mb-8">
-      <div class="inline-flex items-center px-3 py-1.5 sm:px-4 sm:py-2 bg-accent-100 border border-accent-200 rounded-full">
-        <span class="text-accent-600 text-xs sm:text-sm font-semibold">Crecimiento</span>
+      <div class="group relative inline-flex items-center px-3 py-1.5 sm:px-4 sm:py-2 bg-gradient-to-br from-accent-100 to-accent-200 border-2 border-accent-300 rounded-full shadow-lg hover:shadow-2xl hover:shadow-accent-500/50 transition-all duration-500 hover:scale-110 overflow-hidden cursor-pointer">
+        <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+        <span class="relative text-accent-700 text-xs sm:text-sm font-bold group-hover:text-accent-800 transition-colors duration-300">Crecimiento</span>
       </div>
     </div>
 
     <!-- Section Header -->
-    <div class="text-center mb-12 sm:mb-16">
-      <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-secondary-800 mb-4 sm:mb-6 leading-tight">
-        Crecimiento y productividad de la transformación digital
-      </h2>
-    </div>
+    <ScrollReveal direction="up" delay={0} client:visible>
+      <div class="text-center mb-8 sm:mb-10 lg:mb-12">
+        <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-secondary-800 mb-4 leading-tight px-4">
+          Resultados que impulsan su negocio
+        </h2>
+      </div>
+    </ScrollReveal>
 
     <!-- Content Grid -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-      <!-- Card 1: RPA Services -->
-      <div class="bg-white rounded-xl shadow-lg p-6 sm:p-8 hover-lift animate-fade-in-up">
-        <div class="mb-4 sm:mb-6">
-          <div class="w-full h-40 sm:h-48 bg-secondary-800 rounded-lg flex items-center justify-center mb-4">
-            <div class="text-center">
-              <div class="text-3xl sm:text-4xl font-bold text-white mb-2">RPA</div>
-              <div class="text-xs sm:text-sm text-gray-300">Robotic Process Automation</div>
-              <div class="mt-3 sm:mt-4 flex justify-center space-x-2">
-                <div class="w-6 h-6 sm:w-8 sm:h-8 bg-accent-600 rounded flex items-center justify-center">
-                  <svg class="w-3 h-3 sm:w-4 sm:h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z"></path>
-                  </svg>
-                </div>
-                <div class="w-6 h-6 sm:w-8 sm:h-8 bg-accent-500 rounded flex items-center justify-center">
-                  <svg class="w-3 h-3 sm:w-4 sm:h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"></path>
-                  </svg>
-                </div>
-                <div class="w-6 h-6 sm:w-8 sm:h-8 bg-accent-400 rounded flex items-center justify-center">
-                  <svg class="w-3 h-3 sm:w-4 sm:h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                  </svg>
-                </div>
-              </div>
-            </div>
-          </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 md:gap-6 max-w-xs md:max-w-none mx-auto items-stretch">
+      <!-- Card 1: Reducción de Costos -->
+      <CardReveal index={0} hueA={220} hueB={250} client:visible>
+      <div class="group relative bg-gradient-to-br from-white to-accent-50 rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-500 border-2 border-transparent hover:border-accent-200 h-full flex flex-col">
+        <!-- Efecto de brillo animado -->
+        <div class="absolute inset-0 bg-gradient-to-r from-transparent via-accent-200/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 z-10"></div>
+        
+        <div class="w-full h-48 sm:h-56 overflow-hidden">
+          <picture>
+            <source srcset={`${import.meta.env.BASE_URL}images/analisis-datos.webp`} type="image/webp">
+            <img 
+              src={`${import.meta.env.BASE_URL}images/analisis-datos.jpg`} 
+              alt="Análisis de datos y reducción de costos empresariales con automatización robótica de procesos RPA" 
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" 
+              loading="lazy"
+              sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+            />
+          </picture>
         </div>
-        <h3 class="text-lg sm:text-xl font-bold text-secondary-800 mb-3 sm:mb-4 leading-tight">
-          SERVICIOS DE RPA E IA QUE AUMENTARÁN LA PRODUCTIVIDAD
-        </h3>
-        <p class="text-sm sm:text-base text-secondary-600 leading-relaxed">
-          Brindamos herramientas digitales que ahorran tiempo y eliminan el trabajo rutinario monótono, lo que permite a sus empleados concentrarse en otras tareas.
-        </p>
+        <div class="relative p-3 sm:p-6 flex flex-col flex-grow">
+          <h3 class="text-lg sm:text-xl font-bold text-secondary-800 mb-2 text-center group-hover:text-accent-700 transition-colors duration-300">
+            Reducción de Costos
+          </h3>
+          <p class="text-sm sm:text-base text-secondary-600 leading-relaxed text-center flex-grow">
+            Optimice recursos y reduzca gastos operativos
+          </p>
+        </div>
       </div>
+      </CardReveal>
 
-      <!-- Card 2: Automation Solutions -->
-      <div class="bg-white rounded-xl shadow-lg p-6 sm:p-8 hover-lift animate-fade-in-up" style="animation-delay: 0.1s">
-        <div class="mb-4 sm:mb-6">
-          <div class="w-full h-40 sm:h-48 bg-secondary-800 rounded-lg flex items-center justify-center mb-4">
-            <div class="text-center">
-              <div class="flex items-center justify-center space-x-3 sm:space-x-4 mb-3 sm:mb-4">
-                <div class="w-10 h-10 sm:w-12 sm:h-12 bg-white rounded-full flex items-center justify-center">
-                  <svg class="w-5 h-5 sm:w-6 sm:h-6 text-secondary-800" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z"></path>
-                  </svg>
-                </div>
-                <div class="w-10 h-10 sm:w-12 sm:h-12 bg-accent-500 rounded-full flex items-center justify-center">
-                  <svg class="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"></path>
-                  </svg>
-                </div>
-              </div>
-              <div class="text-white text-xs sm:text-sm">Colaboración Humano-Robot</div>
-            </div>
-          </div>
+      <!-- Card 2: Aumento de Productividad -->
+      <CardReveal index={1} hueA={210} hueB={240} client:visible>
+      <div class="group relative bg-gradient-to-br from-white to-accent-50 rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-500 border-2 border-transparent hover:border-accent-200 h-full flex flex-col">
+        <!-- Efecto de brillo animado -->
+        <div class="absolute inset-0 bg-gradient-to-r from-transparent via-accent-200/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 z-10"></div>
+        
+        <div class="w-full h-48 sm:h-56 overflow-hidden">
+          <picture>
+            <source srcset={`${import.meta.env.BASE_URL}images/capacitacion-ejecutiva.webp`} type="image/webp">
+            <img src={`${import.meta.env.BASE_URL}images/capacitacion-ejecutiva.jpg`} alt="Capacitación ejecutiva y aumento de productividad empresarial con tecnologías de automatización" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy" />
+          </picture>
         </div>
-        <h3 class="text-lg sm:text-xl font-bold text-secondary-800 mb-3 sm:mb-4 leading-tight">
-          SOLUCIONES DE AUTOMATIZACIÓN PARA DIFERENTES INDUSTRIAS
-        </h3>
-        <p class="text-sm sm:text-base text-secondary-600 leading-relaxed">
-          La digitalización de los procesos comerciales genera numerosos beneficios para las empresas de diferentes sectores o dentro de sus funciones clave para su progreso.
-        </p>
+        <div class="relative p-3 sm:p-6 flex flex-col flex-grow">
+          <h3 class="text-lg sm:text-xl font-bold text-secondary-800 mb-2 text-center group-hover:text-accent-700 transition-colors duration-300">
+            Mayor Productividad
+          </h3>
+          <p class="text-sm sm:text-base text-secondary-600 leading-relaxed text-center flex-grow">
+            Incremente la eficiencia de su equipo
+          </p>
+        </div>
       </div>
+      </CardReveal>
 
-      <!-- Card 3: Business Process Automation -->
-      <div class="bg-white rounded-xl shadow-lg p-6 sm:p-8 hover-lift animate-fade-in-up" style="animation-delay: 0.2s">
-        <div class="mb-4 sm:mb-6">
-          <div class="w-full h-40 sm:h-48 bg-secondary-800 rounded-lg flex items-center justify-center mb-4">
-            <div class="text-center">
-              <div class="w-12 h-12 sm:w-16 sm:h-16 bg-blue-500 rounded-lg flex items-center justify-center mx-auto mb-3 sm:mb-4">
-                <svg class="w-6 h-6 sm:w-8 sm:h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                </svg>
-              </div>
-              <div class="text-white text-xs sm:text-sm">Inteligencia Artificial</div>
-              <div class="mt-2 flex justify-center space-x-1">
-                <div class="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-blue-400 rounded-full"></div>
-                <div class="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-blue-400 rounded-full"></div>
-                <div class="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-blue-400 rounded-full"></div>
-                <div class="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-blue-400 rounded-full"></div>
-              </div>
-            </div>
-          </div>
+      <!-- Card 3: Escalabilidad -->
+      <CardReveal index={2} hueA={200} hueB={230} client:visible>
+      <div class="group relative bg-gradient-to-br from-white to-accent-50 rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-500 border-2 border-transparent hover:border-accent-200 h-full flex flex-col">
+        <!-- Efecto de brillo animado -->
+        <div class="absolute inset-0 bg-gradient-to-r from-transparent via-accent-200/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 z-10"></div>
+        
+        <div class="w-full h-48 sm:h-56 overflow-hidden">
+          <picture>
+            <source srcset={`${import.meta.env.BASE_URL}images/desarrollo-web-mobile.webp`} type="image/webp">
+            <img src={`${import.meta.env.BASE_URL}images/desarrollo-web-mobile.jpg`} alt="Desarrollo web y móvil para escalabilidad empresarial y transformación digital" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy" />
+          </picture>
         </div>
-        <h3 class="text-lg sm:text-xl font-bold text-secondary-800 mb-3 sm:mb-4 leading-tight">
-          PIONEROS EN LA AUTOMATIZACIÓN DE PROCESOS EMPRESARIALES
-        </h3>
-        <p class="text-sm sm:text-base text-secondary-600 leading-relaxed">
-          Resolver los desafíos comerciales de nuestros clientes con soluciones de automatización ha sido nuestro principio absoluto desde nuestra formación en el 2011.
-        </p>
+        <div class="relative p-3 sm:p-6 flex flex-col flex-grow">
+          <h3 class="text-lg sm:text-xl font-bold text-secondary-800 mb-2 text-center group-hover:text-accent-700 transition-colors duration-300">
+            Escalabilidad
+          </h3>
+          <p class="text-sm sm:text-base text-secondary-600 leading-relaxed text-center flex-grow">
+            Soluciones que crecen con su empresa
+          </p>
+        </div>
       </div>
+      </CardReveal>
     </div>
 
-    <!-- CTA Section -->
-    <div class="text-center mt-12 sm:mt-16">
-      <div class="bg-white rounded-2xl shadow-xl p-6 sm:p-8 max-w-4xl mx-auto">
-        <h3 class="text-2xl sm:text-3xl font-bold text-secondary-800 mb-3 sm:mb-4">
-          ¿Listo para revolucionar sus procesos?
-        </h3>
-        <p class="text-base sm:text-lg text-secondary-600 mb-6 sm:mb-8">
-          Descubra cómo nuestras soluciones de automatización pueden transformar su empresa
-        </p>
-        <a href="#contacto" class="btn-primary text-sm sm:text-base px-6 py-3 sm:px-8 sm:py-4">
-          Solicitar Consulta Gratuita
-        </a>
-      </div>
-    </div>
+    <!-- CTA Section - Eliminado para evitar redundancia -->
   </div>
 </section>

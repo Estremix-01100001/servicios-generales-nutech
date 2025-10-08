@@ -1,0 +1,49 @@
+---
+interface Props {
+  speed?: 'slow' | 'fast';
+  direction?: 'left' | 'right';
+  class?: string;
+}
+
+const { speed = 'slow', direction = 'left', class: className = '' } = Astro.props;
+---
+
+<div 
+  class={`scroller ${className}`} 
+  data-speed={speed}
+  data-direction={direction}
+>
+  <div class="scroller__inner">
+    <slot />
+  </div>
+</div>
+
+<script>
+  const scrollers = document.querySelectorAll(".scroller");
+
+  // Si el usuario no ha optado por reducir el movimiento, agregamos la animación
+  if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    addAnimation();
+  }
+
+  function addAnimation() {
+    scrollers.forEach((scroller) => {
+      // Agregar data-animated="true" a cada `.scroller`
+      scroller.setAttribute("data-animated", "true");
+
+      // Crear un array de los elementos dentro de `.scroller__inner`
+      const scrollerInner = scroller.querySelector(".scroller__inner");
+      if (!scrollerInner) return;
+      
+      const scrollerContent = Array.from(scrollerInner.children);
+
+      // Para cada item, clonarlo y agregarlo al final
+      scrollerContent.forEach((item) => {
+        const duplicatedItem = item.cloneNode(true);
+        duplicatedItem.setAttribute("aria-hidden", "true");
+        scrollerInner.appendChild(duplicatedItem);
+      });
+    });
+  }
+</script>
+

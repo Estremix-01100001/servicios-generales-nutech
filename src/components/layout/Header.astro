@@ -2,23 +2,29 @@
 import { companyInfo } from '../../database/data';
 ---
 
-<header class="bg-secondary-900/90 backdrop-blur-sm sticky top-0 z-50">
-  <nav class="container mx-auto px-4 py-3">
+<header id="main-header" class="bg-secondary-900/40 backdrop-blur-sm fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+  <nav class="container mx-auto px-4 sm:px-6 md:px-8 lg:px-36 xl:px-44 2xl:px-52 py-4 lg:py-1">
     <div class="flex items-center justify-between">
       <!-- Logo -->
-      <div class="flex items-center">
-        <img src="/servicios-generales-nutech/favicon.png" alt="Nutech" class="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-lg" />
+      <div class="flex items-center md:-ml-[30px]">
+        <a href="#inicio" class="flex items-center space-x-3">
+          <img 
+            src={`${import.meta.env.BASE_URL}favicon.png`} 
+            alt="Nutech Logo" 
+            class="w-[56px] h-[56px] md:w-[80px] md:h-[80px] lg:w-[128px] lg:h-[128px]"
+          />
+        </a>
       </div>
 
       <!-- Desktop Navigation -->
-      <div class="hidden lg:flex items-center space-x-6 xl:space-x-8">
-        <a href="#inicio" class="nav-link text-sm xl:text-base">Inicio</a>
-        <a href="#crecimiento" class="nav-link text-sm xl:text-base">Crecimiento</a>
-        <a href="#servicios-detallados" class="nav-link text-sm xl:text-base">Servicios</a>
-        <a href="#partners" class="nav-link text-sm xl:text-base">Partners</a>
-        <a href="#nutech-info" class="nav-link text-sm xl:text-base">Nutech</a>
-        <a href="#perspectiva" class="nav-link text-sm xl:text-base">Perspectiva</a>
-        <a href="#contacto" class="nav-link text-sm xl:text-base">Contacto</a>
+      <div class="hidden lg:flex items-center space-x-4 lg:space-x-5 xl:space-x-6 2xl:space-x-8 -mr-[30px]">
+        <a href="#inicio" class="nav-link text-sm xl:text-base whitespace-nowrap">Inicio</a>
+        <a href="#crecimiento" class="nav-link text-sm xl:text-base whitespace-nowrap">Crecimiento</a>
+        <a href="#servicios-detallados" class="nav-link text-sm xl:text-base whitespace-nowrap">Servicios</a>
+        <a href="#partners" class="nav-link text-sm xl:text-base whitespace-nowrap">Partners</a>
+        <a href="#equipo" class="nav-link text-sm xl:text-base whitespace-nowrap">Equipo</a>
+        <a href="#perspectiva" class="nav-link text-sm xl:text-base whitespace-nowrap">Perspectiva</a>
+        <a href="#contacto" class="nav-link text-sm xl:text-base whitespace-nowrap">Contacto</a>
       </div>
 
       <!-- Mobile Menu Button -->
@@ -30,15 +36,15 @@ import { companyInfo } from '../../database/data';
     </div>
 
     <!-- Mobile Navigation -->
-    <div id="mobile-menu" class="lg:hidden hidden mt-4 pb-4 border-t border-white/20">
-      <div class="flex flex-col space-y-3 pt-4">
-        <a href="#inicio" class="nav-link text-base py-2">Inicio</a>
-        <a href="#crecimiento" class="nav-link text-base py-2">Crecimiento</a>
-        <a href="#servicios-detallados" class="nav-link text-base py-2">Servicios</a>
-        <a href="#partners" class="nav-link text-base py-2">Partners</a>
-        <a href="#nutech-info" class="nav-link text-base py-2">Nutech</a>
-        <a href="#perspectiva" class="nav-link text-base py-2">Perspectiva</a>
-        <a href="#contacto" class="nav-link text-base py-2">Contacto</a>
+    <div id="mobile-menu" class="lg:hidden hidden mt-4 pb-4">
+      <div class="flex flex-col space-y-3 pt-4 px-2">
+        <a href="#inicio" class="text-white text-base font-medium py-3 px-4 rounded-lg border-2 border-accent-400/50 bg-white/5">Inicio</a>
+        <a href="#crecimiento" class="text-white text-base font-medium py-3 px-4 rounded-lg border-2 border-accent-400/50 bg-white/5">Crecimiento</a>
+        <a href="#servicios-detallados" class="text-white text-base font-medium py-3 px-4 rounded-lg border-2 border-accent-400/50 bg-white/5">Servicios</a>
+        <a href="#partners" class="text-white text-base font-medium py-3 px-4 rounded-lg border-2 border-accent-400/50 bg-white/5">Partners</a>
+        <a href="#equipo" class="text-white text-base font-medium py-3 px-4 rounded-lg border-2 border-accent-400/50 bg-white/5">Equipo</a>
+        <a href="#perspectiva" class="text-white text-base font-medium py-3 px-4 rounded-lg border-2 border-accent-400/50 bg-white/5">Perspectiva</a>
+        <a href="#contacto" class="text-white text-base font-medium py-3 px-4 rounded-lg border-2 border-accent-400/50 bg-white/5">Contacto</a>
       </div>
     </div>
   </nav>
@@ -55,5 +61,23 @@ import { companyInfo } from '../../database/data';
         mobileMenu.classList.toggle('hidden');
       });
     }
+
+    // Header color change on scroll
+    const header = document.getElementById('main-header');
+    const heroSection = document.getElementById('inicio');
+    
+    window.addEventListener('scroll', function() {
+      const heroHeight = heroSection ? heroSection.offsetHeight : 0;
+      
+      if (window.scrollY > heroHeight - 100) {
+        // Más oscuro cuando pasa del hero
+        header.classList.remove('bg-secondary-900/40');
+        header.classList.add('bg-secondary-900/85');
+      } else {
+        // Transparente en el hero
+        header.classList.remove('bg-secondary-900/85');
+        header.classList.add('bg-secondary-900/40');
+      }
+    });
   });
 </script>

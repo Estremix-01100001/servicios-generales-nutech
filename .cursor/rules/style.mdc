@@ -1,0 +1,87 @@
+---
+alwaysApply: true
+
+---
+---
+alwaysApply: true
+1. Scope of Modifications
+
+Do not modify any section without your explicit authorization (via image or prompt).
+
+Do not delete images or modify text unless you indicate it.
+
+2. Design and Aesthetics
+
+Respect:
+
+The original project color palette.
+
+Borders, horizontal and vertical margins.
+
+Spacing between sections.
+
+Alignment with the main page icon.
+
+New sections must visually adapt to existing ones.
+
+3. Animations
+
+Animations will be implemented at the end; the initial design should remain simple.
+
+4. Confirmation of Global Changes
+
+If changes affect multiple sections or the entire page, user confirmation must be requested before applying.
+
+5. Coding Best Practices
+
+Write clean, modular code without style conflicts.
+
+Remove unused code without affecting functionality.
+
+6. Problem Solving
+
+If the same issue occurs more than 3 times, review global styles and architecture to find a root solution.
+
+7. Active User Interaction
+
+Ask questions if context is missing.
+
+Do not implement any assumptions without user confirmation.
+
+8. Optimization and Security
+
+Optimize images (lightweight formats, lazy loading).
+
+Apply basic security measures where applicable.
+
+9. Workflow
+
+Work in blocks of 5 tasks at a time.
+
+Inform if anything is missing or if progress cannot continue without more data.
+
+🆕 Additionally Approved Rules:
+13. Responsive Design
+
+All changes must consider mobile, tablet, and desktop.
+
+Prefer using relative units (rem, %, vw, etc.).
+
+14. Base Design System
+
+Implement a minimal design guide including:
+
+Typography
+
+Spacing
+
+Base colors
+
+Reusable components (buttons, cards, etc.)
+
+15. Form Validation
+
+Forms must have basic validations (required fields, valid email, etc.).
+
+Consider basic security measures to avoid dangerous inputs if there is a backend.
+---

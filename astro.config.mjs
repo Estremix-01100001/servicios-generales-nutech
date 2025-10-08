@@ -2,15 +2,48 @@
 import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
 
+import react from '@astrojs/react';
+
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://estremix-01100001.github.io',
-  base: '/servicios-generales-nutech',
+  site: 'https://nutech.pe',
+  base: '/',
   output: 'static',
   build: {
     assets: 'assets'
   },
-  integrations: [tailwind()],
+  compressHTML: true,
+  prefetch: {
+    prefetchAll: true,
+    defaultStrategy: 'viewport'
+  },
+  security: {
+    checkOrigin: true,
+    allowedHosts: ['nutech.pe', 'www.nutech.pe'],
+    contentSecurityPolicy: {
+      directives: {
+        'default-src': ["'self'"],
+        'script-src': ["'self'", "'unsafe-inline'", "'unsafe-eval'", "https://fonts.googleapis.com"],
+        'style-src': ["'self'", "'unsafe-inline'", "https://fonts.googleapis.com"],
+        'font-src': ["'self'", "https://fonts.gstatic.com"],
+        'img-src': ["'self'", "data:", "blob:", "https:"],
+        'media-src': ["'self'", "blob:"],
+        'connect-src': ["'self'", "https:"],
+        'frame-src': ["'none'"],
+        'object-src': ["'none'"],
+        'base-uri': ["'self'"],
+        'form-action': ["'self'"],
+        'frame-ancestors': ["'none'"],
+        'upgrade-insecure-requests': []
+      }
+    }
+  },
+  integrations: [
+    tailwind(), 
+    react({
+      include: ['**/animations/**/*.tsx']
+    })
+  ],
   vite: {
     build: {
       rollupOptions: {

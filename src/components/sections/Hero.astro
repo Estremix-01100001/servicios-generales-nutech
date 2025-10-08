@@ -2,60 +2,67 @@
 import { companyInfo } from '../../database/data';
 ---
 
-<section id="inicio" class="relative min-h-screen flex items-center justify-center overflow-hidden">
-  <!-- Video Background -->
+  <section id="inicio" class="hero-section relative min-h-[70vh] sm:h-screen lg:min-h-[115vh] flex items-start sm:items-center justify-center overflow-hidden pt-24 lg:pt-32">
+  <!-- Background (Video o Degradado) -->
   <div class="absolute inset-0 w-full h-full">
+    <!-- Video Background (se oculta si no carga) -->
     <video 
+      id="hero-video"
       class="w-full h-full object-cover" 
       autoplay 
       muted 
       loop 
       playsinline
+      preload="metadata"
+      onerror="this.style.display='none'"
     >
-      <source src="/servicios-generales-nutech/video-hersection.mp4" type="video/mp4">
-      Tu navegador no soporta el elemento de video.
+      <source src={`${import.meta.env.BASE_URL}video-hersection.mp4`} type="video/mp4">
     </video>
+    
+    <!-- Fallback: Degradado animado de fondo -->
+    <div class="absolute inset-0 bg-gradient-to-br from-blue-600 via-blue-800 to-blue-900 hero-gradient"></div>
+    
+    <!-- Overlay oscuro para reducir brillo del video -->
+    <div class="absolute inset-0 bg-black/40"></div>
     <!-- Overlay para contraste -->
     <div class="absolute inset-0 bg-gradient-to-br from-blue-900/30 via-transparent to-orange-900/30"></div>
     <!-- Degradado hacia la siguiente sección -->
     <div class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white via-white/80 to-transparent"></div>
   </div>
 
-  <!-- Contenido centrado -->
-  <div class="relative z-10 w-full h-full flex items-center justify-center">
-    <div class="text-center max-w-5xl mx-auto px-4">
+    <!-- Contenido centrado -->
+    <div class="relative z-10 w-full h-full flex items-center justify-center pt-2 sm:pt-0">
+    <div class="text-center max-w-5xl mx-auto px-4 sm:px-6 md:px-8 lg:px-24 xl:px-32 2xl:px-40 lg:-translate-y-20">
       <!-- Texto Principal -->
-      <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-6 md:mb-8 text-white">
+      <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-normal mb-6 md:mb-8 text-white">
         <span class="block">Agrega valor a las</span>
-        <span class="block">organizaciones</span>
-        <span class="block">a través de la</span>
-        <span class="relative inline-block">
-          <span class="letter">t</span><span class="letter">r</span><span class="letter">a</span><span class="letter">n</span>
-          <span class="letter">s</span><span class="letter">f</span><span class="letter">o</span><span class="letter">r</span>
-          <span class="letter">m</span><span class="letter">a</span><span class="letter">c</span><span class="letter">i</span>
-          <span class="letter">ó</span><span class="letter">n</span> <span class="letter">d</span><span class="letter">i</span>
-          <span class="letter">g</span><span class="letter">i</span><span class="letter">t</span><span class="letter">a</span>
-          <span class="letter">l</span>
+        <span class="block">organizaciones a</span>
+        <span class="block relative">
+          <span class="animated-text-hero relative inline-block">
+            través de la transformación digital
+            <span class="hero-shine"></span>
+            <span class="hero-particles"></span>
+          </span>
         </span>
       </h1>
       
       <!-- Subtítulo -->
-      <p class="text-base sm:text-lg md:text-xl text-gray-200 mb-6 md:mb-8 leading-relaxed max-w-4xl mx-auto">
-        Dignificamos el Trabajo Humano y Aceleramos tu Éxito<br class="hidden sm:block">
-        Empresarial con Tecnología de Vanguardia
+      <p class="text-base sm:text-lg md:text-xl text-gray-200 mb-6 md:mb-8 leading-relaxed max-w-4xl mx-auto px-4">
+        Descubra cómo la automatización puede optimizar sus procesos.<br class="hidden sm:block">
+       
       </p>
       
       <!-- Botones -->
-      <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center">
-        <a href="#servicios-detallados" class="w-full sm:w-auto bg-transparent border-2 border-white text-white hover:bg-white hover:text-blue-600 font-semibold py-3 px-6 rounded-lg transition-all duration-300 flex items-center justify-center space-x-2">
+      <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center max-w-xs sm:max-w-none mx-auto">
+        <a href="#contacto" class="w-full sm:w-auto bg-white text-accent-600 hover:bg-accent-50 font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
+          <span>Contacto</span>
+        </a>
+
+        <a href="#servicios-detallados" class="w-full sm:w-auto bg-transparent border-2 border-white text-white hover:bg-white hover:text-accent-600 font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 flex items-center justify-center space-x-2">
           <span>Ver servicios</span>
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
           </svg>
-        </a>
-
-        <a href="#contacto" class="w-full sm:w-auto bg-white/10 backdrop-blur-sm border border-white/20 text-white hover:bg-white hover:text-blue-600 font-semibold py-3 px-6 rounded-lg transition-all duration-300">
-          <span>Contacto</span>
         </a>
       </div>
     </div>
@@ -64,32 +71,117 @@ import { companyInfo } from '../../database/data';
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
-    const letters = document.querySelectorAll('.letter');
-    const letterDelay = 120; // velocidad de animación por letra
-    const pauseBetweenCycles = 2000; // pausa entre ciclos
+    // Animación avanzada del texto "transformación digital"
+    const animatedText = document.querySelector('.animated-text-hero');
+    const particlesContainer = document.querySelector('.hero-particles');
     
-    function resetLetters() {
-      letters.forEach(letter => {
-        letter.style.color = '#ffffff';
-        letter.style.transition = 'color 0.2s ease';
-      });
+    if (animatedText && particlesContainer) {
+      // Crear partículas flotantes
+      for (let i = 0; i < 15; i++) {
+        const particle = document.createElement('span');
+        particle.className = 'hero-particle';
+        particle.style.left = Math.random() * 100 + '%';
+        particle.style.animationDelay = Math.random() * 3 + 's';
+        particle.style.animationDuration = (Math.random() * 2 + 2) + 's';
+        particlesContainer.appendChild(particle);
+      }
     }
-    
-    function animateLetters() {
-      resetLetters();
-      
-      letters.forEach((letter, index) => {
-        setTimeout(() => {
-          letter.style.color = '#3B82F6'; // azul Tailwind
-        }, index * letterDelay);
-      });
-      
-      // Reiniciar animación después de completar
-      setTimeout(() => {
-        setTimeout(animateLetters, pauseBetweenCycles);
-      }, letters.length * letterDelay);
-    }
-    
-    animateLetters();
   });
+  
+  // Ocultar el degradado si el video carga correctamente
+  const video = document.getElementById('hero-video');
+  if (video) {
+    video.addEventListener('loadeddata', () => {
+      const gradient = document.querySelector('.hero-gradient');
+      if (gradient) {
+        gradient.style.opacity = '0';
+      }
+    });
+  }
+</script>
+
+<style>
+  .hero-gradient {
+    animation: gradient-shift 15s ease infinite;
+    background-size: 200% 200%;
+    transition: opacity 0.5s ease;
+  }
+  
+  @keyframes gradient-shift {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  #hero-video {
+    z-index: 1;
+  }
+  
+  .hero-gradient {
+    z-index: 0;
+  }
+  
+  /* Performance: Pausar animaciones cuando no visible */
+  .hero-section.paused .animated-text-hero,
+  .hero-section.paused #hero-video {
+    animation-play-state: paused;
+  }
+  
+  /* Animación para "transformación digital" */
+  .animated-text {
+    display: inline-block;
+    background: linear-gradient(90deg, #ffffff 0%, #3B82F6 50%, #ffffff 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: text-glow 3s ease-in-out infinite;
+    white-space: nowrap;
+  }
+  
+  @keyframes text-glow {
+    0%, 100% {
+      background-position: 0% center;
+      -webkit-text-fill-color: transparent;
+    }
+    50% {
+      background-position: 100% center;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+</style>
+
+<script>
+// ===================================
+// PERFORMANCE: Pausar video y animaciones Hero cuando no visible
+// ===================================
+document.addEventListener('DOMContentLoaded', () => {
+  const heroSection = document.getElementById('inicio');
+  const heroVideo = document.getElementById('hero-video');
+  
+  const heroObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        heroSection?.classList.remove('paused');
+        if (heroVideo) heroVideo.play();
+      } else {
+        heroSection?.classList.add('paused');
+        if (heroVideo) heroVideo.pause();
+      }
+    });
+  }, {
+    threshold: 0.25,
+    rootMargin: '0px'
+  });
+  
+  if (heroSection) {
+    heroObserver.observe(heroSection);
+  }
+});
 </script>
